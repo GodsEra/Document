@@ -13,23 +13,24 @@
 3、全部使用 post请求
 
 4、全局参数
-   reqCode   【请求码  110000-119999】
-   checksum   【签名】
-   reqTime   【请求时间，毫秒单位】
-   mobile_id   【等同与  token】
+        reqCode   【请求码  110000-119999】
+        checksum   【签名】
+        reqTime   【请求时间，毫秒单位】
+        mobile_id   【等同与  token】
 
 5、用户安全参数
-   session_id   【登陆标识】	
-   session_security   【安全校验码】
+        session_id   【登陆标识】	
+        session_security   【安全校验码】
 ```
 
 ## 请求地址
 ```
 接口开始
 
-测试地址：http://distributionapi.marketing.ypvpa.com          
+测试地址: http://kitchenapi.marketing.ypvpa.com
 
-正式地址：http://distributionapi.marketing.yuqg.com                
+线上地址：http://kitchenapi.marketing.yuqg.com          
+
 ```
 
 ## 状态码
@@ -72,27 +73,83 @@ data                响应数据 具体参考其接口文档
 
 ## 请求接口
 
-### 第一步请求 mobile_id
+### 请求 mobile_id
 
-> 接口地址 /kitchen_api/plugin/get_mobile_id 
+> 接口地址 /plugin/get_mobile_id 
 
 > 请求方式 POST
 
-> **传递参数 Request Data : **
+> ** 传递参数 Request Data : **
 ```
-platform  【ios，android】
-device_id  【设备号】
+platform            【ios，android】
+device_id           【设备号】
 reqTime     
 checksum 
 ```
 
->**返回参数 Response Data :**
+> ** 返回参数 Request Data : **
 ```
 {
     "responseCode": 0,
-    "responseMessage": "ok成功",
+    "responseMessage": "ok",
     "data": {
         "mobile_id": "ios_V3ERydy5Kqcv"
+    }
+}
+
+```
+
+### 登录
+
+> 接口地址 /user/get_mobile_id 
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+reqTime     
+checksum 
+mobile_id
+mobile          【用户手机号】
+password        【登陆密码】
+```
+
+> ** 返回参数 Request Data : **
+```
+{
+    "responseCode": 0,
+    "responseMessage": "ok",
+    "data": {
+        "mobile_id": "ios_ygPVpZKqO8TK",
+        "session_id": "acd1fd29796be12f9b3313e022682578",
+        "session_security": "VTJGc2RHVmtYMTlITU9vQXVkMmdBVU4xYU9mNlZmcGdMVEk2SU1TTlhIcndQTmhsWWdNN0t5Mjd4SEdlTmdmYmdLWUdaRzZXT0xiWk9pSDhLS3ZPdHNvdDQxaDI5ODRRQ1dRUE5nZVhPRTRvTXZXVWNRKzNieUdoczdGUzA0YjNBM05jSGRQRDk0ZC9sSFVGa0FwejdBPT0",
+        "user": {
+            "id": 1185,         【用户编号】
+            "status": 1,
+            "superior_id": 580,
+            "group_id": 20,
+            "username": "admin",
+            "mobile": "18381082760",
+            "email": null,
+            "face": "http:\/\/www.ypvpa.localhost\/uploads\/images\/20190402\/3dad8d9e900ceaddf8f867487bd69167.jpg",
+            "nickname": null,
+            "is_real_name": 0,
+            "full_name": null,
+            "sex": 0,
+            "id_type": 1,
+            "idnumber": null,
+            "id_zheng": null,
+            "id_fan": null,
+            "id_shouchi": null,
+            "birthday": null,
+            "is_delete": 0,
+            "invite_code": "jpas122f",
+            "create_time": "2019-04-02 03:49:02",
+            "update_time": "2019-04-02 03:49:02",
+            "sex_name": "保密",
+            "status_name": "正常",
+            "group_name": "商家"
+        }
     }
 }
 
