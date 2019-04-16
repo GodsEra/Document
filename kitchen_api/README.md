@@ -101,7 +101,7 @@ checksum
 
 ### 登录
 
-> 接口地址 /user/get_mobile_id 
+> 接口地址 /user/login_via_password
 
 > 请求方式 POST
 
