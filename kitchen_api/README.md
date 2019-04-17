@@ -81,10 +81,10 @@ data                响应数据 具体参考其接口文档
 
 > ** 传递参数 Request Data : **
 ```
-platform            【ios，android】
-device_id           【设备号】
-reqTime     
-checksum 
+int         reqTime     
+string      checksum 
+string      platform            【ios，android】
+string      device_id           【设备号】
 ```
 
 > ** 返回参数 Request Data : **
@@ -107,11 +107,11 @@ checksum
 
 > ** 传递参数 Request Data : **
 ```
-reqTime     
-checksum 
-mobile_id
-mobile          【用户手机号】
-password        【登陆密码】
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      mobile          【用户手机号】
+string      password        【登陆密码】
 ```
 
 > ** 返回参数 Request Data : **
@@ -154,6 +154,45 @@ password        【登陆密码】
 }
 ```
 
+### 获取二级分类
+
+> 接口地址 /sort/son_good_cate_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         parent_cate_id          【一级分类（上级分类）ID】
+```
+
+> ** 返回参数 Request Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "son_good_cate_list": [
+            {
+                "id": 2,
+                "cate_name": "炒菜",
+                "icon": "http://www.ypvpa.localhost/uploads/goods/cate_icon/20190326/2178d9098ee0fbdb635e2f173b4065f1.png"
+            },
+            {
+                "id": 3,
+                "cate_name": "烧菜",
+                "icon": ""
+            }
+        ]
+    }
+}
+
+```
+
 ### 计算购物车
 
 > 接口地址 /cart/calculate_cart
@@ -162,13 +201,13 @@ password        【登陆密码】
 
 > ** 传递参数 Request Data : **
 ```
-reqTime     
-checksum 
-mobile_id
-session_id        
-session_security
-spec_id                 【规格ID】
-buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         spec_id                 【规格ID】
+int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
 ```
 
 > ** 返回参数 Request Data : **
