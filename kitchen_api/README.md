@@ -152,5 +152,35 @@ password        【登陆密码】
         }
     }
 }
+```
 
+### 计算购物车
+
+> 接口地址 /cart/calculate_cart
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+reqTime     
+checksum 
+mobile_id
+session_id        
+session_security
+spec_id                 【规格ID】
+buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
+```
+
+> ** 返回参数 Request Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "执行成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "购物车物品超过库存",
+    "data": {}
+}
 ```
