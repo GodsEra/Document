@@ -167,6 +167,8 @@ string      checksum
 string      mobile_id
 string      session_id        
 string      session_security
+int/null    limit                   【分页数(默认后台配置)】        
+int/null    page                    【页数(默认1)】
 ```
 
 > ** 返回参数 Request Data : **
@@ -210,7 +212,79 @@ string      session_security
                 "icon": ""
             }
         ],
-        "default_son_cate_id": 2                    【二级分类默认ID】
+        "default_son_cate_id": 2,                   【二级分类默认ID】
+        "good_list": {                  【商品分类列表】
+            "list": [                   【分页列表】
+                {
+                    "id": 11,           【商品ID】
+                    "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",        【商品封面图】
+                    "title": "炒土豆丝",        【商品名】
+                    "first_spec_id": 5,         【第一个规格ID】
+                    "first_spec_name": "2斤",    【第一个规格单位】
+                    "first_spec_unit": "kg",    【第一个规格单位注释】
+                    "first_spec_price": "0.01", 【第一个规格售价】
+                    "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                    "spec_count": 2,                【包含的规格数量】
+                    "spec_list": [              【规格列表】
+                        {
+                            "id": 5,            【规格ID】
+                            "price": "0.01",    【规格售价】
+                            "source_price": "20.00",    【规格原始标价】
+                            "name": "2斤",       【规格单位】
+                            "unit": "kg"        【规格单位注释】
+                        },
+                        {
+                            "id": 6,
+                            "price": "0.01",
+                            "source_price": "38.00",
+                            "name": "半斤",
+                            "unit": "500g"
+                        }
+                    ],
+                    "status_name": null
+                },
+                {
+                    "id": 14,
+                    "litpic": "",
+                    "title": "回锅肉",
+                    "first_spec_id": 14,
+                    "first_spec_name": "3213",
+                    "first_spec_unit": "3213",
+                    "first_spec_price": "213.00",
+                    "first_spec_source_price": "2131.00",
+                    "spec_count": 3,
+                    "spec_list": [
+                        {
+                            "id": 13,
+                            "price": "11.00",
+                            "source_price": "22.00",
+                            "name": "22",
+                            "unit": "22"
+                        },
+                        {
+                            "id": 14,
+                            "price": "213.00",
+                            "source_price": "2131.00",
+                            "name": "3213",
+                            "unit": "3213"
+                        },
+                        {
+                            "id": 15,
+                            "price": "3123.00",
+                            "source_price": "131.00",
+                            "name": "3123",
+                            "unit": "3123"
+                        }
+                    ],
+                    "status_name": null
+                }
+            ],
+            "count": 2,         【列表总数】
+            "total_page": 1,    【分页总数】
+            "current_page": 1,  【当前页】
+            "pagesize": 2       【每页数量，与limit一致】
+        }
+        
     }
 }
 ```
