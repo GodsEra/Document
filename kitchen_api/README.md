@@ -313,9 +313,9 @@ int         parent_cate_id          【一级分类（上级分类）ID】
     "data": {
         "son_good_cate_list": [
             {
-                "id": 2,
-                "cate_name": "炒菜",
-                "icon": "http://www.ypvpa.localhost/uploads/goods/cate_icon/20190326/2178d9098ee0fbdb635e2f173b4065f1.png"
+                "id": 2,                        【分类ID】
+                "cate_name": "炒菜",              【分类名】
+                "icon": "http://www.ypvpa.localhost/uploads/goods/cate_icon/20190326/2178d9098ee0fbdb635e2f173b4065f1.png"          【分类图标】
             },
             {
                 "id": 3,
