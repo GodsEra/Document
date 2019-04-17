@@ -73,7 +73,16 @@ data                响应数据 具体参考其接口文档
 
 ## 请求接口
 
-### 请求 mobile_id
+### 目录
+[请求 mobile_id](#请求mobile_id)
+[登录](#登录)
+[分类页面](#分类页面)
+[分类页面V2](#分类页面V2)
+[获取二级分类](#获取二级分类)
+[获取商品列表](#获取商品列表)
+[计算购物车](#计算购物车)
+
+### 请求mobile_id
 
 > 接口地址 /plugin/get_mobile_id 
 
@@ -87,7 +96,7 @@ string      platform            【ios，android】
 string      device_id           【设备号】
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": 0,
@@ -114,7 +123,7 @@ string      mobile          【用户手机号】
 string      password        【登陆密码】
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": 0,
@@ -172,7 +181,7 @@ int/null    page                    【页数(默认1)】
 int/null    cate_id                 【分类ID(默认选择第一个)】
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": "0",
@@ -305,7 +314,7 @@ string      session_id
 string      session_security
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": "0",
@@ -423,7 +432,7 @@ string      session_security
 int         parent_cate_id          【一级分类（上级分类）ID】
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": "0",
@@ -471,7 +480,7 @@ int/null    limit                   【分页数(默认后台配置)】
 int/null    page                    【页数(默认1)】
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": "0",
@@ -583,7 +592,7 @@ int         spec_id                 【规格ID】
 int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
 ```
 
-> ** 返回参数 Request Data : **
+> ** 返回参数 Response Data : **
 ```
 {
     "responseCode": "0",
