@@ -169,6 +169,7 @@ string      session_id
 string      session_security
 int/null    limit                   【分页数(默认后台配置)】        
 int/null    page                    【页数(默认1)】
+int/null    cate_id                 【分类ID(默认选择第一个)】
 ```
 
 > ** 返回参数 Request Data : **
@@ -285,6 +286,123 @@ int/null    page                    【页数(默认1)】
             "pagesize": 2       【每页数量，与limit一致】
         }
         
+    }
+}
+```
+
+### 分类页面V2
+
+> 接口地址 /navigation/sort_v2
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Request Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "good_cate_list": [                 【一级分类列表】
+            {
+                "id": 1,                    【分类ID】
+                "cate_name": "川菜",          【分类名】
+                "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190326\/df2701805309a17cd2bc47a3ac4d1b92.png",      【分类图标】
+                "son_good_cate_list": [         【二级分类列表】
+                    {
+                        "id": 2,                【分类ID】
+                        "cate_name": "炒菜",      【分类名】
+                        "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190326\/2178d9098ee0fbdb635e2f173b4065f1.png"   【分类图标】
+                    },
+                    {
+                        "id": 3,
+                        "cate_name": "烧菜",
+                        "icon": ""
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "cate_name": "快乐水",
+                "icon": "",
+                "son_good_cate_list": [
+                    {
+                        "id": 5,
+                        "cate_name": "可乐",
+                        "icon": ""
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "cate_name": "面包",
+                "icon": "",
+                "son_good_cate_list": [
+                    {
+                        "id": 7,
+                        "cate_name": "牛角",
+                        "icon": ""
+                    },
+                    {
+                        "id": 8,
+                        "cate_name": "甜甜圈",
+                        "icon": ""
+                    },
+                    {
+                        "id": 9,
+                        "cate_name": "泡芙",
+                        "icon": ""
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "cate_name": "硬件",
+                "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190407\/c5df1368a9ad6fe4c3057e711c0a4992.jpg",
+                "son_good_cate_list": []
+            }
+        ]
+    }
+}
+
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "good_cate_list": [
+            {
+                "id": 1,
+                "cate_name": "川菜",
+                "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190326\/df2701805309a17cd2bc47a3ac4d1b92.png",
+                "son_good_cate_list": []
+            },
+            {
+                "id": 4,
+                "cate_name": "快乐水",
+                "icon": "",
+                "son_good_cate_list": []
+            },
+            {
+                "id": 6,
+                "cate_name": "面包",
+                "icon": "",
+                "son_good_cate_list": []
+            },
+            {
+                "id": 10,
+                "cate_name": "硬件",
+                "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190407\/c5df1368a9ad6fe4c3057e711c0a4992.jpg",
+                "son_good_cate_list": []
+            }
+        ]
     }
 }
 ```
