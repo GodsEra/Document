@@ -86,7 +86,7 @@ data                响应数据 具体参考其接口文档
 
 [计算购物车](#计算购物车)  
 
-[商品详情](#商品详情)  
+[商品详情页面](#商品详情页面)  
 
 ## 请求接口
 
@@ -625,7 +625,7 @@ int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 
 ```  
 [接口目录](#接口目录)
 
-### 商品详情
+### 商品详情页面
 
 > 接口地址 /good/good
 
@@ -643,7 +643,6 @@ int         id              【商品ID】
 
 > ** 返回参数 Response Data : **
 ```
-{
 {
     "responseCode": "0",
     "responseMessage": "ok",
@@ -680,7 +679,6 @@ int         id              【商品ID】
         "cart_all_buy_number": 18,      【购物车的规格购买数量和】
         "cart_all_price": "22.00",      【购物车的购物车总金额】
         "user_agent": {                 【代理信息】
-            "title": "通江店",             【代理名称】
             "tel": "18381082766"            【代理联系方式】
         }
     }
@@ -695,9 +693,80 @@ int         id              【商品ID】
         "cart_all_buy_number": 18,
         "cart_all_price": "22.00",
         "user_agent": {
-            "title": "通江店",
             "tel": "18381082766"
         }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 购物车信息
+
+> 接口地址 /cart/cart_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "cart_list": [                          【购物车列表】
+            {
+                "spec_id": 171,                 【规格ID】       
+                "buy_number": 1,                【购买数量增量】
+                "good_title": "回锅肉",             【商品名】
+                "good_litpic": "http:\/\/www.ypvpa.localhost",      【商品图片】
+                "name": "2斤",                   【规格单位】
+                "unit": "kg"                    【规格单位注释】
+                "source_price": "22.00",            【规格原始标价】
+                "price": "11.00"                    【规格售价】
+            },
+            {
+                "spec_id": 13,
+                "buy_number": 2,
+                "good_title": "回锅肉",
+                "good_litpic": "http:\/\/www.ypvpa.localhost",
+                "name": "22",
+                "unit": "22",
+                "source_price": "22.00",
+                "price": "11.00"
+            },
+            {
+                "spec_id": 12,
+                "buy_number": 8,
+                "good_title": "甜面包",
+                "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/fe2cc5b880865c84195ad155f2aae2d3.jpg",
+                "name": "1",
+                "unit": "1",
+                "source_price": "1.00",
+                "price": "1.00"
+            }
+        ],
+        "cart_all_spec_number": 3,          【购物车的规格数量和】
+        "cart_all_buy_number": 11,          【购物车的规格购买数量和】
+        "cart_all_price": "30.00"           【购物车的购物车总金额】
+    }
+}
+
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "cart_list": [],
+        "cart_all_spec_number": 0,
+        "cart_all_buy_number": 0,
+        "cart_all_price": "0.00"
     }
 }
 ```  
