@@ -517,17 +517,18 @@ int/null    page                    【页数(默认1)】
                             "price": "0.01",    【规格售价】
                             "source_price": "20.00",    【规格原始标价】
                             "name": "2斤",       【规格单位】
-                            "unit": "kg"        【规格单位注释】
+                            "unit": "kg",        【规格单位注释】
+                            "cart_buy_number": 15
                         },
                         {
                             "id": 6,
                             "price": "0.01",
                             "source_price": "38.00",
                             "name": "半斤",
-                            "unit": "500g"
+                            "unit": "500g",
+                            "cart_buy_number": 0
                         }
                     ],
-                    "status_name": null
                 },
                 {
                     "id": 14,
@@ -545,31 +546,36 @@ int/null    page                    【页数(默认1)】
                             "price": "11.00",
                             "source_price": "22.00",
                             "name": "22",
-                            "unit": "22"
+                            "unit": "22",
+                            "cart_buy_number": 0
                         },
                         {
                             "id": 14,
                             "price": "213.00",
                             "source_price": "2131.00",
                             "name": "3213",
-                            "unit": "3213"
+                            "unit": "3213",
+                            "cart_buy_number": 0
                         },
                         {
                             "id": 15,
                             "price": "3123.00",
                             "source_price": "131.00",
                             "name": "3123",
-                            "unit": "3123"
+                            "unit": "3123",
+                            "cart_buy_number": 0
                         }
                     ],
-                    "status_name": null
                 }
             ],
             "count": 2,         【列表总数】
             "total_page": 1,    【分页总数】
             "current_page": 1,  【当前页】
             "pagesize": 2       【每页数量，与limit一致】
-        }
+        },
+        "cart_all_spec_number": 6,      【购物车的规格数量和】
+        "cart_all_buy_number": 45,      【购物车的规格购买数量和】
+        "cart_all_price": "109.00",      【购物车的购物车总金额】
     }
 }
 
@@ -612,6 +618,7 @@ int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 
     "responseCode": "0",
     "responseMessage": "执行成功",
     "data": {
+        "cart_buy_numer": 23,               【此规格的购物车购买数量】
         "cart_all_spec_number": 4,          【购物车的规格数量和】
         "cart_all_buy_number": 27,          【购物车的规格购买数量和】
         "cart_all_price": "121.00"          【购物车的购物车总金额】
