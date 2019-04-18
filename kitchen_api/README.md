@@ -13,7 +13,6 @@
 3、全部使用 post请求
 
 4、全局参数
-        reqCode   【请求码  110000-119999】
         checksum   【签名】
         reqTime   【请求时间，毫秒单位】
         mobile_id   【等同与  token】
