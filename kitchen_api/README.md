@@ -314,8 +314,10 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
             "total_page": 1,    【分页总数】
             "current_page": 1,  【当前页】
             "pagesize": 2       【每页数量，与limit一致】
-        }
-        
+        },
+        "cart_all_spec_number": 7,      【购物车的规格数量和】
+        "cart_all_buy_number": 77,      【购物车的规格购买数量和】
+        "cart_all_price": "248.03"      【购物车的购物车总金额】
     }
 }
 ```  
@@ -607,39 +609,39 @@ int/null    page                    【页数(默认1)】
 [接口目录](#接口目录)
 
 ### 计算购物车
-
-> 接口地址 /cart/calculate_cart
-
-> 请求方式 POST
-
-> ** 传递参数 Request Data : **
-```
-int         reqTime     
-string      checksum 
-string      mobile_id
-string      session_id        
-string      session_security
-int         spec_id                 【规格ID】
-int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
-```
-
-> ** 返回参数 Response Data : **
-```
-{
-    "responseCode": "0",
-    "responseMessage": "执行成功",
-    "data": {
-        "cart_buy_number": 23,               【此规格的购物车购买数量】
-        "cart_all_spec_number": 4,          【购物车的规格数量和】
-        "cart_all_buy_number": 27,          【购物车的规格购买数量和】
-        "cart_all_price": "121.00"          【购物车的购物车总金额】
-    }
-}
-{
-    "responseCode": "10001",
-    "responseMessage": "购物车物品超过库存",
-    "data": {}
-}
+ 
+ > 接口地址 /cart/calculate_cart
+ 
+ > 请求方式 POST
+ 
+ > ** 传递参数 Request Data : **
+ ```
+ int         reqTime     
+ string      checksum 
+ string      mobile_id
+ string      session_id        
+ string      session_security
+ int         spec_id                 【规格ID】
+ int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
+ ```
+ 
+ > ** 返回参数 Response Data : **
+ ```
+ {
+     "responseCode": "0",
+     "responseMessage": "执行成功",
+     "data": {
+         "cart_buy_number": 23,               【此规格的购物车购买数量】
+         "cart_all_spec_number": 4,          【购物车的规格数量和】
+         "cart_all_buy_number": 27,          【购物车的规格购买数量和】
+         "cart_all_price": "121.00"          【购物车的购物车总金额】
+     }
+ }
+ {
+     "responseCode": "10001",
+     "responseMessage": "购物车物品超过库存",
+     "data": {}
+ }
 ```  
 [接口目录](#接口目录)
 
@@ -789,3 +791,48 @@ string      session_security
 }
 ```  
 [接口目录](#接口目录)
+
+### 批量删除购物车
+ 
+> 接口地址 /cart/delete_carts
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      spec_ids                 【批量规格ID,ID之间以逗号隔开 比如2 或者 1,2,3】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "执行成功",
+    "data": {
+        "cart_all_spec_number": 6,          【购物车的规格数量和】  
+        "cart_all_buy_number": 65,          【购物车的规格购买数量和】
+        "cart_all_price": "236.03"          【购物车的购物车总金额】
+    }
+}
+
+{
+ "responseCode": "0",
+ "responseMessage": "执行成功",
+ "data": {
+     "cart_buy_number": 23,                 【此规格的购物车购买数量】
+     "cart_all_spec_number": 4,             【购物车的规格数量和】
+     "cart_all_buy_number": 27,             【购物车的规格购买数量和】
+     "cart_all_price": "121.00"             【购物车的购物车总金额】
+ }
+}
+{
+ "responseCode": "10001",
+ "responseMessage": "购物车物品超过库存",
+ "data": {}
+}
+```  
