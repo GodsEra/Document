@@ -624,3 +624,80 @@ int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 
 ```  
 [接口目录](#接口目录)
 
+### 商品详情
+
+> 接口地址 /good/good
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         id              【商品ID】          
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "good": {                           【商品信息】
+            "id": 12,                       【商品ID】
+            "title": "百事可乐",            【商品标题】
+            "description": "百事可乐",      【商品说明】
+            "body": "<p>\r\n\t百事可乐fdsafa\r\n<\/p>",     【图文详情】
+            "pic_list": [                   【轮播展示图】
+                "http:\/\/www.ypvpa.localhost\/uploads\/goods\/album\/20190404\/e8003f338aa604704117dcc2ea1f0f8d.jpg",
+                "http:\/\/www.ypvpa.localhost\/uploads\/goods\/album\/20190404\/5e323f178d3e77194d0be265dd6985a2.jpg"
+            ],
+            "spec_list": [                  【规格列表】
+                {
+                    "id": 9,                【规格ID】
+                    "price": "5.00",        【规格售价】
+                    "source_price": "20.00",        【规格原始标价】
+                    "name": "杯",            【规格单位】
+                    "unit": "1杯"            【规格单位注释】
+                },
+                {
+                    "id": 11,
+                    "price": "2.00",
+                    "source_price": "1.00",
+                    "name": "1",
+                    "unit": "1"
+                }
+            ],
+            "distribution_price": 0,            【运费】
+            "monthly_order_number": 0           【月销量】
+        },
+        "cart_all_spec_number": 4,      【购物车的规格数量和】
+        "cart_all_buy_number": 18,      【购物车的规格购买数量和】
+        "cart_all_price": "22.00",      【购物车的购物车总金额】
+        "user_agent": {                 【代理信息】
+            "title": "通江店",             【代理名称】
+            "tel": "18381082766"            【代理联系方式】
+        }
+    }
+}
+
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "good": {},
+        "cart_all_spec_number": 4,
+        "cart_all_buy_number": 18,
+        "cart_all_price": "22.00",
+        "user_agent": {
+            "title": "通江店",
+            "tel": "18381082766"
+        }
+    }
+}
+```  
+[接口目录](#接口目录)
