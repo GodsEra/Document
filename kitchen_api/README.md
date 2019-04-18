@@ -807,7 +807,7 @@ string      checksum
 string      mobile_id
 string      session_id        
 string      session_security
-string      spec_ids                 【批量规格ID,ID之间以逗号隔开 比如2 或者 1,2,3】
+string      spec_ids                 【批量规格ID,ID之间以英文半角逗号隔开 比如2 或者 1,2,3】
 ```
 
 > ** 返回参数 Response Data : **
