@@ -275,6 +275,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "cart_buy_number": 0
                         }
                     ],
+                    "first_spec_car_buy_number": 0          【第一个规格购买数量】
                 },
                 {
                     "id": 14,
@@ -312,6 +313,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "cart_buy_number": 0
                         }
                     ],
+                    "first_spec_car_buy_number": 0
                 }
             ],
             "count": 2,         【列表总数】
@@ -546,6 +548,7 @@ int/null    page                    【页数(默认1)】
                             "cart_buy_number": 0
                         }
                     ],
+                    "first_spec_car_buy_number": 0         【第一个规格购买数量】
                 },
                 {
                     "id": 14,
