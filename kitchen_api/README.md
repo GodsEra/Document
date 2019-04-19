@@ -828,6 +828,82 @@ string      spec_ids                 【批量规格ID,ID之间以英文半角�
         "cart_all_price": "236.03"          【购物车的购物车总金额】
     }
 }
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "cart_list": [],
+        "cart_all_spec_number": 0,
+        "cart_all_buy_number": 0,
+        "cart_all_price": "0.00"
+    }
+}
 ```  
 [接口目录](#接口目录)
 
+### 订单确认页面
+ 
+> 接口地址 /order/order_ok
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string/null         order_from                       【订单来源 good商品/cart购物车 默认good】
+string              spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "spec_list": {                              【规格列表】
+            "list": [
+                {
+                    "id": 5,                            【规格ID】
+                    "name": "2斤",                       【规格单位】
+                    "unit": "kg",                       【规格单位注释】
+                    "price": "0.01",                    【规格售价】
+                    "source_price": "20.00",            【规格原始标价】
+                    "good_title": "炒土豆丝",           【商品名】
+                    "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",       【商品图片】
+                    "buy_number": 7                     【购买数量】
+                },
+                {
+                    "id": 9,
+                    "name": "杯",
+                    "unit": "1杯",
+                    "price": "5.00",
+                    "source_price": "20.00",
+                    "good_title": "百事可乐",
+                    "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+                    "buy_number": 76
+                }
+            ],
+            "all_spec_number": 2,           【规格数量和】
+            "all_buy_number": 83,               【规格购买数量和】
+            "all_price": 380.07,                【总金额】
+            "all_source_price": 1660,               【总标价】
+            "all_diff_price": 1279.93,              【总优惠价】
+            "distribution_price": 0,                【运费】
+            "pay_price": 380.07                     【订单实付金额】
+        },
+        "address_info": {                   【地区信息】
+            "title": "通江店",             【】
+            "tel": "18381082766",
+            "province_name": "天津市",
+            "city_name": "天津市",
+            "area_name": "河东区",
+            "address": "红星路四段"
+        }
+    }
+}
+```  
+[接口目录](#接口目录)
