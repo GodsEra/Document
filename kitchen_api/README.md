@@ -624,7 +624,7 @@ int/null    page                    【页数(默认1)】
  string      session_id        
  string      session_security
  int         spec_id                 【规格ID】
- int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】
+ int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】【为了解决请求接收先后问题，现在只能传带符号的数量增量 如+1 -1】
  ```
  
  > ** 返回参数 Response Data : **
@@ -633,6 +633,8 @@ int/null    page                    【页数(默认1)】
      "responseCode": "0",
      "responseMessage": "执行成功",
      "data": {
+         "buy_number_string": "+1",            【购物车购买数量增量】
+         "price_string": "+5",                  【购物车价格增量】
          "cart_buy_number": 23,               【此规格的购物车购买数量】
          "cart_all_spec_number": 4,          【购物车的规格数量和】
          "cart_all_buy_number": 27,          【购物车的规格购买数量和】
