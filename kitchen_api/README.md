@@ -731,7 +731,7 @@ int         id              【商品ID】
 
 ### 购物车信息
 
-> 接口地址 /cart/cart_list
+> 接口地址 /navigation/cart_list
 
 > 请求方式 POST
 
