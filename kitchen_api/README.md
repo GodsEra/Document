@@ -855,7 +855,7 @@ string      mobile_id
 string      session_id        
 string      session_security
 string/null         order_from                       【订单来源 good商品/cart购物车 默认good】
-string              spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
+string/null              spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
 ```
 
 > ** 返回参数 Response Data : **
@@ -897,6 +897,30 @@ string              spec_ids_numbers                 【批量规格ID与数量�
         },
         "address_info": {                   【地区信息】
             "title": "通江店",             【】
+            "tel": "18381082766",
+            "province_name": "天津市",
+            "city_name": "天津市",
+            "area_name": "河东区",
+            "address": "红星路四段"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "spec_list": {
+            "list": [],
+            "all_spec_number": 0,
+            "all_buy_number": 0,
+            "all_price": 0,
+            "all_source_price": 0,
+            "all_diff_price": 0,
+            "distribution_price": 0,
+            "pay_price": 0
+        },
+        "address_info": {
+            "title": "通江店",
             "tel": "18381082766",
             "province_name": "天津市",
             "city_name": "天津市",
