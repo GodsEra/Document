@@ -646,6 +646,11 @@ int/null    page                    【页数(默认1)】
      "responseMessage": "购物车物品超过库存",
      "data": {}
  }
+ {
+     "responseCode": "10001",
+     "responseMessage": "购买数量信息必须带符号 buy_number_string(+1 -1等)",
+     "data": {}
+ }
 ```  
 [接口目录](#接口目录)
 
