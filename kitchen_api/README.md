@@ -693,14 +693,16 @@ int         id              【商品ID】
                     "price": "5.00",        【规格售价】
                     "source_price": "20.00",        【规格原始标价】
                     "name": "杯",            【规格单位】
-                    "unit": "1杯"            【规格单位注释】
+                    "unit": "1杯",            【规格单位注释】
+                    "stock_number": 50          【规格库存】
                 },
                 {
                     "id": 11,
                     "price": "2.00",
                     "source_price": "1.00",
                     "name": "1",
-                    "unit": "1"
+                    "unit": "1",
+                    "stock_number": 20
                 }
             ],
             "distribution_price": 0,            【运费】
