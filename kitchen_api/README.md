@@ -943,31 +943,14 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
     }
 }
 {
-    "responseCode": "0",
-    "responseMessage": "ok",
-    "data": {
-        "spec_list": {
-            "list": [],
-            "all_spec_number": 0,
-            "all_buy_number": 0,
-            "all_price": 0,
-            "all_source_price": 0,
-            "all_diff_price": 0,
-            "distribution_price": 0,
-            "pay_price": 0
-        },
-        "user_info": {                          
-           "id": 1185,                           
-           "nickname": null,                       
-           "extension_title": "通江店",               
-           "extension_tel": "18381082766",             
-           "extension_logo": "\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg",          
-           "extension_province_name": "天津市",               
-           "extension_city_name": "天津市",                   
-           "extension_area_name": "河东区",                   
-           "extension_address": "红星路四段"                    
-        }
-    }
+    "responseCode": "10001",
+    "responseMessage": "库存不足 规格ID为5的购买量10000超过库存30",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "库存不足 规格ID为5的购买量1000超过库存30,规格ID为9的购买量1001超过库存1000",
+    "data": {}
 }
 ```  
 [接口目录](#接口目录)
