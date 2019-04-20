@@ -785,6 +785,7 @@ string      session_security
             {
                 "spec_id": 171,                 【规格ID】       
                 "buy_number": 1,                【购买数量增量】
+                "good_id": 12,                      【商品ID】
                 "good_title": "回锅肉",             【商品名】
                 "good_litpic": "http:\/\/www.ypvpa.localhost",      【商品图片】
                 "name": "2斤",                   【规格单位】
