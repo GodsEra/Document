@@ -100,6 +100,8 @@ session相关错误
 
 [订单确认页面](#订单确认页面)  
 
+[检测规格库存](#检测规格库存)  
+
 ## 请求接口
 
 ### 请求mobile_id
@@ -146,6 +148,28 @@ string      password        【登陆密码】
 
 > ** 返回参数 Response Data : **
 ```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "mobile_id": "ios_ygPVpZKqO8TK",
+        "session_id": "81e0712eb61ad88da7a2e47f8e550e15",
+        "session_security": "VTJGc2RHVmtYMStyKzZvQVFpTjVoSE1RZVFlZGd6S0ZYcnNXYkRUemJnMzR3OTAvVWxJM1k3Q09XUlBYUEFobmVTZGZJUkprMzdUVDVGekVjWW5GWVB4amFNd3NuOTBvakNxcU9QRHcxVXowTzJkd1BkMEtZdTYxUlpDY3F0MHhQSnpEUHdXSzEwUEJzK1NyOE9KUGpBPT0",
+        "user_info": {                          【用户信息】
+            "id": 1185,                           【用户编号】
+            "nickname": null,                       【用户昵称】
+            "mobile": "18381082760",                   【用户手机（登录用的手机）】
+            "extension_title": "通江店",               【商户名】
+            "extension_tel": "18381082766",             【商户电话】
+            "extension_logo": "\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg",          【商户logo】
+            "extension_province_name": "天津市",               【商户省名】
+            "extension_city_name": "天津市",                   【商户市名】
+            "extension_area_name": "河东区",                   【商户区名】
+            "extension_address": "红星路四段"                    【商户地址】
+        }
+    }
+}
+
 {
     "responseCode": 0,
     "responseMessage": "ok",
@@ -902,13 +926,17 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
             "distribution_price": 0,                【运费】
             "pay_price": 380.07                     【订单实付金额】
         },
-        "address_info": {                           【商户地区信息】
-            "title": "通江店",                         【商户名】
-            "tel": "18381082766",                   【商户电话】
-            "province_name": "天津市",                 【商户省】
-            "city_name": "天津市",                     【商户市】
-            "area_name": "河东区",                     【商户区】
-            "address": "红星路四段"                      【商户详细地址】
+        "user_info": {                          【用户信息】
+            "id": 1185,                           【用户编号】
+            "nickname": null,                       【用户昵称】
+            "mobile": "18381082760",                   【用户手机（登录用的手机）】
+            "extension_title": "通江店",               【商户名】
+            "extension_tel": "18381082766",             【商户电话】
+            "extension_logo": "\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg",          【商户logo】
+            "extension_province_name": "天津市",               【商户省名】
+            "extension_city_name": "天津市",                   【商户市名】
+            "extension_area_name": "河东区",                   【商户区名】
+            "extension_address": "红星路四段"                    【商户地址】
         }
     }
 }
@@ -926,15 +954,54 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
             "distribution_price": 0,
             "pay_price": 0
         },
-        "address_info": {
-            "title": "通江店",
-            "tel": "18381082766",
-            "province_name": "天津市",
-            "city_name": "天津市",
-            "area_name": "河东区",
-            "address": "红星路四段"
+        "user_info": {                          
+           "id": 1185,                           
+           "nickname": null,                       
+           "extension_title": "通江店",               
+           "extension_tel": "18381082766",             
+           "extension_logo": "\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg",          
+           "extension_province_name": "天津市",               
+           "extension_city_name": "天津市",                   
+           "extension_area_name": "河东区",                   
+           "extension_address": "红星路四段"                    
         }
     }
+}
+```  
+[接口目录](#接口目录)
+
+### 检测规格库存
+ 
+> 接口地址 /order/check_spec_stock
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string/null         spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5 代表规格ID为5 数量为1，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "库存充足",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "规格ID为5的购买量10000超过库存30",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "规格ID为5的购买量1000超过库存30,规格ID为9的购买量1001超过库存1000",
+    "data": {}
 }
 ```  
 [接口目录](#接口目录)
