@@ -904,6 +904,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                     "price": "0.01",                    【规格售价】
                     "source_price": "20.00",            【规格原始标价】
                     "stock_number": 30,                 【规格库存】
+                    "good_id": 14,                      【商品ID】
                     "good_title": "炒土豆丝",           【商品名】
                     "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",       【商品图片】
                     "buy_number": 7                     【购买数量】
