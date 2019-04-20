@@ -903,6 +903,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                     "unit": "kg",                       【规格单位注释】
                     "price": "0.01",                    【规格售价】
                     "source_price": "20.00",            【规格原始标价】
+                    "stock_number": 30,                 【规格库存】
                     "good_title": "炒土豆丝",           【商品名】
                     "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",       【商品图片】
                     "buy_number": 7                     【购买数量】
@@ -913,6 +914,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                     "unit": "1杯",
                     "price": "5.00",
                     "source_price": "20.00",
+                    "stock_number": 50,
                     "good_title": "百事可乐",
                     "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
                     "buy_number": 76
@@ -995,12 +997,12 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 }
 {
     "responseCode": "10001",
-    "responseMessage": "规格ID为5的购买量10000超过库存30",
+    "responseMessage": "库存不足 规格ID为5的购买量10000超过库存30",
     "data": {}
 }
 {
     "responseCode": "10001",
-    "responseMessage": "规格ID为5的购买量1000超过库存30,规格ID为9的购买量1001超过库存1000",
+    "responseMessage": "库存不足 规格ID为5的购买量1000超过库存30,规格ID为9的购买量1001超过库存1000",
     "data": {}
 }
 ```  
