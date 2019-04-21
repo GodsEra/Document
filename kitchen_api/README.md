@@ -106,6 +106,10 @@ session相关错误
 
 [订单列表](#订单列表)  
 
+[取消订单](#取消订单)  
+
+[删除订单](#删除订单)  
+
 ## 请求接口
 
 ### 请求mobile_id
@@ -989,7 +993,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 
 ### 下单
  
-> 接口地址 /order/generate_spec_order
+> 接口地址 /order/generate_order
 
 > 请求方式 POST
 
@@ -1034,8 +1038,9 @@ string      checksum
 string      mobile_id
 string      session_id        
 string      session_security
-string/null         order_from                       【订单来源 good商品/cart购物车 默认good】
-string/null         spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5 代表规格ID为5 数量为1，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
+int/null    limit                   【分页数(默认后台配置)】        
+int/null    page                    【页数(默认1)】
+string/null    status_choice                     【订单状态选择：no_pay 未付款（待付款） pay_success 已付款（待发货） send_success 已发货（待收货） finish 完成（待评价），其余状态或空都是显示所有订单】
 ```
 
 > ** 返回参数 Response Data : **
@@ -1060,8 +1065,8 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                             "price": "5.00"                     【商品规格售价】
                         }
                     ],
-                    "status_string": "待付款",                     【订单创建时间】
-                    "create_time_string": "昨天 17:27"                【订单创建时间优化显示】
+                    "status_string": "待付款",                     【订单状态显示】
+                    "create_time_string": "昨天 17:27"                【订单创建时间显示】
                 },
                 {
                     "order_sn": "S201904201643361928",
@@ -1077,7 +1082,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                             "price": "5.00"
                         }
                     ],
-                    "status_string": "待付款",
+                    "status_string": "交易关闭",
                     "create_time_string": "昨天 16:43"
                 }
             ],
@@ -1104,4 +1109,76 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 ```  
 [接口目录](#接口目录)
 
+### 取消订单
+ 
+> 接口地址 /order/cancel_order
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      order_sn                                【订单号】
+string/null    status_cancel_choice                 【订单状态取消：no_buy 我不想买了 write_wrong 信息填写错误 sold_out 卖家缺货 buy_offline 同城见面交易 other 其他原因，其余状态或空都是默认选择no_buy 我不想买了】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "订单取消成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "只有未购买的订单才能取消",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "订单不存在",
+    "data": {}
+}
+```  
+[接口目录](#接口目录)
+
+### 删除订单
+ 
+> 接口地址 /order/delete_order
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      order_sn                                【订单号】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "订单删除成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "只有购买完成或关闭的订单才能删除",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "订单不存在",
+    "data": {}
+}
+```  
+[接口目录](#接口目录)
 
