@@ -96,7 +96,9 @@ session相关错误
 
 [商品详情](#商品详情)  
 
-[收藏商品](#收藏商品)  
+[收藏商品](#收藏商品)
+  
+[清空商品收藏](#清空商品收藏)  
 
 [购物车信息](#购物车信息)  
 
@@ -844,6 +846,36 @@ int      goods_id                                【商品ID】
         "goods_id": 14,
         "love_status": "unloved"
     }
+}
+```  
+[接口目录](#接口目录)
+
+### 清空商品收藏
+ 
+> 接口地址 /good/empty_good_love
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "清空商品收藏成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "商品收藏已经为空",
+    "data": {}
 }
 ```  
 [接口目录](#接口目录)
