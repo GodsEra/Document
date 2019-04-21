@@ -82,6 +82,8 @@ session相关错误
    
 [登录](#登录)  
 
+[用户详情](#用户详情)  
+
 [分类页面](#分类页面)  
 
 [分类页面V2](#分类页面V2)  
@@ -179,7 +181,6 @@ string      password        【登陆密码】
         }
     }
 }
-
 {
     "responseCode": 0,
     "responseMessage": "ok",
@@ -213,6 +214,44 @@ string      password        【登陆密码】
             "sex_name": "保密",
             "status_name": "正常",
             "group_name": "商家"
+        }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 用户详情
+ 
+> 接口地址 /user/user
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+         "user_info": {                          【用户信息】
+            "id": 1185,                           【用户编号】
+            "nickname": null,                       【用户昵称】
+            "mobile": "18381082760",                   【用户手机（登录用的手机）】
+            "extension_title": "通江店",               【商户名】
+            "extension_tel": "18381082766",             【商户电话】
+            "extension_logo": "\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg",          【商户logo】
+            "extension_province_name": "天津市",               【商户省名】
+            "extension_city_name": "天津市",                   【商户市名】
+            "extension_area_name": "河东区",                   【商户区名】
+            "extension_address": "红星路四段"                    【商户地址】
         }
     }
 }
