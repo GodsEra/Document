@@ -1247,7 +1247,7 @@ string      mobile_id
 string      session_id        
 string      session_security
 string      order_sn                                【订单号】
-string/null    status_cancel_choice                 【订单状态取消：no_buy 我不想买了 write_wrong 信息填写错误 sold_out 卖家缺货 buy_offline 同城见面交易 other 其他原因，其余状态或空都是默认选择no_buy 我不想买了】
+string/null    status_cancel_choice                 【订单状态取消原因：no_buy 我不想买了 write_wrong 信息填写错误 sold_out 卖家缺货 buy_offline 同城见面交易 other 其他原因，其余状态或空都是默认选择no_buy 我不想买了】
 ```
 
 > ** 返回参数 Response Data : **
