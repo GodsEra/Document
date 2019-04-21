@@ -94,7 +94,9 @@ session相关错误
 
 [计算购物车](#计算购物车)  
 
-[商品详情页面](#商品详情页面)  
+[商品详情](#商品详情)  
+
+[收藏商品](#收藏商品)  
 
 [购物车信息](#购物车信息)  
 
@@ -732,7 +734,7 @@ int/null    page                    【页数(默认1)】
 ```  
 [接口目录](#接口目录)
 
-### 商品详情页面
+### 商品详情
 
 > 接口地址 /good/good
 
@@ -782,7 +784,8 @@ int         id              【商品ID】
                 }
             ],
             "distribution_price": 0,            【运费】
-            "monthly_order_number": 0           【月销量】
+            "monthly_order_number": 0,           【月销量】
+            "love_status": "loved"              【收藏状态：loved 已收藏 unloved 未收藏】
         },
         "cart_all_spec_number": 4,      【购物车的规格数量和】
         "cart_all_buy_number": 18,      【购物车的规格购买数量和】
@@ -792,7 +795,6 @@ int         id              【商品ID】
         }
     }
 }
-
 {
     "responseCode": "0",
     "responseMessage": "ok",
@@ -804,6 +806,43 @@ int         id              【商品ID】
         "user_agent": {
             "tel": "18381082766"
         }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 收藏商品
+ 
+> 接口地址 /good/love_good
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int      goods_id                                【商品ID】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "收藏成功",
+    "data": {
+        "goods_id": 14,                 【商品ID】
+        "love_status": "loved"          【收藏状态：loved 已收藏 unloved 未收藏】
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "取消收藏成功",
+    "data": {
+        "goods_id": 14,
+        "love_status": "unloved"
     }
 }
 ```  
@@ -1100,10 +1139,10 @@ string/null    status_choice                     【订单状态选择：no_pay 
             "list": [                           【列表】
                 {
                     "order_sn": "S201904201727304308",          【订单序列号】
-                    "all_buy_number": 1,                        【购买总规格数量】
-                    "pay_price": "5.00",                        【实付金额】
+                    "all_buy_number": 1,                        【购买规格数量和】
+                    "pay_price": "5.00",                        【订单实付金额】
                     "create_time": "2019-04-20 17:27:30",           【订单创建时间】
-                    "order_item_list": [                        【订单规格列表】
+                    "spec_list": [                        【订单规格列表】
                         {
                             "good_id": 12,                      【商品ID】
                             "good_title": "百事可乐",               【商品名】
