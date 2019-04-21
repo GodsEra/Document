@@ -104,6 +104,8 @@ session相关错误
 
 [下单](#下单)  
 
+[订单列表](#订单列表)  
+
 ## 请求接口
 
 ### 请求mobile_id
@@ -862,16 +864,6 @@ string      spec_ids                 【批量规格ID,ID之间以英文半角�
         "cart_all_price": "236.03"          【购物车的购物车总金额】
     }
 }
-{
-    "responseCode": "0",
-    "responseMessage": "ok",
-    "data": {
-        "cart_list": [],
-        "cart_all_spec_number": 0,
-        "cart_all_buy_number": 0,
-        "cart_all_price": "0.00"
-    }
-}
 ```  
 [接口目录](#接口目录)
 
@@ -1028,4 +1020,88 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 }
 ```  
 [接口目录](#接口目录)
+
+### 订单列表
+ 
+> 接口地址 /order/order_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string/null         order_from                       【订单来源 good商品/cart购物车 默认good】
+string/null         spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5 代表规格ID为5 数量为1，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_list": {                         【订单分页】
+            "list": [                           【列表】
+                {
+                    "order_sn": "S201904201727304308",          【订单序列号】
+                    "all_buy_number": 1,                        【购买总规格数量】
+                    "pay_price": "5.00",                        【实付金额】
+                    "create_time": "2019-04-20 17:27:30",           【订单创建时间】
+                    "order_item_list": [                        【订单规格列表】
+                        {
+                            "good_id": 12,                      【商品ID】
+                            "good_title": "百事可乐",               【商品名】
+                            "good_litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",           【商品图片】
+                            "buy_number": 1,                    【商品规格购买数量】
+                            "price": "5.00"                     【商品规格售价】
+                        }
+                    ],
+                    "status_string": "待付款",                     【订单创建时间】
+                    "create_time_string": "昨天 17:27"                【订单创建时间优化显示】
+                },
+                {
+                    "order_sn": "S201904201643361928",
+                    "all_buy_number": 4,
+                    "pay_price": "20.00",
+                    "create_time": "2019-04-20 16:43:36",
+                    "order_item_list": [
+                        {
+                            "good_id": 12,
+                            "good_title": "百事可乐",
+                            "good_litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+                            "buy_number": 4,
+                            "price": "5.00"
+                        }
+                    ],
+                    "status_string": "待付款",
+                    "create_time_string": "昨天 16:43"
+                }
+            ],
+            "count": 70,                【列表总数】
+            "total_page": 35,           【分页总数】
+            "current_page": 1,          【当前页】    
+            "pagesize": 2               【每页数量，与limit一致】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_list": {
+            "list": [],
+            "count": 0,
+            "total_page": 0,
+            "current_page": 1,
+            "pagesize": 6
+        }
+    }
+}
+```  
+[接口目录](#接口目录)
+
 
