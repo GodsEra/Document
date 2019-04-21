@@ -86,9 +86,9 @@ session相关错误
 
 [分类页面V2](#分类页面V2)  
 
-[获取二级分类](#获取二级分类)  
+[二级分类](#二级分类)  
 
-[获取商品列表](#获取商品列表)  
+[商品列表](#商品列表)  
 
 [计算购物车](#计算购物车)  
 
@@ -105,6 +105,8 @@ session相关错误
 [下单](#下单)  
 
 [订单列表](#订单列表)  
+
+[订单详情](#订单详情)  
 
 [取消订单](#取消订单)  
 
@@ -479,7 +481,7 @@ string      session_security
 ```  
 [接口目录](#接口目录)
 
-### 获取二级分类
+### 二级分类
 
 > 接口地址 /sort/son_good_cate_list
 
@@ -526,7 +528,7 @@ int         parent_cate_id          【一级分类（上级分类）ID】
 ```  
 [接口目录](#接口目录)
 
-### 获取商品列表
+### 商品列表
 
 > 接口地址 /good/good_list
 
@@ -1006,6 +1008,7 @@ string      session_id
 string      session_security
 string/null         order_from                       【订单来源 good商品/cart购物车 默认good】
 string/null         spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5 代表规格ID为5 数量为1，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
+string/null         remarks                         【订单备注】
 ```
 
 > ** 返回参数 Response Data : **
@@ -1103,6 +1106,127 @@ string/null    status_choice                     【订单状态选择：no_pay 
             "total_page": 0,
             "current_page": 1,
             "pagesize": 6
+        }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 订单详情
+ 
+> 接口地址 /order/order
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      order_sn                                【订单号】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201904220039186777",                  【订单号】
+            "status": 30,                                       【订单状态 现有5个状态分别对应5个详情页：状态 0 未支付（待付款） 1 支付成功（待发货） 10 已发货（待收货） 20 完成（待评价） 30 取消订单（交易关闭）】
+            "create_time": "2019-04-22 00:39:18",               【创建时间】
+            "extension_title": "通江店",                       【商户名】
+            "extension_tel": "18381082766",                   【商户电话】
+            "extension_province_name": "天津市",               【商户省名】
+            "extension_city_name": "天津市",                   【商户市名】
+            "extension_area_name": "河东区",                   【商户区名】
+            "extension_address": "红星路四段"                    【商户地址】
+            "remarks": "555555",                        【订单备注】
+            "spec_list": {                          【规格列表信息】
+                "list": [                           【列表】
+                    {
+                        "id": 9,                    【规格ID】
+                        "price": "5.00",            【规格售价】
+                        "source_price": "20.00",    【规格原始标价】
+                        "name": "杯",                【规格单位】
+                        "good_id": 12,              【商品ID】
+                        "good_title": "百事可乐",       【商品名】
+                        "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",    【商品图片】
+                        "buy_number": 1,            【购买数量】
+                    }
+                ],
+                "all_spec_number": 1,               【规格数量和】
+                "all_buy_number": 1,                【规格购买数量和】
+                "all_price": 5,                     【总金额】
+                "all_source_price": 20,             【总标价】
+                "all_diff_price": 15,               【总优惠价】
+                "distribution_price": "0.00",       【运费】
+                "pay_price": 5                      【订单实付金额】
+            },
+            "status_string": "交易关闭",            【订单状态显示】
+            "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
+            "create_time_string": "17分钟前"       【创建时间显示】
+        },
+        "user_agent": {                 【代理信息】
+            "tel": "18381082766"            【代理联系方式】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201904220052558497",
+            "status": 0,
+            "create_time": "2019-04-22 00:52:55",
+            "extension_title": "通江店",
+            "extension_tel": "18381082766",
+            "extension_province_name": "天津市",
+            "extension_city_name": "天津市",
+            "extension_area_name": "河东区",
+            "extension_address": "红星路四段",
+            "remarks": "555555",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 9,
+                        "price": "5.00",
+                        "source_price": "20.00",
+                        "name": "杯",
+                        "good_id": 12,
+                        "good_title": "百事可乐",
+                        "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 5,
+                "all_source_price": 20,
+                "all_diff_price": 15,
+                "distribution_price": "0.00",
+                "pay_price": 5
+            },
+            "status_string": "待付款",
+            "status_cancel_string": "未取消",
+            "create_time_string": "22分钟前"
+        },
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {},
+        "user_agent": {
+            "tel": "4001-898-116"
         }
     }
 }
