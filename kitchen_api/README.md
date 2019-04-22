@@ -340,7 +340,8 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "price": "0.01",    【规格售价】
                             "source_price": "20.00",    【规格原始标价】
                             "name": "2斤",       【规格单位】
-                            "unit": "kg"        【规格单位注释】
+                            "unit": "kg",        【规格单位注释】
+                            "stock_number": 222,                【规格库存】
                             "cart_buy_number": 0    【此规格的购物车购买数量】
                         },
                         {
@@ -349,9 +350,11 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "source_price": "38.00",
                             "name": "半斤",
                             "unit": "500g",
+                            "stock_number": 222,                
                             "cart_buy_number": 0
                         }
                     ],
+                    "spec_count": 2,                        【规格数量】
                     "first_spec_car_buy_number": 0          【第一个规格购买数量】
                 },
                 {
@@ -371,6 +374,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "source_price": "22.00",
                             "name": "22",
                             "unit": "22",
+                            "stock_number": 222,                
                             "cart_buy_number": 0
                         },
                         {
@@ -379,6 +383,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "source_price": "2131.00",
                             "name": "3213",
                             "unit": "3213",
+                            "stock_number": 222,                
                             "cart_buy_number": 0
                         },
                         {
@@ -387,9 +392,11 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "source_price": "131.00",
                             "name": "3123",
                             "unit": "3123",
+                            "stock_number": 222,                
                             "cart_buy_number": 0
                         }
                     ],
+                    "spec_count": 2,                        
                     "first_spec_car_buy_number": 0
                 }
             ],
@@ -829,22 +836,181 @@ string      session_security
 int      goods_id                                【商品ID】
 ```
 
+### 收藏的商品列表
+ 
+> 接口地址 /good/loved_good_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int/null    cate_id                 【分类ID(默认0 表示所有分类ID)】
+loved_good_status/null              【收藏的商品状态：lacked 失效 其余状态或空都是查询所有】
+int/null    limit                   【分页数(默认后台配置)】        
+int/null    page                    【页数(默认1)】
+```
+
 > ** 返回参数 Response Data : **
 ```
 {
     "responseCode": "0",
-    "responseMessage": "收藏成功",
+    "responseMessage": "ok",
     "data": {
-        "goods_id": 14,                 【商品ID】
-        "love_status": "loved"          【收藏状态：loved 已收藏 unloved 未收藏】
+        "good_list": {
+            "list": [
+                {
+                    "id": 11,           【商品ID】
+                    "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",        【商品封面图】
+                    "title": "炒土豆丝",        【商品名】
+                    "first_spec_id": 5,         【第一个规格ID】
+                    "first_spec_name": "2斤",    【第一个规格单位】
+                    "first_spec_unit": "kg",    【第一个规格单位注释】
+                    "first_spec_price": "0.01", 【第一个规格售价】
+                    "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                    "spec_count": 2,                【包含的规格数量】
+                    "spec_list": [              【规格列表】
+                        {
+                            "id": 5,            【规格ID】
+                            "price": "0.01",    【规格售价】
+                            "source_price": "20.00",    【规格原始标价】
+                            "name": "2斤",       【规格单位】
+                            "unit": "kg",        【规格单位注释】
+                            "stock_number": 0          【规格库存】
+                        },
+                        {
+                            "id": 6,
+                            "price": "0.01",
+                            "source_price": "38.00",
+                            "name": "半斤",
+                            "unit": "500g",
+                            "stock_number": 1          
+                        }
+                    ],
+                    "spec_count": 2,                   【规格数量】
+                    "love_good_status": "lowed_stock_number"                【收藏的商品状态：normal 正常 lacked 失效 lowed_stock_number 低库存】
+                },
+                {
+                    "id": 12,
+                    "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+                    "title": "百事可乐",
+                    "first_spec_id": 9,
+                    "first_spec_name": "杯",
+                    "first_spec_unit": "1杯",
+                    "first_spec_price": "5.00",
+                    "first_spec_source_price": "20.00",
+                    "spec_list": [
+                        {
+                            "id": 9,
+                            "price": "5.00",
+                            "source_price": "20.00",
+                            "name": "杯",
+                            "unit": "1杯",
+                            "stock_number": 1
+                        },
+                        {
+                            "id": 11,
+                            "price": "2.00",
+                            "source_price": "1.00",
+                            "name": "1",
+                            "unit": "1",
+                            "stock_number": 0
+                        }
+                    ],
+                    "spec_count": 2,
+                    "love_good_status": "lowed_stock_number"
+                },
+                {
+                    "id": 13,
+                    "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/fe2cc5b880865c84195ad155f2aae2d3.jpg",
+                    "title": "甜面包111",
+                    "first_spec_id": 7,
+                    "first_spec_name": "个数",
+                    "first_spec_unit": "1个",
+                    "first_spec_price": "2.00",
+                    "first_spec_source_price": "20.00",
+                    "spec_list": [
+                        {
+                            "id": 7,
+                            "price": "2.00",
+                            "source_price": "20.00",
+                            "name": "个数",
+                            "unit": "1个",
+                            "stock_number": 20
+                        },
+                        {
+                            "id": 12,
+                            "price": "1.00",
+                            "source_price": "1.00",
+                            "name": "1",
+                            "unit": "1",
+                            "stock_number": 20
+                        }
+                    ],
+                    "spec_count": 2,
+                    "love_good_status": "lacked"
+                },
+                {
+                    "id": 14,
+                    "litpic": "",
+                    "title": "回锅肉",
+                    "first_spec_id": 13,
+                    "first_spec_name": "22",
+                    "first_spec_unit": "22",
+                    "first_spec_price": "11.00",
+                    "first_spec_source_price": "22.00",
+                    "spec_list": [
+                        {
+                            "id": 13,
+                            "price": "11.00",
+                            "source_price": "22.00",
+                            "name": "22",
+                            "unit": "22",
+                            "stock_number": 20
+                        },
+                        {
+                            "id": 14,
+                            "price": "213.00",
+                            "source_price": "2131.00",
+                            "name": "3213",
+                            "unit": "3213",
+                            "stock_number": 123
+                        },
+                        {
+                            "id": 15,
+                            "price": "3123.00",
+                            "source_price": "131.00",
+                            "name": "3123",
+                            "unit": "3123",
+                            "stock_number": 212
+                        }
+                    ],
+                    "spec_count": 3,
+                    "love_good_status": "normal"
+                }
+            ],
+            "count": 4,                【列表总数】
+            "total_page": 1,           【分页总数】
+            "current_page": 1,          【当前页】    
+            "pagesize": 5               【每页数量，与limit一致】
+        }
     }
 }
 {
     "responseCode": "0",
-    "responseMessage": "取消收藏成功",
+    "responseMessage": "ok",
     "data": {
-        "goods_id": 14,
-        "love_status": "unloved"
+        "good_list": {
+            "list": [],
+            "count": 0,
+            "total_page": 0,
+            "current_page": 1,
+            "pagesize": 5
+        }
     }
 }
 ```  
