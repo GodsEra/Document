@@ -1447,12 +1447,12 @@ string      order_sn                                【订单号】
             "order_sn": "S201904220039186777",                  【订单号】
             "status": 30,                                       【订单状态 现有5个状态分别对应5个详情页：状态 0 未支付（待付款） 1 支付成功（待发货） 10 已发货（待收货） 20 完成（待评价） 30 取消订单（交易关闭）】
             "create_time": "2019-04-22 00:39:18",               【创建时间】
-            "extension_title": "通江店",                       【商户名】
-            "extension_tel": "18381082766",                   【商户电话】
-            "extension_province_name": "天津市",               【商户省名】
-            "extension_city_name": "天津市",                   【商户市名】
-            "extension_area_name": "河东区",                   【商户区名】
-            "extension_address": "红星路四段"                    【商户地址】
+            "extension_title": "通江店",                       【收货人（商户名）】
+            "extension_tel": "18381082766",                   【收货电话（商户电话）】
+            "extension_province_name": "天津市",               【收货地址-省（商户省名）】
+            "extension_city_name": "天津市",                   【收货地址-市（商户市名）】
+            "extension_area_name": "河东区",                   【收货地址-区（商户区名）】
+            "extension_address": "红星路四段"                    【收取地址-详细地址（商户地址）】
             "remarks": "555555",                        【订单备注】
             "spec_list": {                          【规格列表信息】
                 "list": [                           【列表】
@@ -1477,23 +1477,23 @@ string      order_sn                                【订单号】
             },
             "status_string": "交易关闭",            【订单状态显示】
             "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
-            "create_time_string": "17分钟前",       【创建时间显示】
-            "distribution_order": {                 【配送信息】
-                "distribution_user_full_name": "红星",            【配送员全名】
-                "distribution_user_face": "",                       【配送员头像】
-                "distribution_user_mobile": "18381082701",           【配送员电话】
-                "status_string": "赶往仓库",                    【配送状态】
-                "coordinate_info": {                        【坐标信息】
-                    "receive_to_pick_goods": {          【确认接单坐标 到 取货坐标列表】
-                        "coordinate_x": "23.5555556",                   【坐标X轴】
-                        "coordinate_y": "113.2222222",                  【坐标Y轴】
-                        "create_time": "1970-01-01 08:33:39"            【接单时间】
-                    },
-                    "pick_goods_to_merchant": {             【取货坐标 到 完成坐标列表】
-                        "coordinate_x": "23.5555556",
-                        "coordinate_y": "113.2222222",
-                        "create_time": "1970-01-01 08:33:39"            【取货时间】
-                    }
+            "create_time_string": "17分钟前"       【创建时间显示】
+        },
+        "distribution_order": {                 【配送信息】
+            "distribution_user_full_name": "红星",            【配送员全名】
+            "distribution_user_face": "",                       【配送员头像】
+            "distribution_user_mobile": "18381082701",           【配送员电话】
+            "status_string": "赶往仓库",                    【配送状态】
+            "coordinate_info": {                        【坐标信息】
+                "receive_to_pick_goods": {          【确认接单坐标 到 取货坐标列表】
+                    "coordinate_x": "23.5555556",                   【坐标X轴】
+                    "coordinate_y": "113.2222222",                  【坐标Y轴】
+                    "create_time": "1970-01-01 08:33:39"            【接单时间】
+                },
+                "pick_goods_to_merchant": {             【取货坐标 到 完成坐标列表】
+                    "coordinate_x": "23.5555556",
+                    "coordinate_y": "113.2222222",
+                    "create_time": "1970-01-01 08:33:39"            【取货时间】
                 }
             }
         },
@@ -1542,9 +1542,10 @@ string      order_sn                                【订单号】
             "status_cancel_string": "未取消",
             "create_time_string": "22分钟前"
         },
+        "distribution_order": {},
         "user_agent": {
             "tel": "4001-898-116"
-        }
+        },
     }
 }
 {
@@ -1552,6 +1553,7 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {},
+        "distribution_order": {},
         "user_agent": {
             "tel": "4001-898-116"
         }
