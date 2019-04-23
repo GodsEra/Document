@@ -1477,7 +1477,25 @@ string      order_sn                                【订单号】
             },
             "status_string": "交易关闭",            【订单状态显示】
             "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
-            "create_time_string": "17分钟前"       【创建时间显示】
+            "create_time_string": "17分钟前",       【创建时间显示】
+            "distribution_order": {                 【配送信息】
+                "distribution_user_full_name": "红星",            【配送员全名】
+                "distribution_user_face": "",                       【配送员头像】
+                "distribution_user_mobile": "18381082701",           【配送员电话】
+                "status_string": "赶往仓库",                    【配送状态】
+                "coordinate_info": {                        【坐标信息】
+                    "receive_to_pick_goods": {          【确认接单坐标 到 取货坐标列表】
+                        "coordinate_x": "23.5555556",                   【坐标X轴】
+                        "coordinate_y": "113.2222222",                  【坐标Y轴】
+                        "create_time": "1970-01-01 08:33:39"            【接单时间】
+                    },
+                    "pick_goods_to_merchant": {             【取货坐标 到 完成坐标列表】
+                        "coordinate_x": "23.5555556",
+                        "coordinate_y": "113.2222222",
+                        "create_time": "1970-01-01 08:33:39"            【取货时间】
+                    }
+                }
+            }
         },
         "user_agent": {                 【代理信息】
             "tel": "18381082766"            【代理联系方式】
