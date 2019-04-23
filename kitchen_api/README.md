@@ -78,11 +78,17 @@ session相关错误
 
 ## 接口目录
 
+### 登录
+
 [请求 mobile_id](#请求mobile_id)  
    
 [登录](#登录)  
 
+### 用户
+
 [用户详情](#用户详情)  
+
+### 商品
 
 [分类页面](#分类页面)  
 
@@ -92,9 +98,9 @@ session相关错误
 
 [商品列表](#商品列表)  
 
-[计算购物车](#计算购物车)  
-
 [商品详情](#商品详情)  
+
+### 收藏
 
 [收藏商品](#收藏商品)
 
@@ -102,13 +108,19 @@ session相关错误
   
 [清空商品收藏](#清空商品收藏)  
 
-[购物车信息](#购物车信息)  
+### 购物车
+
+[购物车列表](#购物车列表)  
+
+[计算购物车](#计算购物车)  
 
 [批量删除购物车](#批量删除购物车)  
 
+### 订单
+
 [订单确认页面](#订单确认页面)  
 
-[检测规格库存](#检测规格库存)  
+[检测规格库存](#检测规格库存) 
 
 [下单](#下单)  
 
@@ -120,7 +132,14 @@ session相关错误
 
 [删除订单](#删除订单)  
 
-## 请求接口
+### 系统消息
+
+[系统消息列表](#系统消息列表)  
+
+[系统消息](#系统消息)  
+
+
+## 接口
 
 ### 请求mobile_id
 
@@ -701,50 +720,6 @@ int/null    page                    【页数(默认1)】
 ```  
 [接口目录](#接口目录)
 
-### 计算购物车
- 
- > 接口地址 /cart/calculate_cart
- 
- > 请求方式 POST
- 
- > ** 传递参数 Request Data : **
- ```
- int         reqTime     
- string      checksum 
- string      mobile_id
- string      session_id        
- string      session_security
- int         spec_id                 【规格ID】
- int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】【为了解决请求接收先后问题，现在只能传带符号的数量增量 如+1 -1】
- ```
- 
- > ** 返回参数 Response Data : **
- ```
- {
-     "responseCode": "0",
-     "responseMessage": "执行成功",
-     "data": {
-         "buy_number_string": "+1",            【购物车购买数量增量】
-         "price_string": "+5",                  【购物车价格增量】
-         "cart_buy_number": 23,               【此规格的购物车购买数量】
-         "cart_all_spec_number": 4,          【购物车的规格数量和】
-         "cart_all_buy_number": 27,          【购物车的规格购买数量和】
-         "cart_all_price": "121.00"          【购物车的购物车总金额】
-     }
- }
- {
-     "responseCode": "10001",
-     "responseMessage": "购物车物品超过库存",
-     "data": {}
- }
- {
-     "responseCode": "10001",
-     "responseMessage": "购买数量信息必须带符号 buy_number_string(+1 -1等)",
-     "data": {}
- }
-```  
-[接口目录](#接口目录)
-
 ### 商品详情
 
 > 接口地址 /good/good
@@ -1048,7 +1023,7 @@ string      session_security
 ```  
 [接口目录](#接口目录)
 
-### 购物车信息
+### 购物车列表
 
 > 接口地址 /navigation/cart_list
 
@@ -1118,6 +1093,50 @@ string      session_security
         "cart_all_price": "0.00"
     }
 }
+```  
+[接口目录](#接口目录)
+
+### 计算购物车
+ 
+ > 接口地址 /cart/calculate_cart
+ 
+ > 请求方式 POST
+ 
+ > ** 传递参数 Request Data : **
+ ```
+ int         reqTime     
+ string      checksum 
+ string      mobile_id
+ string      session_id        
+ string      session_security
+ int         spec_id                 【规格ID】
+ int         buy_number_string       【购买数量增量 比如+1 -1 0等，+1 -1表示在原有基础上+1 -1,0 表示直接定义此规格的购物车数量为0】【为了解决请求接收先后问题，现在只能传带符号的数量增量 如+1 -1】
+ ```
+ 
+ > ** 返回参数 Response Data : **
+ ```
+ {
+     "responseCode": "0",
+     "responseMessage": "执行成功",
+     "data": {
+         "buy_number_string": "+1",            【购物车购买数量增量】
+         "price_string": "+5",                  【购物车价格增量】
+         "cart_buy_number": 23,               【此规格的购物车购买数量】
+         "cart_all_spec_number": 4,          【购物车的规格数量和】
+         "cart_all_buy_number": 27,          【购物车的规格购买数量和】
+         "cart_all_price": "121.00"          【购物车的购物车总金额】
+     }
+ }
+ {
+     "responseCode": "10001",
+     "responseMessage": "购物车物品超过库存",
+     "data": {}
+ }
+ {
+     "responseCode": "10001",
+     "responseMessage": "购买数量信息必须带符号 buy_number_string(+1 -1等)",
+     "data": {}
+ }
 ```  
 [接口目录](#接口目录)
 
@@ -1594,3 +1613,100 @@ string      order_sn                                【订单号】
 ```  
 [接口目录](#接口目录)
 
+### 系统消息列表
+ 
+> 接口地址 /system/system_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int/null    limit                   【分页数(默认后台配置)】        
+int/null    page                    【页数(默认1)】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "system_list": {            【系统消息列表信息】
+            "list": [               【列表】
+                {
+                    "id": 1,            【消息ID】
+                    "title": "欢迎来到大神厨房",        【消息题目】
+                    "description": "666",               【消息摘要】
+                    "create_time": "1970-01-01 08:33:39",       【消息创建时间】
+                    "create_time_string": "1970年01月01日 08:00"           【消息创建时间显示】
+                }
+            ],
+            "count": 1,         【列表总数】
+            "total_page": 1,    【分页总数】
+            "current_page": 1,  【当前页】
+            "pagesize": 2       【每页数量，与limit一致】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "system_list": {
+            "list": [],
+            "count": 1,
+            "total_page": 1,
+            "current_page": 1,
+            "pagesize": 2
+        }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 系统消息
+ 
+> 接口地址 /system/system
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         id                  【系统消息ID】          
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "system": {                     【系统消息信息】
+            "id": 1,                        【消息ID】
+            "title": "欢迎来到大神厨房",        【消息题目】
+            "description": "666",               【消息摘要】
+            "body": "B站源码被公开 6啊",           【消息内容】
+            "create_time": "1970-01-01 08:33:39",       【消息创建时间】
+            "create_time_string": "1970-01-01"              【消息创建时间显示】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "system": {}
+    }
+}
+```  
+[接口目录](#接口目录)
