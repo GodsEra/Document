@@ -132,6 +132,8 @@ session相关错误
 
 [删除订单](#删除订单)  
 
+[订单日志列表](#订单日志列表)  
+
 ### 系统消息相关
 
 [系统消息列表](#系统消息列表)  
@@ -1609,6 +1611,90 @@ string      order_sn                                【订单号】
     "responseCode": "10001",
     "responseMessage": "订单不存在",
     "data": {}
+}
+```  
+[接口目录](#接口目录)
+
+### 订单日志列表
+ 
+> 接口地址 /order/order_log_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int/null    limit                   【分页数(默认后台配置)】        
+int/null    page                    【页数(默认1)】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_log_list": {                 【订单日志列表信息】
+            "list": [                       【列表】
+                {
+                    "order_sn": "S201904231038438763",              【订单号】
+                    "create_time": "2019-04-23 11:03:27",           【创建时间】
+                    "create_timestamp": 1555988607,                 【创建时间戳】
+                    "status_string": "删除订单",                        【订单状态显示】
+                    "description": "您的订单已删除"                    【订单状态说明】
+                },
+                {
+                    "order_sn": "S201904231038438763",
+                    "create_time": "2019-04-23 10:45:38",
+                    "create_timestamp": 1555987538,
+                    "status_string": "取消订单",
+                    "description": "您的订单已取消"
+                },
+                {
+                    "order_sn": "S201904231038438763",
+                    "create_time": "2019-04-23 10:38:43",
+                    "create_timestamp": 1555987123,
+                    "status_string": "未支付",
+                    "description": "您的订单还未付款，赶快去支付"
+                },
+                {
+                    "order_sn": "S201904231038424658",
+                    "create_time": "2019-04-23 10:38:42",
+                    "create_timestamp": 1555987122,
+                    "status_string": "未支付",
+                    "description": "您的订单还未付款，赶快去支付"
+                },
+                {
+                    "order_sn": "S201904231038127333",
+                    "create_time": "2019-04-23 10:38:12",
+                    "create_timestamp": 1555987092,
+                    "status_string": "未支付",
+                    "description": "您的订单还未付款，赶快去支付"
+                }
+            ],
+            "count": 12,         【列表总数】
+            "total_page": 3,    【分页总数】
+            "current_page": 1,  【当前页】
+            "pagesize": 5       【每页数量，与limit一致】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_log_list": {
+            "list": [],
+            "count": 12,
+            "total_page": 3,
+            "current_page": 3,
+            "pagesize": 5
+        }
+    }
 }
 ```  
 [接口目录](#接口目录)
