@@ -324,17 +324,21 @@ int/null    random_number                 【获取随机商品列表个数（�
                 "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
             }
         ],
+        "ad_object": {                      【广告专题】
+            "id": 4,
+            "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
+        },
         "mid_object_list": [                【中部专题列表】
             {
-                "id": 4,                            【专题ID】
+                "id": 5,                            【专题ID】
                 "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"             【专题图片】
             },
             {
-                "id": 5,
+                "id": 6,
                 "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
             },
             {
-                "id": 6,
+                "id": 7,
                 "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
             }
         ],
@@ -439,6 +443,7 @@ int/null    random_number                 【获取随机商品列表个数（�
     "data": {
         "area_name": "河东区",
         "top_object_list": [],
+        "ad_object": {},
         "mid_object_list": [],
         "good_cate_list": [
             {
