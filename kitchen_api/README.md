@@ -90,6 +90,8 @@ session相关错误
 
 ### 商品相关
 
+[首页](首页)
+
 [分类页面](#分类页面)  
 
 [分类页面V2](#分类页面V2)  
@@ -280,6 +282,190 @@ string      session_security
             "extension_area_name": "河东区",                   【商户区名】
             "extension_address": "红星路四段"                    【商户地址】
         }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 首页
+
+> 接口地址 /navigation/index
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int/null    random_number                 【获取随机商品列表个数（默认后台配置）】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "area_name": "河东区",                 【地区名称】
+        "top_object_list": [                 【上部专题列表】
+            {
+                "id": 1,                    【专题ID】
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"             【专题图片】
+            },
+            {
+                "id": 2,
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
+            },
+            {
+                "id": 3,
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
+            }
+        ],
+        "mid_object_list": [                【中部专题列表】
+            {
+                "id": 4,                            【专题ID】
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"             【专题图片】
+            },
+            {
+                "id": 5,
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
+            },
+            {
+                "id": 6,
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
+            }
+        ],
+        "good_cate_list": [                                 【一级分类列表】
+            {
+                "id": 1,                                    【分类ID】                                  
+                "cate_name": "川菜",                        【分类名】
+                "icon": "http://www.ypvpa.localhost/uploads/goods/cate_icon/20190326/df2701805309a17cd2bc47a3ac4d1b92.png"          【分类图标】
+            },
+            {
+                "id": 4,
+                "cate_name": "快乐水",
+                "icon": ""
+            },
+            {
+                "id": 6,
+                "cate_name": "面包",
+                "icon": ""
+            },
+            {
+                "id": 10,
+                "cate_name": "硬件",
+                "icon": "http://www.ypvpa.localhost/uploads/goods/cate_icon/20190407/c5df1368a9ad6fe4c3057e711c0a4992.jpg"
+            }
+        ],
+        "good_list": [
+            {
+                "id": 11,           【商品ID】
+                "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",        【商品封面图】
+                "title": "炒土豆丝",        【商品名】
+                "first_spec_id": 5,         【第一个规格ID】
+                "first_spec_name": "2斤",    【第一个规格单位】
+                "first_spec_unit": "kg",    【第一个规格单位注释】
+                "first_spec_price": "0.01", 【第一个规格售价】
+                "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                "spec_count": 2,                【包含的规格数量】
+                "spec_list": [              【规格列表】
+                    {
+                        "id": 5,            【规格ID】
+                        "price": "0.01",    【规格售价】
+                        "source_price": "20.00",    【规格原始标价】
+                        "name": "2斤",       【规格单位】
+                        "unit": "kg",        【规格单位注释】
+                        "stock_number": 222,                【规格库存】
+                        "cart_buy_number": 0    【此规格的购物车购买数量】
+                    },
+                    {
+                        "id": 6,
+                        "price": "0.01",
+                        "source_price": "38.00",
+                        "name": "半斤",
+                        "unit": "500g",
+                        "stock_number": 222,                
+                        "cart_buy_number": 0
+                    }
+                ],
+                "spec_count": 2,                        【规格数量】
+                "first_spec_car_buy_number": 0          【第一个规格购买数量】
+            },
+            {
+                "id": 12,
+                "litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+                "title": "百事可乐",
+                "first_spec_id": 9,
+                "first_spec_name": "杯",
+                "first_spec_unit": "1杯",
+                "first_spec_price": "5.00",
+                "first_spec_source_price": "20.00",
+                "spec_list": [
+                    {
+                        "id": 9,
+                        "price": "5.00",
+                        "source_price": "20.00",
+                        "name": "杯",
+                        "unit": "1杯",
+                        "stock_number": 2,
+                        "cart_buy_number": 1
+                    },
+                    {
+                        "id": 11,
+                        "price": "2.00",
+                        "source_price": "1.00",
+                        "name": "1",
+                        "unit": "1",
+                        "stock_number": 2,
+                        "cart_buy_number": 1
+                    }
+                ],
+                "spec_count": 2,
+                "first_spec_car_buy_number": 1
+            }
+        ],
+        "cart_all_spec_number": 4,      【购物车的规格数量和】
+        "cart_all_buy_number": 5,      【购物车的规格购买数量和】
+        "cart_all_price": "7.03"      【购物车的购物车总金额】
+    }
+}
+
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "area_name": "河东区",
+        "top_object_list": [],
+        "mid_object_list": [],
+        "good_cate_list": [
+            {
+                "id": 1,
+                "cate_name": "川菜",
+                "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190326\/df2701805309a17cd2bc47a3ac4d1b92.png"
+            },
+            {
+                "id": 4,
+                "cate_name": "快乐水",
+                "icon": ""
+            },
+            {
+                "id": 6,
+                "cate_name": "面包",
+                "icon": ""
+            },
+            {
+                "id": 10,
+                "cate_name": "硬件",
+                "icon": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cate_icon\/20190407\/c5df1368a9ad6fe4c3057e711c0a4992.jpg"
+            }
+        ],
+        "good_list": [],
+        "cart_all_spec_number": 4,
+        "cart_all_buy_number": 5,
+        "cart_all_price": "7.03"
     }
 }
 ```  
@@ -828,10 +1014,10 @@ string      checksum
 string      mobile_id
 string      session_id        
 string      session_security
-int/null    cate_id                 【分类ID(默认0 表示所有分类ID)】
-loved_good_status/null              【收藏的商品状态：lacked 失效 其余状态或空都是查询所有】
-int/null    limit                   【分页数(默认后台配置)】        
-int/null    page                    【页数(默认1)】
+int/null        cate_id                 【分类ID(默认0 表示所有分类ID)】
+string/null     loved_good_status       【收藏的商品状态：lacked 失效 其余状态或空都是查询所有】
+int/null        limit                   【分页数(默认后台配置)】        
+int/null        page                    【页数(默认1)】
 ```
 
 > ** 返回参数 Response Data : **
