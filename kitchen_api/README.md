@@ -362,6 +362,11 @@ int/null    random_number                 【获取随机商品列表个数（�
                 "id": 10,
                 "cate_name": "硬件",
                 "icon": "http://www.ypvpa.localhost/uploads/goods/cate_icon/20190407/c5df1368a9ad6fe4c3057e711c0a4992.jpg"
+            },
+            {
+                "id": 1,
+                "cate_name": "更多",
+                "icon": "http:\/\/www.ypvpa.localhost\/statics\/kitchen_api\/images\/default_all_goods_cate.png"
             }
         ],
         "good_list": [
