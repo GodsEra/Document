@@ -1126,6 +1126,27 @@ string      session_security
 int      goods_id                                【商品ID】
 ```
 
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "收藏成功",
+    "data": {
+        "goods_id": 11,
+        "love_status": "loved"
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "取消收藏成功",
+    "data": {
+        "goods_id": 11,
+        "love_status": "unloved"
+    }
+}
+```  
+[接口目录](#接口目录)
+
 ### 收藏的商品列表
  
 > 接口地址 /good/loved_good_list
