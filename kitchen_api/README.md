@@ -1828,6 +1828,7 @@ string      order_sn                                【订单号】
                 "pay_price": 5                      【订单实付金额】
             },
             "status_string": "交易关闭",            【订单状态显示】
+            "status_string_description": "其他原因",            【订单状态显示的解释】
             "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
             "create_time_string": "17分钟前"       【创建时间显示】
         },
@@ -1890,7 +1891,8 @@ string      order_sn                                【订单号】
                 "distribution_price": "0.00",
                 "pay_price": 5
             },
-            "status_string": "待付款",
+            "status_string": "等待买家付款",
+            "status_string_description": "剩余23小时59分钟自动关闭",
             "status_cancel_string": "未取消",
             "create_time_string": "22分钟前"
         },
