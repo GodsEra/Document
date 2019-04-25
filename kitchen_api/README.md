@@ -2019,35 +2019,35 @@ int/null    page                    【页数(默认1)】
                     "create_time": "2019-04-23 11:03:27",           【创建时间】
                     "create_timestamp": 1555988607,                 【创建时间戳】
                     "status_string": "删除订单",                        【订单状态显示】
-                    "description": "您的订单已删除"                    【订单状态说明】
+                    "status_string_description": "您的订单已删除"                    【订单状态说明】
                 },
                 {
                     "order_sn": "S201904231038438763",
                     "create_time": "2019-04-23 10:45:38",
                     "create_timestamp": 1555987538,
                     "status_string": "取消订单",
-                    "description": "您的订单已取消"
+                    "status_string_description": "您的订单已取消"
                 },
                 {
                     "order_sn": "S201904231038438763",
                     "create_time": "2019-04-23 10:38:43",
                     "create_timestamp": 1555987123,
                     "status_string": "未支付",
-                    "description": "您的订单还未付款，赶快去支付"
+                    "status_string_description": "您的订单还未付款，赶快去支付"
                 },
                 {
                     "order_sn": "S201904231038424658",
                     "create_time": "2019-04-23 10:38:42",
                     "create_timestamp": 1555987122,
                     "status_string": "未支付",
-                    "description": "您的订单还未付款，赶快去支付"
+                    "status_string_description": "您的订单还未付款，赶快去支付"
                 },
                 {
                     "order_sn": "S201904231038127333",
                     "create_time": "2019-04-23 10:38:12",
                     "create_timestamp": 1555987092,
                     "status_string": "未支付",
-                    "description": "您的订单还未付款，赶快去支付"
+                    "status_string_description": "您的订单还未付款，赶快去支付"
                 }
             ],
             "count": 12,         【列表总数】
