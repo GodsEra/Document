@@ -140,6 +140,8 @@ session相关错误
 
 [订单日志列表](#订单日志列表)  
 
+[订单追踪列表](#订单追踪列表)  
+
 ### 系统消息相关
 
 [系统消息列表](#系统消息列表)  
@@ -2068,6 +2070,78 @@ int/null    page                    【页数(默认1)】
             "current_page": 3,
             "pagesize": 5
         }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 订单追踪列表
+ 
+> 接口地址 /order/order_trace_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      order_sn                                【订单号】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_trace_list": [                       【订单追踪列表】
+            {
+                "create_time": "2019-04-26 19:30:57",               【创建时间】
+                "status_string": "配送员已取货",                          【状态显示】
+                "status_string_description": "开始为您配送，配送员:红星",               【状态显示说明】
+                "log": "http:\/\/www.ypvpa.localhost\/statics\/kitchen_api\/images\/order\/distribution.png",           【前方小log】
+                "create_time_string": "2019-04-26 19:30"                【创建时间显示】
+            },
+            {
+                "create_time": "2019-04-26 15:30:57",
+                "status_string": "配送员已接单",
+                "status_string_description": "正在前往商家，配送员:红星",
+                "log": "http:\/\/www.ypvpa.localhost\/statics\/kitchen_api\/images\/order\/distribution.png",
+                "create_time_string": "2019-04-26 15:30"
+            },
+            {
+                "create_time": "2019-04-25 09:09:45",
+                "status_string": "已支付",
+                "status_string_description": "订单支付成功",
+                "log": "http:\/\/www.ypvpa.localhost\/statics\/kitchen_api\/images\/order\/order_payed.png",
+                "create_time_string": "2019-04-25 09:09"
+            },
+            {
+                "create_time": "2019-04-23 10:38:09",
+                "status_string": "订单提交成功",
+                "status_string_description": "订单号:S201904231038093789",
+                "log": "http:\/\/www.ypvpa.localhost\/statics\/kitchen_api\/images\/order\/order_unpay.png",
+                "create_time_string": "2019-04-23 10:38"
+            }
+        ]
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_trace_list": [
+            {
+                "create_time": "2019-04-25 21:00:47",
+                "status_string": "订单提交成功",
+                "status_string_description": "订单号:S201904252100474389",
+                "log": "http:\/\/www.ypvpa.localhost\/statics\/kitchen_api\/images\/order\/order_unpay.png",
+                "create_time_string": "2019-04-25 21:00"
+            }
+        ]
     }
 }
 ```  
