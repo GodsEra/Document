@@ -130,6 +130,8 @@ session相关错误
 
 [下单](#下单)  
 
+[支付订单](#支付订单)  
+
 [订单列表](#订单列表)  
 
 [订单详情](#订单详情)  
@@ -1656,6 +1658,54 @@ string/null         remarks                         【订单备注】
 {
     "responseCode": "30001",
     "responseMessage": "下单失败:购物车购买数量同步减少失败",
+    "data": {}
+}
+```  
+[接口目录](#接口目录)
+
+### 支付订单
+ 
+> 接口地址 /order/generate_order
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      order_sn                【订单号】
+string      pay_type                【支付方式：微信 weixin  支付宝 alipay】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "获取支付订单数据成功",
+    "data": {
+        "appid": "wx14069c8d65f602ff",
+        "partnerid": "1500740191",
+        "prepayid": "wx261140006902492126b16dc13281889491",
+        "noncestr": "5zxm1anUyuXkC6Be",
+        "timestamp": 1556250000,
+        "package": "Sign=WXPay",
+        "sign": "38D2AD53A6128188DAA31596679DFBDC",
+        "system_package": "Sign=WXPay"
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "获取支付订单数据成功",
+    "data": {
+        "scalar": "alipay_sdk=alipay-sdk-php-20161101&app_id=2019042364291313&biz_content=%7B%22body%22%3A%22%E3%80%90%E5%A4%A7%E7%A5%9E%E5%8E%A8%E6%88%BF%E8%AE%A2%E5%8D%95%E3%80%91S201904261111479305%22%2C%22subject%22%3A%22%E3%80%90%E5%A4%A7%E7%A5%9E%E5%8E%A8%E6%88%BF%E8%AE%A2%E5%8D%95%E3%80%91S201904261111479305%22%2C%22out_trade_no%22%3A%22S201904261140224360%22%2C%22timeout_express%22%3A%221m%22%2C%22total_amount%22%3A%225.00%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fwww.ypvpa.localhost%2Findex.php%2Fkitchen_api%2Falipay_comm%2Fnotify.html&sign_type=RSA2&timestamp=2019-04-26+11%3A40%3A27&version=1.0&sign=0FF1Wr9F8CxIs4H2%2FFbEdConp8VCc5gGwUrKtvTAZ9yd0l4hgcrszjCSK%2FeHfTUiXOifdwa1f1u21VBcn2krSUxOf9c6vfrqpyEGVHVS3PPu3jvpTRZgphgAm0ESfbMzVFYXrkpTnIbk142MCS%2B4VW1ItcDNVsSUd0KcxFnL1PRyisdaDujsUWoWrjqih%2Fpficjur14Zu7JPaf6A%2FNpUO6gIa35vDulZmQx3Xk1jOTn9arLd1ioT%2FwTZ2fGeR%2BXIbQpn7y0N5xFyWq0Bpot%2Fh3JRZkAvSKYKjwKW%2BFMcpY1ikHNV3kw1tGgaN6Qfgko8mftvqGZSNkYDOgKKAO4h7Q%3D%3D"
+    }
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "订单不存在",
     "data": {}
 }
 ```  
