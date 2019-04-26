@@ -1665,7 +1665,7 @@ string/null         remarks                         【订单备注】
 
 ### 支付订单
  
-> 接口地址 /order/generate_order
+> 接口地址 /order/pay_order
 
 > 请求方式 POST
 
