@@ -106,6 +106,8 @@ session相关错误
 
 [专题详情](#专题详情)
 
+[关于详情](#关于详情)
+
 ### 收藏相关
 
 [收藏商品](#收藏商品)
@@ -1119,6 +1121,48 @@ int/null    page                    【商品列表页数(默认1)】
 }
 ```  
 [接口目录](#接口目录)
+
+### 关于详情
+
+> 接口地址 /about/about
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         id                      【关于ID】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "about": {                  【关于信息】
+            "id": 37,                   【关于ID】
+            "title": "3U商户",            【关于题目】
+            "create_time": "2019-04-28 11:31:50",       【关于创建时间】
+            "body": "3U商户",                             【关于内容】
+            "create_time_string": "2019-04-28"              【关于创建时间显示】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "about": {}
+    }
+}
+```  
+[接口目录](#接口目录)
+
 
 ### 收藏商品
  
