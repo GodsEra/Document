@@ -86,7 +86,9 @@ session相关错误
    
 [密码登录](#密码登录)  
 
-[验证码登录](#验证码登录)  
+[验证码登录](#验证码登录) 
+
+[找回密码](#找回密码) 
 
 ### 用户相关
 
@@ -303,6 +305,43 @@ string      verify_code        【验证码】
     "responseCode": 30001,
     "responseMessage": "验证码未获取或者超时!",
     "data": ""
+}
+```  
+[接口目录](#接口目录)
+
+### 找回密码
+
+> 接口地址 /user/find_password
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      mobile          【用户手机号】
+string      password            【新密码】
+string      conn_password       【重复密码】
+string      verify_code        【验证码】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": 0,
+    "responseMessage": "找回密码成功",
+    "data": {}
+}
+{
+    "responseCode": 30001,
+    "responseMessage": "验证码错误, 请重新发送!",
+    "data": {}
+}
+{
+    "responseCode": 30001,
+    "responseMessage": "两次密码不一致",
+    "data": {}
 }
 ```  
 [接口目录](#接口目录)
