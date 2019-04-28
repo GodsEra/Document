@@ -1018,6 +1018,130 @@ int/null    page                    【页数(默认1)】
 ```  
 [接口目录](#接口目录)
 
+### 查询商品列表
+ 
+> 接口地址 /good/search_good_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int/null    limit                   【分页数(默认后台配置)】        
+int/null    page                    【页数(默认1)】
+string      search                  【查询字符串】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "good_list": {                  【商品分类列表】
+            "list": [                   【分页列表】
+                {
+                    "id": 11,           【商品ID】
+                    "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",        【商品封面图】
+                    "title": "炒土豆丝",        【商品名】
+                    "first_spec_id": 5,         【第一个规格ID】
+                    "first_spec_name": "2斤",    【第一个规格单位】
+                    "first_spec_unit": "kg",    【第一个规格单位注释】
+                    "first_spec_price": "0.01", 【第一个规格售价】
+                    "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                    "spec_count": 2,                【包含的规格数量】
+                    "spec_list": [              【规格列表】
+                        {
+                            "id": 5,            【规格ID】
+                            "price": "0.01",    【规格售价】
+                            "source_price": "20.00",    【规格原始标价】
+                            "name": "2斤",       【规格单位】
+                            "unit": "kg",        【规格单位注释】
+                            "cart_buy_number": 15   【此规格的购物车购买数量】       
+                        },
+                        {
+                            "id": 6,
+                            "price": "0.01",
+                            "source_price": "38.00",
+                            "name": "半斤",
+                            "unit": "500g",
+                            "cart_buy_number": 0
+                        }
+                    ],
+                    "first_spec_car_buy_number": 0         【第一个规格购买数量】
+                },
+                {
+                    "id": 14,
+                    "litpic": "",
+                    "title": "回锅肉",
+                    "first_spec_id": 14,
+                    "first_spec_name": "3213",
+                    "first_spec_unit": "3213",
+                    "first_spec_price": "213.00",
+                    "first_spec_source_price": "2131.00",
+                    "spec_count": 3,
+                    "spec_list": [
+                        {
+                            "id": 13,
+                            "price": "11.00",
+                            "source_price": "22.00",
+                            "name": "22",
+                            "unit": "22",
+                            "cart_buy_number": 0
+                        },
+                        {
+                            "id": 14,
+                            "price": "213.00",
+                            "source_price": "2131.00",
+                            "name": "3213",
+                            "unit": "3213",
+                            "cart_buy_number": 0
+                        },
+                        {
+                            "id": 15,
+                            "price": "3123.00",
+                            "source_price": "131.00",
+                            "name": "3123",
+                            "unit": "3123",
+                            "cart_buy_number": 0
+                        }
+                    ],
+                }
+            ],
+            "count": 2,         【列表总数】
+            "total_page": 1,    【分页总数】
+            "current_page": 1,  【当前页】
+            "pagesize": 2       【每页数量，与limit一致】
+        },
+        "cart_all_spec_number": 6,      【购物车的规格数量和】
+        "cart_all_buy_number": 45,      【购物车的规格购买数量和】
+        "cart_all_price": "109.00",      【购物车的购物车总金额】
+    }
+}
+
+{
+    "responseCode": "0",
+    "responseMessage": "查询成功",
+    "data": {
+        "good_list": {
+            "list": [],
+            "count": 0,
+            "total_page": 0,
+            "current_page": 1,
+            "pagesize": 2
+        },
+        "cart_all_spec_number": 4,
+        "cart_all_buy_number": 5,
+        "cart_all_price": "7.03"
+    }
+}
+```  
+[接口目录](#接口目录)
+
 ### 商品详情
 
 > 接口地址 /good/good
@@ -1247,7 +1371,6 @@ int         id                      【关于ID】
 }
 ```  
 [接口目录](#接口目录)
-
 
 ### 收藏商品
  
@@ -2452,7 +2575,17 @@ string      body                        【内容】
 ```
 {
     "responseCode": "0",
-    "responseMessage": "留言成功",
+    "responseMessage": "订单删除成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "只有购买完成或关闭的订单才能删除",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "订单不存在",
     "data": {}
 }
 ```  
