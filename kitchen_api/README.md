@@ -301,7 +301,7 @@ string      verify_code        【验证码】
 }
 {
     "responseCode": 30001,
-    "responseMessage": "验证码错误, 请重新发送!",
+    "responseMessage": "验证码未获取或者超时!",
     "data": ""
 }
 ```  
