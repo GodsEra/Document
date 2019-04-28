@@ -150,6 +150,12 @@ session相关错误
 
 [系统消息详情](#系统消息详情)  
 
+### 版本相关
+
+[ios版本](#ios版本)  
+
+[android版本](#android版本)  
+
 
 ## 接口
 
@@ -2290,6 +2296,82 @@ int         id                  【系统消息ID】
     "responseMessage": "ok",
     "data": {
         "system": {}
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### ios版本
+ 
+> 接口地址 /plugin/ios_version
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "version": {
+            "code": "0",
+            "msg": "获取版本信息成功",
+            "data": {
+                "module_type": "ios",
+                "version_id": "2019-4-28",
+                "log_information": "首次版本"
+            }
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "version": {}
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### android版本
+ 
+> 接口地址 /plugin/android_version
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "version": {
+            "code": "0",
+            "msg": "获取版本信息成功",
+            "data": {
+                "module_type": "android",
+                "update_url": "http:\/\/jm.game.ypvpa.com\/kitchen_api\/alipay_comm\/weixin_data",
+                "version_id": "2019-4-28",
+                "force_version_id": "2019-4-28",
+                "log_information": "首次版本"
+            }
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "version": {}
     }
 }
 ```  
