@@ -81,8 +81,12 @@ session相关错误
 ### 登录相关
 
 [请求 mobile_id](#请求mobile_id)  
+
+[发送验证码](#发送验证码)  
    
-[登录](#登录)  
+[密码登录](#密码登录)  
+
+[验证码登录](#验证码登录)  
 
 ### 用户相关
 
@@ -188,7 +192,35 @@ string      device_id           【设备号】
 ```  
 [接口目录](#接口目录)
 
-### 登录
+### 发送验证码
+
+> 接口地址 /plugin/verify_code
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile          【用户手机号】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": 0,
+    "responseMessage": "发送成功",
+    "data": {}
+}
+{
+    "responseCode": 30001,
+    "responseMessage": "短信发送失败",
+    "data": {}
+}
+```  
+[接口目录](#接口目录)
+
+### 密码登录
 
 > 接口地址 /user/login_via_password
 
@@ -226,41 +258,51 @@ string      password        【登陆密码】
         }
     }
 }
+```  
+[接口目录](#接口目录)
+
+### 验证码登录
+
+> 接口地址 /user/login_via_sms
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      mobile          【用户手机号】
+string      verify_code        【验证码】
+```
+
+> ** 返回参数 Response Data : **
+```
 {
-    "responseCode": 0,
+    "responseCode": "0",
     "responseMessage": "ok",
     "data": {
         "mobile_id": "ios_ygPVpZKqO8TK",
-        "session_id": "acd1fd29796be12f9b3313e022682578",
-        "session_security": "VTJGc2RHVmtYMTlITU9vQXVkMmdBVU4xYU9mNlZmcGdMVEk2SU1TTlhIcndQTmhsWWdNN0t5Mjd4SEdlTmdmYmdLWUdaRzZXT0xiWk9pSDhLS3ZPdHNvdDQxaDI5ODRRQ1dRUE5nZVhPRTRvTXZXVWNRKzNieUdoczdGUzA0YjNBM05jSGRQRDk0ZC9sSFVGa0FwejdBPT0",
-        "user": {
-            "id": 1185,         【用户编号】
-            "status": 1,
-            "superior_id": 580,
-            "group_id": 20,
-            "username": "admin",
-            "mobile": "18381082760",
-            "email": null,
-            "face": "http:\/\/www.ypvpa.localhost\/uploads\/images\/20190402\/3dad8d9e900ceaddf8f867487bd69167.jpg",
-            "nickname": null,
-            "is_real_name": 0,
-            "full_name": null,
-            "sex": 0,
-            "id_type": 1,
-            "idnumber": null,
-            "id_zheng": null,
-            "id_fan": null,
-            "id_shouchi": null,
-            "birthday": null,
-            "is_delete": 0,
-            "invite_code": "jpas122f",
-            "create_time": "2019-04-02 03:49:02",
-            "update_time": "2019-04-02 03:49:02",
-            "sex_name": "保密",
-            "status_name": "正常",
-            "group_name": "商家"
+        "session_id": "81e0712eb61ad88da7a2e47f8e550e15",
+        "session_security": "VTJGc2RHVmtYMStyKzZvQVFpTjVoSE1RZVFlZGd6S0ZYcnNXYkRUemJnMzR3OTAvVWxJM1k3Q09XUlBYUEFobmVTZGZJUkprMzdUVDVGekVjWW5GWVB4amFNd3NuOTBvakNxcU9QRHcxVXowTzJkd1BkMEtZdTYxUlpDY3F0MHhQSnpEUHdXSzEwUEJzK1NyOE9KUGpBPT0",
+        "user_info": {                          【用户信息】
+            "id": 1185,                           【用户编号】
+            "nickname": null,                       【用户昵称】
+            "mobile": "18381082760",                   【用户手机（登录用的手机）】
+            "extension_title": "通江店",               【商户名】
+            "extension_tel": "18381082766",             【商户电话】
+            "extension_logo": "\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg",          【商户logo】
+            "extension_province_name": "天津市",               【商户省名】
+            "extension_city_name": "天津市",                   【商户市名】
+            "extension_area_name": "河东区",                   【商户区名】
+            "extension_address": "红星路四段"                    【商户地址】
         }
     }
+}
+{
+    "responseCode": 30001,
+    "responseMessage": "验证码错误, 请重新发送!",
+    "data": ""
 }
 ```  
 [接口目录](#接口目录)
