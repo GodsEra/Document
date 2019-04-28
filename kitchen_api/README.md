@@ -154,11 +154,15 @@ session相关错误
 
 [订单追踪列表](#订单追踪列表)  
 
-### 系统消息相关
+### 消息相关
 
 [系统消息列表](#系统消息列表)  
 
 [系统消息详情](#系统消息详情)  
+
+[常见问题列表](#常见问题列表)  
+
+[常见问题详情](#常见问题详情)  
 
 ### 留言相关
 
@@ -2459,7 +2463,7 @@ string      order_sn                                【订单号】
 
 ### 系统消息列表
  
-> 接口地址 /system/system_list
+> 接口地址 /plugin/system_list
 
 > 请求方式 POST
 
@@ -2467,9 +2471,6 @@ string      order_sn                                【订单号】
 ```
 int         reqTime     
 string      checksum 
-string      mobile_id
-string      session_id        
-string      session_security
 int/null    limit                   【分页数(默认后台配置)】        
 int/null    page                    【页数(默认1)】
 ```
@@ -2515,7 +2516,7 @@ int/null    page                    【页数(默认1)】
 
 ### 系统消息详情
  
-> 接口地址 /system/system
+> 接口地址 /plugin/system
 
 > 请求方式 POST
 
@@ -2523,9 +2524,6 @@ int/null    page                    【页数(默认1)】
 ```
 int         reqTime     
 string      checksum 
-string      mobile_id
-string      session_id        
-string      session_security
 int         id                  【系统消息ID】          
 ```
 
@@ -2550,6 +2548,79 @@ int         id                  【系统消息ID】
     "responseMessage": "ok",
     "data": {
         "system": {}
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 常见问题列表
+ 
+> 接口地址 /plugin/question_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "question_list": [              【常见问题列表】
+            {
+                "id": 2,                    【常见问题ID】
+                "question": "快递如何收费",           【问题】
+                "answer_description": "快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过..."           【回答摘要】
+            },
+            {
+                "id": 1,
+                "question": "快递如何收费",
+                "answer_description": "快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过..."
+            }
+        ]
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 常见问题详情
+ 
+> 接口地址 /plugin/question
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+int         id                  【常见问题ID】          
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "question": {               【常见问题信息】
+            "id": 1,                【常见问题ID】
+            "question": "快递如何收费",               【问题】
+            "answer": "快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。快递按公斤计算，超过1公斤算2公斤计算。",               【回答】
+            "create_time": "2019-04-28 12:06:55",           【创建时间】
+            "create_time_string": "2019-04-28"              【创建时间显示】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "question": {}
     }
 }
 ```  
