@@ -158,6 +158,10 @@ session相关错误
 
 [系统消息详情](#系统消息详情)  
 
+### 留言相关
+
+[写留言](#写留言)  
+
 ### 版本相关
 
 [ios版本](#ios版本)  
@@ -2422,6 +2426,34 @@ int         id                  【系统消息ID】
     "data": {
         "system": {}
     }
+}
+```  
+[接口目录](#接口目录)
+
+### 写留言
+ 
+> 接口地址 /mes_book/write_mes_book
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      name                        【姓名】                         
+string      mobile                      【电话】     
+string      body                        【内容】   
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "留言成功",
+    "data": {}
 }
 ```  
 [接口目录](#接口目录)
