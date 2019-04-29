@@ -1175,7 +1175,7 @@ int/null    number              【列表显示数量(默认后台配置)】
     "responseCode": "0",
     "responseMessage": "ok",
     "data": {
-       "search_list": [                【查询列表】
+       "hot_search_word_list": [        【热词列表】
             {
                "search_count": 2,      【查询次数】            
                "content": "海尔"         【查询内容】
