@@ -2755,7 +2755,6 @@ string      body                        【内容】
 ```
 int         reqTime     
 string      checksum 
-string      mobile          【用户手机号】
 ```
 
 > ** 返回参数 Response Data : **
