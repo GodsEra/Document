@@ -1350,9 +1350,6 @@ int/null    page                    【商品列表页数(默认1)】
 ```
 int         reqTime     
 string      checksum 
-string      mobile_id
-string      session_id        
-string      session_security
 int         id                      【关于ID】
 ```
 
