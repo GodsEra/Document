@@ -1151,6 +1151,59 @@ string      search                  【查询字符串】
 ```  
 [接口目录](#接口目录)
 
+### 热门查询词列表
+ 
+> 接口地址 /good/hot_search_word_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int/null    number              【列表显示数量(默认后台配置)】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "search_list": [                【查询列表】
+            {
+                "search_count": 2,      【查询次数】            
+                "content": "海尔"         【查询内容】
+            },
+            {
+                "search_count": 2,
+                "content": "花椒"
+            },
+            {
+                "search_count": 2,
+                "content": "花椒123456"
+            },
+            {
+                "search_count": 1,
+                "content": "花椒12345"
+            },
+            {
+                "search_count": 1,
+                "content": "花椒12"
+            },
+            {
+                "search_count": 1,
+                "content": "花椒1234"
+            }
+        ]
+    }
+}
+```  
+[接口目录](#接口目录)
+
 ### 商品详情
 
 > 接口地址 /good/good
