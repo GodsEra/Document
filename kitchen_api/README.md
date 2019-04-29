@@ -28,8 +28,6 @@
 
 测试地址: http://kitchenapi.marketing.ypvpa.com
 
-线上地址：http://kitchenapi.marketing.yuqg.com          
-
 ```
 
 ## 状态码
