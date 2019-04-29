@@ -1175,30 +1175,18 @@ int/null    number              【列表显示数量(默认后台配置)】
     "responseCode": "0",
     "responseMessage": "ok",
     "data": {
-        "search_list": [                【查询列表】
+       "search_list": [                【查询列表】
             {
-                "search_count": 2,      【查询次数】            
-                "content": "海尔"         【查询内容】
+               "search_count": 2,      【查询次数】            
+               "content": "海尔"         【查询内容】
             },
             {
-                "search_count": 2,
+                "search_count": 1,
                 "content": "花椒"
             },
             {
-                "search_count": 2,
-                "content": "花椒123456"
-            },
-            {
                 "search_count": 1,
-                "content": "花椒12345"
-            },
-            {
-                "search_count": 1,
-                "content": "花椒12"
-            },
-            {
-                "search_count": 1,
-                "content": "花椒1234"
+                "content": "冰箱"
             }
         ]
     }
