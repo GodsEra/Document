@@ -174,6 +174,9 @@ session相关错误
 
 [android版本](#android版本)  
 
+### 我的相关
+
+[资质条款](#资质条款)  
 
 ## 接口
 
@@ -2737,6 +2740,34 @@ string      body                        【内容】
     "responseMessage": "ok",
     "data": {
         "version": {}
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 资质条款
+
+> 接口地址 /about/mine_clause
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile          【用户手机号】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "about": {                  
+            "id": 38,                   【ID】
+            "title": "平台业务主体"           【题目】
+        }
     }
 }
 ```  
