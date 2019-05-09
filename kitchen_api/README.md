@@ -74,6 +74,12 @@ session相关错误
 20701,              session id检测操作失败
 ```
 
+## 更新日志
+
+### 2019.5.9
+> * 评论订单、商品评论列表
+> * 商品详情 添加关于评论的信息
+
 ## 接口目录
 
 ### 登录相关
@@ -109,6 +115,8 @@ session相关错误
 [热门查询词列表](#热门查询词列表)  
 
 [商品详情](#商品详情)  
+
+[商品评论列表](#商品评论列表)  
 
 ### 专题相关
 
@@ -153,6 +161,8 @@ session相关错误
 [订单日志列表](#订单日志列表)  
 
 [订单追踪列表](#订单追踪列表)  
+
+[评论订单](#评论订单) 
 
 ### 消息相关
 
@@ -1245,6 +1255,27 @@ int         id              【商品ID】
             "monthly_order_number": 0,           【月销量】
             "love_status": "loved"              【收藏状态：loved 已收藏 unloved 未收藏】
         },
+        "good_evaluation_count": 1,             【商品评论总数】
+        "good_evaluation_list": [
+            {
+                "evaluation": "66662323",           【评论】
+                "good_star_number": 5,              【评论商品星数】
+                "create_time": "2019-05-09 16:14:55",           【评论时间】
+                "good_title": "百事可乐",               【商品标题】
+                "spec_name": "1",                       【商品规格】
+                "extension_title": "通江店2",              【商户名】
+                "extension_logo": ""                        【商户图标】
+            },
+            {
+                "evaluation": "66662323",
+                "good_star_number": 5,
+                "create_time": "2019-05-09 15:11:23",
+                "good_title": "百事可乐",
+                "spec_name": "1",
+                "extension_title": "18381082766",
+                "extension_logo": ""
+            }
+        ],
         "cart_all_spec_number": 4,      【购物车的规格数量和】
         "cart_all_buy_number": 18,      【购物车的规格购买数量和】
         "cart_all_price": "22.00",      【购物车的购物车总金额】
@@ -1264,6 +1295,87 @@ int         id              【商品ID】
         "user_agent": {
             "tel": "18381082766"
         }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 商品评论列表
+
+> 接口地址 /good/good_evaluation_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         goods_id              【商品ID】          
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "list": [                                   【评论列表】
+            {
+                "evaluation": "66662323",           【评论】
+                "good_star_number": 5,              【评论商品星数】
+                "create_time": "2019-05-09 16:14:55",           【评论时间】
+                "good_title": "百事可乐",               【商品标题】
+                "spec_name": "1",                       【商品规格】
+                "extension_title": "通江店2",              【商户名】
+                "extension_logo": ""                        【商户图标】
+            },
+            {
+                "evaluation": "66662323",
+                "good_star_number": 5,
+                "create_time": "2019-05-09 15:11:23",
+                "good_title": "百事可乐",
+                "spec_name": "1",
+                "extension_title": "通江店2",
+                "extension_logo": ""
+            },
+            {
+                "evaluation": "此用户没有填写评价。",
+                "good_star_number": 5,
+                "create_time": "2019-05-09 12:52:12",
+                "good_title": "百事可乐",
+                "spec_name": "1",
+                "extension_title": "通江店",
+                "extension_logo": "http:\/\/www.ypvpa.localhost\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg"
+            },
+            {
+                "evaluation": "商品非常好！\nfdasf",
+                "good_star_number": 5,
+                "create_time": "2019-05-08 17:58:04",
+                "good_title": "百事可乐",
+                "spec_name": "1",
+                "extension_title": "通江店",
+                "extension_logo": "http:\/\/www.ypvpa.localhost\/uploads\/images\/20190402\/55e104138963bf0d4dc63c8821cc1b56.jpg"
+            }
+        ],
+        "count": 4,                【列表总数】
+        "total_page": 1,           【分页总数】
+        "current_page": 1,          【当前页】    
+        "pagesize": 5               【每页数量，与limit一致】
+    }
+}
+
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "list": [],
+        "count": 0,
+        "total_page": 0,
+        "current_page": 1,
+        "pagesize": 5
     }
 }
 ```  
@@ -2498,6 +2610,45 @@ string      order_sn                                【订单号】
             }
         ]
     }
+}
+```  
+[接口目录](#接口目录)
+
+### 评论订单
+ 
+> 接口地址 /order/evaluate_order
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string      order_sn                                【订单号】
+string      good_star_number                        【评价商品星数】
+string      distribution_star_number                【评价配送星数】
+string      evaluation                              【评论】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "评论成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "已经评论",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "订单只有完成交易后才能评论",
+    "data": {}
 }
 ```  
 [接口目录](#接口目录)
