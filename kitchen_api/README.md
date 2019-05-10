@@ -965,6 +965,7 @@ int/null    page                    【页数(默认1)】
                             "source_price": "20.00",    【规格原始标价】
                             "name": "2斤",       【规格单位】
                             "unit": "kg",        【规格单位注释】
+                            "stock_number": 0,      【商品库存】
                             "cart_buy_number": 15   【此规格的购物车购买数量】       
                         },
                         {
@@ -1086,6 +1087,7 @@ string      search                  【查询字符串】
                             "source_price": "20.00",    【规格原始标价】
                             "name": "2斤",       【规格单位】
                             "unit": "kg",        【规格单位注释】
+                            "stock_number": 0,      【商品库存】
                             "cart_buy_number": 15   【此规格的购物车购买数量】       
                         },
                         {
