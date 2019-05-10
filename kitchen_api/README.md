@@ -80,6 +80,10 @@ session相关错误
 > * [评论订单](#评论订单)、[商品评论列表](#商品评论列表)
 > * [商品详情](#商品详情) 添加关于评论的信息
 
+### 2019.5.10
+> * 更新 [取消订单](#取消订单) 参数变化：status_cancel_choice直接用 [订单取消原因列表](#订单取消原因列表) 取得的数据的ID
+> * 添加 [订单取消原因列表](#订单取消原因列表)  
+
 ## 接口目录
 
 ### 登录相关
@@ -153,6 +157,8 @@ session相关错误
 [订单列表](#订单列表)  
 
 [订单详情](#订单详情)  
+
+[订单取消原因列表](#订单取消原因列表)  
 
 [取消订单](#取消订单)  
 
@@ -2385,6 +2391,50 @@ string      order_sn                                【订单号】
 ```  
 [接口目录](#接口目录)
 
+### 订单取消原因列表
+ 
+> 接口地址 /order/order_cancel_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order_cancel_list": [
+            {
+                "id": 1,
+                "status_cancel_string": "误购或不想买了"
+            },
+            {
+                "id": 2,
+                "status_cancel_string": "信息填写有误，重新购买"
+            },
+            {
+                "id": 3,
+                "status_cancel_string": "在线支付遇到问题"
+            },
+            {
+                "id": 4,
+                "status_cancel_string": "其他原因"
+            }
+        ]
+    }
+}
+```  
+[接口目录](#接口目录)
+
 ### 取消订单
  
 > 接口地址 /order/cancel_order
@@ -2399,7 +2449,7 @@ string      mobile_id
 string      session_id        
 string      session_security
 string      order_sn                                【订单号】
-string/null    status_cancel_choice                 【订单状态取消原因：no_buy 我不想买了 write_wrong 信息填写错误 sold_out 卖家缺货 buy_offline 同城见面交易 other 其他原因，其余状态或空都是默认选择no_buy 我不想买了】
+string/null    status_cancel_choice                 【订单状态取消原因:直接用/order/order_cancel_list获取的数据的ID】
 ```
 
 > ** 返回参数 Response Data : **
