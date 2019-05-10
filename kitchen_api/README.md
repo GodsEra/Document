@@ -2412,10 +2412,10 @@ string      session_security
     "responseCode": "0",
     "responseMessage": "ok",
     "data": {
-        "order_cancel_list": [
+        "order_cancel_list": [                  【订单取消原因列表】
             {
-                "id": 1,
-                "status_cancel_string": "误购或不想买了"
+                "id": 1,                                        【订单取消原因ID】
+                "status_cancel_string": "误购或不想买了"           【订单取消原因】
             },
             {
                 "id": 2,
