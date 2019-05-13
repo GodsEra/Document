@@ -3005,9 +3005,12 @@ string      checksum
     "responseCode": "0",
     "responseMessage": "ok",
     "data": {
-        "about": {                  
-            "id": 38,                   【ID】
-            "title": "平台业务主体"           【题目】
+        "about": {
+            "id": 38,               【关于ID】
+            "title": "平台业务主体",      【题目】
+            "create_time": "2019-04-29 19:05:25",       【创建时间】
+            "body": "平台业务主体<br />",             【内容】
+            "create_time_string": "2019-04-29"          【创建时间显示】
         }
     }
 }
