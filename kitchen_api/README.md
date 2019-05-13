@@ -2264,6 +2264,9 @@ string      order_sn                                【订单号】
 > * status 0 未付款（待付款） 可以 取消订单、去付款
 > * status 1 已付款（待发货） 可以 申请退款、提醒发货
 > * status 10 已发货（待收货） 可以 催单
+> * status 11 已发货（待收货）已分配订单 商家拣货完成状态 
+> * status 12 已发货（待收货）已分配订单 配送员接单状态
+> * status 13 已发货（待收货）已分配订单 配送员取货状态
 > * status 20 完成（待评价） 可以 删除订单、申请售后、去评价
 > * status 30 订单取消（交易关闭） 可以 删除订单
 
@@ -2491,7 +2494,7 @@ string      order_sn                                【订单号】
     "data": {
         "order": {
             "order_sn": "S201905131759149482",
-            "status": 10,
+            "status": 11,
             "status_cancel_string": null,
             "create_time": "2019-05-13 17:59:14",
             "extension_title": "苏杰的商户",
@@ -2547,7 +2550,7 @@ string      order_sn                                【订单号】
     "data": {
         "order": {
             "order_sn": "S201905131759149482",
-            "status": 10,
+            "status": 12,
             "status_cancel_string": null,
             "create_time": "2019-05-13 17:59:14",
             "extension_title": "苏杰的商户",
@@ -2607,7 +2610,7 @@ string      order_sn                                【订单号】
     "data": {
         "order": {
             "order_sn": "S201905131759149482",
-            "status": 10,
+            "status": 13,
             "status_cancel_string": null,
             "create_time": "2019-05-13 17:59:14",
             "extension_title": "苏杰的商户",
