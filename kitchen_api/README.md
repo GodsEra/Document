@@ -2391,6 +2391,344 @@ string      order_sn                                【订单号】
         }
     }
 }
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201905131759149482",
+            "status": 0,
+            "status_cancel_string": null,
+            "create_time": "2019-05-13 18:05:03",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": "",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 66,
+                        "price": "0.01",
+                        "source_price": "9.40",
+                        "name": "450g",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 0.01,
+                "all_source_price": 9.4,
+                "all_diff_price": 9.39,
+                "distribution_price": "0.00",
+                "pay_price": 0.01
+            },
+            "status_string": "等待买家付款",
+            "status_string_description": "剩余23小时59分钟自动关闭",
+            "create_time_string": "刚刚"
+        },
+        "distribution_order": {},
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201905131759149482",
+            "status": 1,
+            "status_cancel_string": null,
+            "create_time": "2019-05-13 17:59:14",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": "",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 66,
+                        "price": "0.01",
+                        "source_price": "9.40",
+                        "name": "450g",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 0.01,
+                "all_source_price": 9.4,
+                "all_diff_price": 9.39,
+                "distribution_price": "0.00",
+                "pay_price": 0.01
+            },
+            "status_string": "已支付",
+            "status_string_description": "订单支付成功，等待商家接单",
+            "create_time_string": "刚刚"
+        },
+        "distribution_order": {},
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201905131759149482",
+            "status": 10,
+            "status_cancel_string": null,
+            "create_time": "2019-05-13 17:59:14",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": "",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 66,
+                        "price": "0.01",
+                        "source_price": "9.40",
+                        "name": "450g",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 0.01,
+                "all_source_price": 9.4,
+                "all_diff_price": 9.39,
+                "distribution_price": "0.00",
+                "pay_price": 0.01
+            },
+            "status_string": "拣货完成",
+            "status_string_description": "商家已完成拣货，等待配送",
+            "create_time_string": "4分钟前"
+        },
+        "distribution_order": {
+            "distribution_user_full_name": "苹果的配送员",
+            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
+            "distribution_user_mobile": "13910000004",
+            "status_string": "已分配",
+            "coordinate_info": {
+                "receive_to_pick_goods": {},
+                "pick_goods_to_merchant": {}
+            }
+        },
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201905131759149482",
+            "status": 10,
+            "status_cancel_string": null,
+            "create_time": "2019-05-13 17:59:14",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": "",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 66,
+                        "price": "0.01",
+                        "source_price": "9.40",
+                        "name": "450g",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 0.01,
+                "all_source_price": 9.4,
+                "all_diff_price": 9.39,
+                "distribution_price": "0.00",
+                "pay_price": 0.01
+            },
+            "status_string": "配送员已接单",
+            "status_string_description": "配送员正在前往仓库，配送员:苹果的配送员",
+            "create_time_string": "5分钟前"
+        },
+        "distribution_order": {
+            "distribution_user_full_name": "苹果的配送员",
+            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
+            "distribution_user_mobile": "13910000004",
+            "status_string": "赶往仓库",
+            "coordinate_info": {
+                "receive_to_pick_goods": {
+                    "coordinate_x": "30.5289076",
+                    "coordinate_y": "104.0593956",
+                    "create_time": "2019-05-13 18:03:56"
+                },
+                "pick_goods_to_merchant": {}
+            }
+        },
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201905131759149482",
+            "status": 10,
+            "status_cancel_string": null,
+            "create_time": "2019-05-13 17:59:14",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": "",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 66,
+                        "price": "0.01",
+                        "source_price": "9.40",
+                        "name": "450g",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 0.01,
+                "all_source_price": 9.4,
+                "all_diff_price": 9.39,
+                "distribution_price": "0.00",
+                "pay_price": 0.01
+            },
+            "status_string": "配送员已取货",
+            "status_string_description": "开始为您配送，配送员:苹果的配送员",
+            "create_time_string": "6分钟前"
+        },
+        "distribution_order": {
+            "distribution_user_full_name": "苹果的配送员",
+            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
+            "distribution_user_mobile": "13910000004",
+            "status_string": "配送中",
+            "coordinate_info": {
+                "receive_to_pick_goods": {
+                    "coordinate_x": "30.5289076",
+                    "coordinate_y": "104.0593956",
+                    "create_time": "2019-05-13 18:03:56"
+                },
+                "pick_goods_to_merchant": {
+                    "coordinate_x": "30.5288968",
+                    "coordinate_y": "104.0593842",
+                    "create_time": "2019-05-13 18:04:13"
+                }
+            }
+        },
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "order": {
+            "order_sn": "S201905131759149482",
+            "status": 20,
+            "status_cancel_string": null,
+            "create_time": "2019-05-13 17:59:14",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": "",
+            "spec_list": {
+                "list": [
+                    {
+                        "id": 66,
+                        "price": "0.01",
+                        "source_price": "9.40",
+                        "name": "450g",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 1
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 1,
+                "all_price": 0.01,
+                "all_source_price": 9.4,
+                "all_diff_price": 9.39,
+                "distribution_price": "0.00",
+                "pay_price": 0.01
+            },
+            "status_string": "订单已完成",
+            "status_string_description": "感谢您使用大神厨房",
+            "create_time_string": "6分钟前"
+        },
+        "distribution_order": {
+            "distribution_user_full_name": "苹果的配送员",
+            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
+            "distribution_user_mobile": "13910000004",
+            "status_string": "完成配送",
+            "coordinate_info": {
+                "receive_to_pick_goods": {
+                    "coordinate_x": "30.5289076",
+                    "coordinate_y": "104.0593956",
+                    "create_time": "2019-05-13 18:03:56"
+                },
+                "pick_goods_to_merchant": {
+                    "coordinate_x": "30.5288968",
+                    "coordinate_y": "104.0593842",
+                    "create_time": "2019-05-13 18:04:13"
+                }
+            }
+        },
+        "user_agent": {
+            "tel": "4001-898-116"
+        }
+    }
+}
 ```  
 [接口目录](#接口目录)
 
