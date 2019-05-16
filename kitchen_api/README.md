@@ -2217,6 +2217,9 @@ string/null    status_choice                     【订单状态选择：no_pay 
                                 "create_time": "1970-01-01 08:33:39"            【取货时间】
                             }
                         }
+                    },
+                    "user_agent": {                 【代理信息】
+                      "tel": "18381082766"            【代理联系方式】
                     }
                 },
                 {
