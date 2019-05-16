@@ -95,7 +95,7 @@ status 12 已发货（待收货）已分配订单 配送员接单状态
 status 13 已发货（待收货）已分配订单 配送员取货状态
 
 ### 2019.5.16
-> * [订单详情](#订单详情) 增加 订单付款时间、订单拣货时间、配送员接单时间、配送员取货时间、订单完成时间、订单评论时间 默认为null
+> * [订单详情](#订单详情) 增加 送达时间、付款时间、拣货时间、接单时间、取货时间、完成时间、评论时间 默认为null
 
 ## 接口目录
 
@@ -2329,6 +2329,7 @@ string      order_sn                                【订单号】
             "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
             "create_time_string": "17分钟前",       【创建时间显示】
             "pay_type_string": "微信支付",           【支付方式】
+            "arrive_time": "立即配送",              【送达时间】
             "distribution_get_order_time": null,    【时间->订单拣货时间】
             "distribution_arriving_time": null,     【时间->配送员接单时间】
             "distribution_sending_time": null,      【时间->配送员取货时间】
