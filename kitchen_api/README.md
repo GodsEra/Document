@@ -94,6 +94,9 @@ status 11 已发货（待收货）已分配订单 商家拣货完成状态
 status 12 已发货（待收货）已分配订单 配送员接单状态  
 status 13 已发货（待收货）已分配订单 配送员取货状态
 
+### 2019.5.16
+> * [订单详情](#订单详情) 增加 订单付款时间、订单拣货时间、配送员接单时间、配送员取货时间、订单完成时间、订单评论时间 默认为null
+
 ## 接口目录
 
 ### 登录相关
@@ -2291,7 +2294,7 @@ string      order_sn                                【订单号】
         "order": {
             "order_sn": "S201904220039186777",                  【订单号】
             "status": 30,                                       【订单状态 现有5个状态分别对应5个详情页：状态 0 未支付（待付款） 1 支付成功（待发货） 10 已发货（待收货） 20 完成（待评价） 30 取消订单（交易关闭）】
-            "create_time": "2019-04-22 00:39:18",               【创建时间】
+            "create_time": "2019-04-22 00:39:18",               【时间->下单时间】
             "extension_title": "通江店",                       【收货人（商户名）】
             "extension_tel": "18381082766",                   【收货电话（商户电话）】
             "extension_province_name": "天津市",               【收货地址-省（商户省名）】
@@ -2299,6 +2302,7 @@ string      order_sn                                【订单号】
             "extension_area_name": "河东区",                   【收货地址-区（商户区名）】
             "extension_address": "红星路四段"                    【收取地址-详细地址（商户地址）】
             "remarks": "555555",                        【订单备注】
+            "pay_time": null,                           【时间->订单付款时间】
             "spec_list": {                          【规格列表信息】
                 "list": [                           【列表】
                     {
@@ -2324,8 +2328,12 @@ string      order_sn                                【订单号】
             "status_string_description": "其他原因",            【订单状态显示的解释】
             "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
             "create_time_string": "17分钟前",       【创建时间显示】
-            "pay_type_string": "微信支付"           【支付方式】
-            
+            "pay_type_string": "微信支付",           【支付方式】
+            "distribution_get_order_time": null,    【时间->订单拣货时间】
+            "distribution_arriving_time": null,     【时间->配送员接单时间】
+            "distribution_sending_time": null,      【时间->配送员取货时间】
+            "finish_time": null,                    【时间->订单完成时间】
+            "evaluation_time": null                 【时间->订单评论时间】
         },
         "distribution_order": {                 【配送信息】
             "distribution_user_full_name": "红星",            【配送员全名】
@@ -2460,10 +2468,10 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {
-            "order_sn": "S201905131759149482",
+            "order_sn": "S201905161512346685",
             "status": 1,
             "status_cancel_string": null,
-            "create_time": "2019-05-13 17:59:14",
+            "create_time": "2019-05-16 15:12:34",
             "extension_title": "苏杰的商户",
             "extension_tel": "18381082760",
             "extension_province_name": "四川省",
@@ -2471,6 +2479,7 @@ string      order_sn                                【订单号】
             "extension_area_name": "武侯区",
             "extension_address": "四川成都",
             "remarks": "",
+            "pay_time": "2019-05-16 15:13:14",
             "spec_list": {
                 "list": [
                     {
@@ -2480,7 +2489,7 @@ string      order_sn                                【订单号】
                         "name": "450g",
                         "good_id": 34,
                         "good_title": "伊品鸡精",
-                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "good_litpic": "http://kitchenapi.marketing.yuqg.com/uploads/goods/cover/20190407/a8b30305190cb9113c039c2dee8587d9.jpg",
                         "buy_number": 1
                     }
                 ],
@@ -2494,7 +2503,13 @@ string      order_sn                                【订单号】
             },
             "status_string": "已支付",
             "status_string_description": "订单支付成功，等待商家接单",
-            "create_time_string": "刚刚"
+            "create_time_string": "刚刚",
+            "pay_type_string": "微信支付",
+            "distribution_get_order_time": null,
+            "distribution_arriving_time": null,
+            "distribution_sending_time": null,
+            "finish_time": null,
+            "evaluation_time": null
         },
         "distribution_order": {},
         "user_agent": {
@@ -2507,10 +2522,10 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {
-            "order_sn": "S201905131759149482",
+            "order_sn": "S201905161512346685",
             "status": 11,
             "status_cancel_string": null,
-            "create_time": "2019-05-13 17:59:14",
+            "create_time": "2019-05-16 15:12:34",
             "extension_title": "苏杰的商户",
             "extension_tel": "18381082760",
             "extension_province_name": "四川省",
@@ -2518,6 +2533,7 @@ string      order_sn                                【订单号】
             "extension_area_name": "武侯区",
             "extension_address": "四川成都",
             "remarks": "",
+            "pay_time": "2019-05-16 15:13:14",
             "spec_list": {
                 "list": [
                     {
@@ -2527,7 +2543,7 @@ string      order_sn                                【订单号】
                         "name": "450g",
                         "good_id": 34,
                         "good_title": "伊品鸡精",
-                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "good_litpic": "http://kitchenapi.marketing.yuqg.com/uploads/goods/cover/20190407/a8b30305190cb9113c039c2dee8587d9.jpg",
                         "buy_number": 1
                     }
                 ],
@@ -2541,12 +2557,18 @@ string      order_sn                                【订单号】
             },
             "status_string": "拣货完成",
             "status_string_description": "商家已完成拣货，等待配送",
-            "create_time_string": "4分钟前"
+            "create_time_string": "4分钟前",
+            "pay_type_string": "微信支付",
+            "distribution_get_order_time": "2019-05-16 15:15:18",
+            "distribution_arriving_time": null,
+            "distribution_sending_time": null,
+            "finish_time": null,
+            "evaluation_time": null
         },
         "distribution_order": {
-            "distribution_user_full_name": "苹果的配送员",
-            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
-            "distribution_user_mobile": "13910000004",
+            "distribution_user_full_name": "苏杰",
+            "distribution_user_face": "http://img.marketing.yuqg.com/uploads/distribution_user/face/201905/a4acf3ef8c.jpg",
+            "distribution_user_mobile": "18381082760",
             "status_string": "已分配",
             "coordinate_info": {
                 "receive_to_pick_goods": {},
@@ -2563,10 +2585,10 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {
-            "order_sn": "S201905131759149482",
+            "order_sn": "S201905161512346685",
             "status": 12,
             "status_cancel_string": null,
-            "create_time": "2019-05-13 17:59:14",
+            "create_time": "2019-05-16 15:12:34",
             "extension_title": "苏杰的商户",
             "extension_tel": "18381082760",
             "extension_province_name": "四川省",
@@ -2574,6 +2596,7 @@ string      order_sn                                【订单号】
             "extension_area_name": "武侯区",
             "extension_address": "四川成都",
             "remarks": "",
+            "pay_time": "2019-05-16 15:13:14",
             "spec_list": {
                 "list": [
                     {
@@ -2583,7 +2606,7 @@ string      order_sn                                【订单号】
                         "name": "450g",
                         "good_id": 34,
                         "good_title": "伊品鸡精",
-                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "good_litpic": "http://kitchenapi.marketing.yuqg.com/uploads/goods/cover/20190407/a8b30305190cb9113c039c2dee8587d9.jpg",
                         "buy_number": 1
                     }
                 ],
@@ -2596,19 +2619,25 @@ string      order_sn                                【订单号】
                 "pay_price": 0.01
             },
             "status_string": "配送员已接单",
-            "status_string_description": "配送员正在前往仓库，配送员:苹果的配送员",
-            "create_time_string": "5分钟前"
+            "status_string_description": "配送员正在前往仓库，配送员:苏杰",
+            "create_time_string": "6分钟前",
+            "pay_type_string": "微信支付",
+            "distribution_get_order_time": "2019-05-16 15:15:18",
+            "distribution_arriving_time": "2019-05-16 15:17:41",
+            "distribution_sending_time": null,
+            "finish_time": null,
+            "evaluation_time": null
         },
         "distribution_order": {
-            "distribution_user_full_name": "苹果的配送员",
-            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
-            "distribution_user_mobile": "13910000004",
+            "distribution_user_full_name": "苏杰",
+            "distribution_user_face": "http://img.marketing.yuqg.com/uploads/distribution_user/face/201905/a4acf3ef8c.jpg",
+            "distribution_user_mobile": "18381082760",
             "status_string": "赶往仓库",
             "coordinate_info": {
                 "receive_to_pick_goods": {
-                    "coordinate_x": "30.5289076",
-                    "coordinate_y": "104.0593956",
-                    "create_time": "2019-05-13 18:03:56"
+                    "coordinate_x": "0.0000000",
+                    "coordinate_y": "0.0000000",
+                    "create_time": "2019-05-16 15:17:41"
                 },
                 "pick_goods_to_merchant": {}
             }
@@ -2623,10 +2652,10 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {
-            "order_sn": "S201905131759149482",
+            "order_sn": "S201905161512346685",
             "status": 13,
             "status_cancel_string": null,
-            "create_time": "2019-05-13 17:59:14",
+            "create_time": "2019-05-16 15:12:34",
             "extension_title": "苏杰的商户",
             "extension_tel": "18381082760",
             "extension_province_name": "四川省",
@@ -2634,6 +2663,7 @@ string      order_sn                                【订单号】
             "extension_area_name": "武侯区",
             "extension_address": "四川成都",
             "remarks": "",
+            "pay_time": "2019-05-16 15:13:14",
             "spec_list": {
                 "list": [
                     {
@@ -2643,7 +2673,7 @@ string      order_sn                                【订单号】
                         "name": "450g",
                         "good_id": 34,
                         "good_title": "伊品鸡精",
-                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "good_litpic": "http://kitchenapi.marketing.yuqg.com/uploads/goods/cover/20190407/a8b30305190cb9113c039c2dee8587d9.jpg",
                         "buy_number": 1
                     }
                 ],
@@ -2656,24 +2686,30 @@ string      order_sn                                【订单号】
                 "pay_price": 0.01
             },
             "status_string": "配送员已取货",
-            "status_string_description": "开始为您配送，配送员:苹果的配送员",
-            "create_time_string": "6分钟前"
+            "status_string_description": "开始为您配送，配送员:苏杰",
+            "create_time_string": "6分钟前",
+            "pay_type_string": "微信支付",
+            "distribution_get_order_time": "2019-05-16 15:15:18",
+            "distribution_arriving_time": "2019-05-16 15:17:41",
+            "distribution_sending_time": "2019-05-16 15:18:20",
+            "finish_time": null,
+            "evaluation_time": null
         },
         "distribution_order": {
-            "distribution_user_full_name": "苹果的配送员",
-            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
-            "distribution_user_mobile": "13910000004",
+            "distribution_user_full_name": "苏杰",
+            "distribution_user_face": "http://img.marketing.yuqg.com/uploads/distribution_user/face/201905/a4acf3ef8c.jpg",
+            "distribution_user_mobile": "18381082760",
             "status_string": "配送中",
             "coordinate_info": {
                 "receive_to_pick_goods": {
-                    "coordinate_x": "30.5289076",
-                    "coordinate_y": "104.0593956",
-                    "create_time": "2019-05-13 18:03:56"
+                    "coordinate_x": "0.0000000",
+                    "coordinate_y": "0.0000000",
+                    "create_time": "2019-05-16 15:17:41"
                 },
                 "pick_goods_to_merchant": {
-                    "coordinate_x": "30.5288968",
-                    "coordinate_y": "104.0593842",
-                    "create_time": "2019-05-13 18:04:13"
+                    "coordinate_x": "0.0000000",
+                    "coordinate_y": "0.0000000",
+                    "create_time": "2019-05-16 15:18:20"
                 }
             }
         },
@@ -2687,10 +2723,10 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {
-            "order_sn": "S201905131759149482",
+            "order_sn": "S201905161512346685",
             "status": 20,
             "status_cancel_string": null,
-            "create_time": "2019-05-13 17:59:14",
+            "create_time": "2019-05-16 15:12:34",
             "extension_title": "苏杰的商户",
             "extension_tel": "18381082760",
             "extension_province_name": "四川省",
@@ -2698,6 +2734,7 @@ string      order_sn                                【订单号】
             "extension_area_name": "武侯区",
             "extension_address": "四川成都",
             "remarks": "",
+            "pay_time": "2019-05-16 15:13:14",
             "spec_list": {
                 "list": [
                     {
@@ -2707,7 +2744,7 @@ string      order_sn                                【订单号】
                         "name": "450g",
                         "good_id": 34,
                         "good_title": "伊品鸡精",
-                        "good_litpic": "http:\/\/kitchenapi.marketing.yuqg.com\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "good_litpic": "http://kitchenapi.marketing.yuqg.com/uploads/goods/cover/20190407/a8b30305190cb9113c039c2dee8587d9.jpg",
                         "buy_number": 1
                     }
                 ],
@@ -2721,23 +2758,29 @@ string      order_sn                                【订单号】
             },
             "status_string": "订单已完成",
             "status_string_description": "感谢您使用大神厨房",
-            "create_time_string": "6分钟前"
+            "create_time_string": "7分钟前",
+            "pay_type_string": "微信支付",
+            "distribution_get_order_time": "2019-05-16 15:15:18",
+            "distribution_arriving_time": "2019-05-16 15:17:41",
+            "distribution_sending_time": "2019-05-16 15:18:20",
+            "finish_time": "2019-05-16 15:18:40",
+            "evaluation_time": null
         },
         "distribution_order": {
-            "distribution_user_full_name": "苹果的配送员",
-            "distribution_user_face": "\/uploads\/distribution_user\/face\/201905\/932f1263ec.jpg",
-            "distribution_user_mobile": "13910000004",
+            "distribution_user_full_name": "苏杰",
+            "distribution_user_face": "http://img.marketing.yuqg.com/uploads/distribution_user/face/201905/a4acf3ef8c.jpg",
+            "distribution_user_mobile": "18381082760",
             "status_string": "完成配送",
             "coordinate_info": {
                 "receive_to_pick_goods": {
-                    "coordinate_x": "30.5289076",
-                    "coordinate_y": "104.0593956",
-                    "create_time": "2019-05-13 18:03:56"
+                    "coordinate_x": "0.0000000",
+                    "coordinate_y": "0.0000000",
+                    "create_time": "2019-05-16 15:17:41"
                 },
                 "pick_goods_to_merchant": {
-                    "coordinate_x": "30.5288968",
-                    "coordinate_y": "104.0593842",
-                    "create_time": "2019-05-13 18:04:13"
+                    "coordinate_x": "0.0000000",
+                    "coordinate_y": "0.0000000",
+                    "create_time": "2019-05-16 15:18:20"
                 }
             }
         },
