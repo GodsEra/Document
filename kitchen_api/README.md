@@ -2329,7 +2329,7 @@ string      order_sn                                【订单号】
             "status_cancel_string": "其他原因",     【订单取消（交易关闭）的原因】
             "create_time_string": "17分钟前",       【创建时间显示】
             "pay_type_string": "微信支付",           【支付方式】
-            "arrive_time": "立即配送",              【送达时间】
+            "arrive_time": "立即配送",              【时间->送达时间】
             "distribution_get_order_time": null,    【时间->订单拣货时间】
             "distribution_arriving_time": null,     【时间->配送员接单时间】
             "distribution_sending_time": null,      【时间->配送员取货时间】
