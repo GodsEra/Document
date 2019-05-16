@@ -1827,7 +1827,8 @@ string      session_security
                 "name": "2斤",                   【规格单位】
                 "unit": "kg"                    【规格单位注释】
                 "source_price": "22.00",            【规格原始标价】
-                "price": "11.00"                    【规格售价】
+                "price": "11.00",                    【规格售价】
+                "stock_number": 100                   【规格库存】
             },
             {
                 "spec_id": 13,
@@ -1837,7 +1838,8 @@ string      session_security
                 "name": "22",
                 "unit": "22",
                 "source_price": "22.00",
-                "price": "11.00"
+                "price": "11.00",
+                stock_number": 100
             },
             {
                 "spec_id": 12,
@@ -1847,7 +1849,8 @@ string      session_security
                 "name": "1",
                 "unit": "1",
                 "source_price": "1.00",
-                "price": "1.00"
+                "price": "1.00",
+                stock_number": 50
             }
         ],
         "cart_all_spec_number": 3,          【购物车的规格数量和】
