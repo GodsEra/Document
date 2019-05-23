@@ -103,6 +103,8 @@ status 13 已发货（待收货）已分配订单 配送员取货状态
 status 21 已完成 未评论 状态  
 status 22 已完成 已评论 状态  
 
+> * 添加 [消息中心列表](#消息中心列表)  
+
 ## 接口目录
 
 ### 登录相关
@@ -190,6 +192,8 @@ status 22 已完成 已评论 状态
 [评论订单](#评论订单) 
 
 ### 消息相关
+
+[消息中心列表](#消息中心列表)  
 
 [系统消息列表](#系统消息列表)  
 
@@ -3121,6 +3125,47 @@ string      evaluation                              【评论】
 }
 ```  
 [接口目录](#接口目录)
+
+### 消息中心列表
+ 
+> 接口地址 /plugin/message_center_function_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "list": [
+            {
+                "message_type_title": "系统通知",
+                "logo": "http://www.ypvpa.localhost/statics/kitchen_api/images/message_center/system.png",
+                "last_message_description": "暂无更多内容",
+                "un_read_number": 1,
+                "message_type": "system"
+            },
+            {
+                "message_type_title": "订单通知",
+                "logo": "http://www.ypvpa.localhost/statics/kitchen_api/images/message_center/order_log_list.png",
+                "last_message_description": "暂无更多内容",
+                "un_read_number": 0,
+                "message_type": "order_log_list"
+            }
+        ]
+    }
+}
+```  
 
 ### 系统消息列表
  
