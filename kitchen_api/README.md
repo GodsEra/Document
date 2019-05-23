@@ -3149,11 +3149,11 @@ string      session_security
     "data": {
         "list": [
             {
-                "message_type_title": "系统通知",
-                "logo": "http://www.ypvpa.localhost/statics/kitchen_api/images/message_center/system.png",
-                "last_message_description": "暂无更多内容",
-                "un_read_number": 1,
-                "message_type": "system"
+                "message_type_title": "系统通知",               【消息类型题目】
+                "logo": "http://www.ypvpa.localhost/statics/kitchen_api/images/message_center/system.png",      【消息类型logo】
+                "last_message_description": "暂无更多内容",           【消息描述】
+                "un_read_number": 1,                        【未读数量】
+                "message_type": "system"                    【消息类型】
             },
             {
                 "message_type_title": "订单通知",
