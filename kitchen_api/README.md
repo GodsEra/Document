@@ -479,7 +479,8 @@ int/null    random_number                 【获取随机商品列表个数（�
         ],
         "ad_object": {                      【广告专题】
             "id": 4,
-            "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg"
+            "litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+            "h5_url": "http://www.ypvpa.localhost/index.php/kitchen_api/h5/index_3u.html"                               【专题url】
         },
         "mid_object_list": [                【中部专题列表】
             {
