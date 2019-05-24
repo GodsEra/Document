@@ -3199,6 +3199,7 @@ int/null    page                    【页数(默认1)】
                     "title": "欢迎来到大神厨房",        【消息题目】
                     "description": "666",               【消息摘要】
                     "create_time": "1970-01-01 08:33:39",       【消息创建时间】
+                    "is_read": "unread",                        【是否已读:unread 未读,read 已读】
                     "create_time_string": "1970年01月01日 08:00"           【消息创建时间显示】
                 }
             ],
@@ -3250,6 +3251,7 @@ int         id                  【系统消息ID】
             "description": "666",               【消息摘要】
             "body": "B站源码被公开 6啊",           【消息内容】
             "create_time": "1970-01-01 08:33:39",       【消息创建时间】
+            "is_read": "unread",                        【是否已读:unread 未读,read 已读】
             "create_time_string": "1970-01-01"              【消息创建时间显示】
         }
     }
