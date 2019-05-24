@@ -217,6 +217,10 @@ status 22 已完成 已评论 状态
 
 [资质条款](#资质条款)  
 
+### H5
+
+[H5首页3U](#H5首页3U)
+
 ## 接口
 
 ### 请求mobile_id
@@ -3477,3 +3481,29 @@ string      checksum
 }
 ```  
 [接口目录](#接口目录)
+
+### H5首页3U
+ 
+ > 接口地址 /h5/index_3u
+ 
+ > 请求方式 GET
+ 
+ > ** 传递参数 Request Data : **
+ ```
+ int         reqTime     
+ string      checksum 
+ string      mobile_id
+ string      session_id        
+ string      session_security
+ ```
+ 
+ > ** 返回参数 Response Data : **
+ ```
+ H5 页面
+ 
+ {
+     "responseCode": "10007",
+     "responseMessage": "token失效，请重新登录",
+     "data": {}
+ }
+```  
