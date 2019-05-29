@@ -112,6 +112,7 @@ status 22 已完成 已评论 状态
 ### 2019.5.29
 > * [首页](#首页) [购物车列表](#购物车列表) [用户详情](#用户详情) 添加 un_read_number 消息未读数           
 
+
 ## 接口目录
 
 ### 登录相关
@@ -199,6 +200,8 @@ status 22 已完成 已评论 状态
 [评论订单](#评论订单) 
 
 ### 消息相关
+
+[消息详情](消息详情)
 
 [消息中心列表](#消息中心列表)  
 
@@ -3140,6 +3143,32 @@ string      evaluation                              【评论】
 }
 ```  
 [接口目录](#接口目录)
+
+### 消息详情
+
+> 接口地址 /plugin/message
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "un_read_number": 2                 【未读数量】
+    }
+}
+```
 
 ### 消息中心列表
  
