@@ -113,6 +113,9 @@ status 22 已完成 已评论 状态
 > * [首页](#首页) [购物车列表](#购物车列表) [用户详情](#用户详情) 添加 un_read_number 消息未读数           
 > * 增加 [消息详情](#消息详情)
 
+### 2019.6.4
+> * 增加 [协议列表](#协议列表) [协议详情](#协议详情)
+
 
 ## 接口目录
 
@@ -3376,6 +3379,81 @@ int         id                  【常见问题ID】
     "responseMessage": "ok",
     "data": {
         "question": {}
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 协议列表
+ 
+> 接口地址 /plugin/agreement_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "agreement_list": [
+            {
+                "id": 2,                            【协议ID】
+                "title": "协议2",                     【标题】
+                "create_time": "2019-06-04 08:30:01",           【创建时间】
+                "create_time_string": "2019年06月04日 08:30"       【创建时间显示】
+            },
+            {
+                "id": 1,
+                "title": "协议1",
+                "create_time": "2019-06-04 08:29:58",
+                "create_time_string": "2019年06月04日 08:29"
+            }
+        ]
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 协议详情
+ 
+> 接口地址 /plugin/question
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+int         id                  【协议ID】          
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "agreement": {
+            "id": 1,
+            "title": "协议1",                 【标题】
+            "body": "协议1内容",                【内容】
+            "create_time": "2019-06-04 08:29:58",           【创建时间】
+            "create_time_string": "2019-06-04"              【创建时间显示】
+        }
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "agreement": {}
     }
 }
 ```  
