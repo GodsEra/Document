@@ -3425,7 +3425,7 @@ string      checksum
 
 ### 协议详情
  
-> 接口地址 /plugin/question
+> 接口地址 /plugin/agreement
 
 > 请求方式 POST
 
