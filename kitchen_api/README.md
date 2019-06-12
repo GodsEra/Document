@@ -117,7 +117,7 @@ status 22 已完成 已评论 状态
 > * 增加 [协议列表](#协议列表) [协议详情](#协议详情)
 
 ### 2019.6.12
-> * [商品详情](#商品详情) 添加 起售数
+> * [商品详情](#商品详情) [购物车列表](#购物车列表) 添加 起售数
 
 ## 接口目录
 
@@ -1867,7 +1867,9 @@ string      session_security
                 "unit": "kg"                    【规格单位注释】
                 "source_price": "22.00",            【规格原始标价】
                 "price": "11.00",                    【规格售价】
-                "stock_number": 100                   【规格库存】
+                "stock_number": 100,                   【规格库存】
+                "min_buy_number": 2                       【起售数】
+                
             },
             {
                 "spec_id": 13,
@@ -1878,7 +1880,8 @@ string      session_security
                 "unit": "22",
                 "source_price": "22.00",
                 "price": "11.00",
-                stock_number": 100
+                "stock_number": 100,
+                "min_buy_number": 3                       【起售数】
             },
             {
                 "spec_id": 12,
@@ -1889,7 +1892,8 @@ string      session_security
                 "unit": "1",
                 "source_price": "1.00",
                 "price": "1.00",
-                stock_number": 50
+                stock_number": 50,
+                "min_buy_number": 1                       【起售数】
             }
         ],
         "cart_all_spec_number": 3,          【购物车的规格数量和】
