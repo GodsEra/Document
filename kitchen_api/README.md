@@ -116,6 +116,8 @@ status 22 已完成 已评论 状态
 ### 2019.6.4
 > * 增加 [协议列表](#协议列表) [协议详情](#协议详情)
 
+### 2019.6.12
+> * [商品详情](#商品详情) 添加 起兽数
 
 ## 接口目录
 
@@ -1293,7 +1295,8 @@ int         id              【商品ID】
                     "source_price": "20.00",        【规格原始标价】
                     "name": "杯",            【规格单位】
                     "unit": "1杯",            【规格单位注释】
-                    "stock_number": 50          【规格库存】
+                    "stock_number": 50,          【规格库存】
+                    "min_buy_number": 1         【起售数】
                 },
                 {
                     "id": 11,
@@ -1301,7 +1304,8 @@ int         id              【商品ID】
                     "source_price": "1.00",
                     "name": "1",
                     "unit": "1",
-                    "stock_number": 20
+                    "stock_number": 20,
+                    "min_buy_number": 1         【起售数】
                 }
             ],
             "distribution_price": 0,            【运费】
