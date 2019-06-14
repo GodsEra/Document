@@ -119,6 +119,9 @@ status 22 已完成 已评论 状态
 ### 2019.6.12
 > * [商品详情](#商品详情) [购物车列表](#购物车列表) 添加 起售数
 
+### 2019.6.14
+> * [首页](#首页) [专题详情](#专题详情) [查询商品列表](#查询商品列表) [商品列表](#商品列表) 添加 起售数、第一个规格起售数
+
 ## 接口目录
 
 ### 登录相关
@@ -550,6 +553,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                 "first_spec_unit": "kg",    【第一个规格单位注释】
                 "first_spec_price": "0.01", 【第一个规格售价】
                 "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                "first_spec_min_buy_number": 1,         【第一个规格起售数】
                 "spec_list": [              【规格列表】
                     {
                         "id": 5,            【规格ID】
@@ -558,6 +562,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "name": "2斤",       【规格单位】
                         "unit": "kg",        【规格单位注释】
                         "stock_number": 222,                【规格库存】
+                        "min_buy_number": 1,                【起售数】
                         "cart_buy_number": 0    【此规格的购物车购买数量】
                     },
                     {
@@ -567,6 +572,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "name": "半斤",
                         "unit": "500g",
                         "stock_number": 222,                
+                        "min_buy_number": 1,
                         "cart_buy_number": 0
                     }
                 ],
@@ -582,6 +588,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                 "first_spec_unit": "1杯",
                 "first_spec_price": "5.00",
                 "first_spec_source_price": "20.00",
+                "first_spec_min_buy_number": 1, 
                 "spec_list": [
                     {
                         "id": 9,
@@ -590,6 +597,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "name": "杯",
                         "unit": "1杯",
                         "stock_number": 2,
+                        "min_buy_number": 1,
                         "cart_buy_number": 1
                     },
                     {
@@ -599,6 +607,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "name": "1",
                         "unit": "1",
                         "stock_number": 2,
+                        "min_buy_number": 1,
                         "cart_buy_number": 1
                     }
                 ],
@@ -723,6 +732,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                     "first_spec_unit": "kg",    【第一个规格单位注释】
                     "first_spec_price": "0.01", 【第一个规格售价】
                     "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                    "first_spec_min_buy_number": 1,         【第一个规格起售数】
                     "spec_count": 2,                【包含的规格数量】
                     "spec_list": [              【规格列表】
                         {
@@ -732,6 +742,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "name": "2斤",       【规格单位】
                             "unit": "kg",        【规格单位注释】
                             "stock_number": 222,                【规格库存】
+                            "min_buy_number": 1,            【起售数】
                             "cart_buy_number": 0    【此规格的购物车购买数量】
                         },
                         {
@@ -741,6 +752,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "name": "半斤",
                             "unit": "500g",
                             "stock_number": 222,                
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         }
                     ],
@@ -756,6 +768,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                     "first_spec_unit": "3213",
                     "first_spec_price": "213.00",
                     "first_spec_source_price": "2131.00",
+                    "first_spec_min_buy_number": 1,  
                     "spec_count": 3,
                     "spec_list": [
                         {
@@ -765,6 +778,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "name": "22",
                             "unit": "22",
                             "stock_number": 222,                
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         },
                         {
@@ -774,6 +788,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "name": "3213",
                             "unit": "3213",
                             "stock_number": 222,                
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         },
                         {
@@ -783,6 +798,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "name": "3123",
                             "unit": "3123",
                             "stock_number": 222,                
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         }
                     ],
@@ -1004,6 +1020,7 @@ int/null    page                    【页数(默认1)】
                     "first_spec_unit": "kg",    【第一个规格单位注释】
                     "first_spec_price": "0.01", 【第一个规格售价】
                     "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                    "first_spec_min_buy_number": 1,         【第一个规格起售数】
                     "spec_count": 2,                【包含的规格数量】
                     "spec_list": [              【规格列表】
                         {
@@ -1013,6 +1030,7 @@ int/null    page                    【页数(默认1)】
                             "name": "2斤",       【规格单位】
                             "unit": "kg",        【规格单位注释】
                             "stock_number": 0,      【规格库存】
+                            "min_buy_number": 1,    【起售数】
                             "cart_buy_number": 15   【此规格的购物车购买数量】       
                         },
                         {
@@ -1021,6 +1039,8 @@ int/null    page                    【页数(默认1)】
                             "source_price": "38.00",
                             "name": "半斤",
                             "unit": "500g",
+                            "stock_number": 0,    
+                            "min_buy_number": 1,
                             "cart_buy_number": 0
                         }
                     ],
@@ -1035,6 +1055,7 @@ int/null    page                    【页数(默认1)】
                     "first_spec_unit": "3213",
                     "first_spec_price": "213.00",
                     "first_spec_source_price": "2131.00",
+                    "first_spec_min_buy_number": 1,
                     "spec_count": 3,
                     "spec_list": [
                         {
@@ -1043,6 +1064,8 @@ int/null    page                    【页数(默认1)】
                             "source_price": "22.00",
                             "name": "22",
                             "unit": "22",
+                            "stock_number": 0,    
+                            "min_buy_number": 1,
                             "cart_buy_number": 0
                         },
                         {
@@ -1051,6 +1074,8 @@ int/null    page                    【页数(默认1)】
                             "source_price": "2131.00",
                             "name": "3213",
                             "unit": "3213",
+                            "stock_number": 0,    
+                            "min_buy_number": 1,
                             "cart_buy_number": 0
                         },
                         {
@@ -1059,6 +1084,8 @@ int/null    page                    【页数(默认1)】
                             "source_price": "131.00",
                             "name": "3123",
                             "unit": "3123",
+                            "stock_number": 0,    
+                            "min_buy_number": 1,
                             "cart_buy_number": 0
                         }
                     ],
@@ -1126,6 +1153,7 @@ string      search                  【查询字符串】
                     "first_spec_unit": "kg",    【第一个规格单位注释】
                     "first_spec_price": "0.01", 【第一个规格售价】
                     "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                    "first_spec_min_buy_number": 1,         【第一个规格起售数】
                     "spec_count": 2,                【包含的规格数量】
                     "spec_list": [              【规格列表】
                         {
@@ -1135,6 +1163,7 @@ string      search                  【查询字符串】
                             "name": "2斤",       【规格单位】
                             "unit": "kg",        【规格单位注释】
                             "stock_number": 0,      【规格库存】
+                            "min_buy_number": 1,    【起售数】
                             "cart_buy_number": 15   【此规格的购物车购买数量】       
                         },
                         {
@@ -1143,6 +1172,7 @@ string      search                  【查询字符串】
                             "source_price": "38.00",
                             "name": "半斤",
                             "unit": "500g",
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         }
                     ],
@@ -1157,6 +1187,7 @@ string      search                  【查询字符串】
                     "first_spec_unit": "3213",
                     "first_spec_price": "213.00",
                     "first_spec_source_price": "2131.00",
+                    "first_spec_min_buy_number": 1,
                     "spec_count": 3,
                     "spec_list": [
                         {
@@ -1165,6 +1196,7 @@ string      search                  【查询字符串】
                             "source_price": "22.00",
                             "name": "22",
                             "unit": "22",
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         },
                         {
@@ -1173,6 +1205,7 @@ string      search                  【查询字符串】
                             "source_price": "2131.00",
                             "name": "3213",
                             "unit": "3213",
+                            "min_buy_number": 1, 
                             "cart_buy_number": 0
                         },
                         {
@@ -1181,6 +1214,7 @@ string      search                  【查询字符串】
                             "source_price": "131.00",
                             "name": "3123",
                             "unit": "3123",
+                            min_buy_number": 1, 
                             "cart_buy_number": 0
                         }
                     ],
@@ -1477,6 +1511,7 @@ int/null    page                    【商品列表页数(默认1)】
                         "first_spec_unit": "kg",    【第一个规格单位注释】
                         "first_spec_price": "0.01", 【第一个规格售价】
                         "first_spec_source_price": "20.00",     【第一个规格原始标价】
+                        "first_spec_min_buy_number": 1,         【第一个规格起售数】
                         "spec_count": 2,                【包含的规格数量】
                         "spec_list": [              【规格列表】
                             {
@@ -1485,6 +1520,7 @@ int/null    page                    【商品列表页数(默认1)】
                                 "source_price": "20.00",    【规格原始标价】
                                 "name": "2斤",       【规格单位】
                                 "unit": "kg",        【规格单位注释】
+                                "min_buy_number": 1,    【起售数】
                                 "cart_buy_number": 15   【此规格的购物车购买数量】       
                             },
                             {
@@ -1493,6 +1529,7 @@ int/null    page                    【商品列表页数(默认1)】
                                 "source_price": "38.00",
                                 "name": "半斤",
                                 "unit": "500g",
+                                "min_buy_number": 1,    
                                 "cart_buy_number": 0
                             }
                         ],
@@ -1507,6 +1544,7 @@ int/null    page                    【商品列表页数(默认1)】
                         "first_spec_unit": "3213",
                         "first_spec_price": "213.00",
                         "first_spec_source_price": "2131.00",
+                        "first_spec_min_buy_number": 1,
                         "spec_count": 3,
                         "spec_list": [
                             {
@@ -1515,6 +1553,7 @@ int/null    page                    【商品列表页数(默认1)】
                                 "source_price": "22.00",
                                 "name": "22",
                                 "unit": "22",
+                                "min_buy_number": 1,    
                                 "cart_buy_number": 0
                             },
                             {
@@ -1523,6 +1562,7 @@ int/null    page                    【商品列表页数(默认1)】
                                 "source_price": "2131.00",
                                 "name": "3213",
                                 "unit": "3213",
+                                "min_buy_number": 1,    
                                 "cart_buy_number": 0
                             },
                             {
@@ -1531,6 +1571,7 @@ int/null    page                    【商品列表页数(默认1)】
                                 "source_price": "131.00",
                                 "name": "3123",
                                 "unit": "3123",
+                                "min_buy_number": 1,    
                                 "cart_buy_number": 0
                             }
                         ],
