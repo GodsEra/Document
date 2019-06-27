@@ -122,6 +122,12 @@ status 22 已完成 已评论 状态
 ### 2019.6.14
 > * [首页](#首页) [专题详情](#专题详情) [查询商品列表](#查询商品列表) [商品列表](#商品列表) 添加 起售数、第一个规格起售数
 
+### 2019.6.27
+> * [首页](#首页) [分类页面](#分类页面) [商品列表](#商品列表) [查询商品列表](#查询商品列表) [商品详情](#商品详情) [订单确认页面](#订单确认页面) 添加 规格类型：标准的-std，预订的-advance
+> * [订单确认页面](#订单确认页面) 添加 配送时间列表 arrive_time_list
+> * [下单](#下单) 添加 输入参数 (配送时间 arrive_time) (开始配送时间 start_arrive_time) (结束配送时间 end_arrive_time)
+> * [订单列表](#订单列表) [订单详情](#订单详情) 添加 (订单类型：标准的-std，预订-advance，预订补款-advance_son) (还未支付的尾款订单 wait_pay_order)
+
 ## 接口目录
 
 ### 登录相关
@@ -563,6 +569,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "unit": "kg",        【规格单位注释】
                         "stock_number": 222,                【规格库存】
                         "min_buy_number": 1,                【起售数】
+                        "type": "std",                      【规格类型：标准的-std，预订的-advance】
                         "cart_buy_number": 0    【此规格的购物车购买数量】
                     },
                     {
@@ -573,6 +580,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "unit": "500g",
                         "stock_number": 222,                
                         "min_buy_number": 1,
+                        "type": "std", 
                         "cart_buy_number": 0
                     }
                 ],
@@ -598,6 +606,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "unit": "1杯",
                         "stock_number": 2,
                         "min_buy_number": 1,
+                        "type": "advance", 
                         "cart_buy_number": 1
                     },
                     {
@@ -608,6 +617,7 @@ int/null    random_number                 【获取随机商品列表个数（�
                         "unit": "1",
                         "stock_number": 2,
                         "min_buy_number": 1,
+                        "type": "advance", 
                         "cart_buy_number": 1
                     }
                 ],
@@ -743,6 +753,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "unit": "kg",        【规格单位注释】
                             "stock_number": 222,                【规格库存】
                             "min_buy_number": 1,            【起售数】
+                            "type": "std",                      【规格类型：标准的-std，预订的-advance】
                             "cart_buy_number": 0    【此规格的购物车购买数量】
                         },
                         {
@@ -753,6 +764,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "unit": "500g",
                             "stock_number": 222,                
                             "min_buy_number": 1, 
+                            "type": "std", 
                             "cart_buy_number": 0
                         }
                     ],
@@ -779,6 +791,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "unit": "22",
                             "stock_number": 222,                
                             "min_buy_number": 1, 
+                            "type": "std", 
                             "cart_buy_number": 0
                         },
                         {
@@ -789,6 +802,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "unit": "3213",
                             "stock_number": 222,                
                             "min_buy_number": 1, 
+                            "type": "std", 
                             "cart_buy_number": 0
                         },
                         {
@@ -799,6 +813,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
                             "unit": "3123",
                             "stock_number": 222,                
                             "min_buy_number": 1, 
+                            "type": "std", 
                             "cart_buy_number": 0
                         }
                     ],
@@ -1031,6 +1046,7 @@ int/null    page                    【页数(默认1)】
                             "unit": "kg",        【规格单位注释】
                             "stock_number": 0,      【规格库存】
                             "min_buy_number": 1,    【起售数】
+                            "type": "std",                      【规格类型：标准的-std，预订的-advance】
                             "cart_buy_number": 15   【此规格的购物车购买数量】       
                         },
                         {
@@ -1041,6 +1057,7 @@ int/null    page                    【页数(默认1)】
                             "unit": "500g",
                             "stock_number": 0,    
                             "min_buy_number": 1,
+                            "type": "std", 
                             "cart_buy_number": 0
                         }
                     ],
@@ -1066,6 +1083,7 @@ int/null    page                    【页数(默认1)】
                             "unit": "22",
                             "stock_number": 0,    
                             "min_buy_number": 1,
+                            "type": "advance", 
                             "cart_buy_number": 0
                         },
                         {
@@ -1076,6 +1094,7 @@ int/null    page                    【页数(默认1)】
                             "unit": "3213",
                             "stock_number": 0,    
                             "min_buy_number": 1,
+                            "type": "advance", 
                             "cart_buy_number": 0
                         },
                         {
@@ -1086,6 +1105,7 @@ int/null    page                    【页数(默认1)】
                             "unit": "3123",
                             "stock_number": 0,    
                             "min_buy_number": 1,
+                            "type": "advance", 
                             "cart_buy_number": 0
                         }
                     ],
@@ -1164,6 +1184,7 @@ string      search                  【查询字符串】
                             "unit": "kg",        【规格单位注释】
                             "stock_number": 0,      【规格库存】
                             "min_buy_number": 1,    【起售数】
+                            "type": "std",                      【规格类型：标准的-std，预订的-advance】
                             "cart_buy_number": 15   【此规格的购物车购买数量】       
                         },
                         {
@@ -1173,6 +1194,7 @@ string      search                  【查询字符串】
                             "name": "半斤",
                             "unit": "500g",
                             "min_buy_number": 1, 
+                            "type": "std",                
                             "cart_buy_number": 0
                         }
                     ],
@@ -1197,6 +1219,7 @@ string      search                  【查询字符串】
                             "name": "22",
                             "unit": "22",
                             "min_buy_number": 1, 
+                            "type": "std",                
                             "cart_buy_number": 0
                         },
                         {
@@ -1206,6 +1229,7 @@ string      search                  【查询字符串】
                             "name": "3213",
                             "unit": "3213",
                             "min_buy_number": 1, 
+                            "type": "std",                
                             "cart_buy_number": 0
                         },
                         {
@@ -1215,6 +1239,7 @@ string      search                  【查询字符串】
                             "name": "3123",
                             "unit": "3123",
                             min_buy_number": 1, 
+                            "type": "std",                
                             "cart_buy_number": 0
                         }
                     ],
@@ -1330,6 +1355,7 @@ int         id              【商品ID】
                     "name": "杯",            【规格单位】
                     "unit": "1杯",            【规格单位注释】
                     "stock_number": 50,          【规格库存】
+                    "type": "std",                      【规格类型：标准的-std，预订的-advance】
                     "min_buy_number": 1         【起售数】
                 },
                 {
@@ -1339,6 +1365,7 @@ int         id              【商品ID】
                     "name": "1",
                     "unit": "1",
                     "stock_number": 20,
+                    "type": "std", 
                     "min_buy_number": 1         【起售数】
                 }
             ],
@@ -2065,7 +2092,10 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                     "good_id": 14,                      【商品ID】
                     "good_title": "炒土豆丝",           【商品名】
                     "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190329\/fa407a4bfb5bcb15700f8fa44dd32a60.png",       【商品图片】
-                    "buy_number": 7                     【购买数量】
+                    "buy_number": 7,                     【购买数量】
+                    "type": "std",                      【规格类型：标准的-std，预订的-advance】
+                    "min_buy_number": 1                【起售数】
+
                 },
                 {
                     "id": 9,
@@ -2077,6 +2107,8 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
                     "good_title": "百事可乐",
                     "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
                     "buy_number": 76
+                    "type": "std", 
+                    "min_buy_number": 1
                 }
             ],
             "all_spec_number": 2,                   【规格数量和】
@@ -2087,6 +2119,162 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
             "distribution_price": 0,                【运费】
             "pay_price": 380.07                     【订单实付金额】
         },
+         "arrive_time_list": [                              【配送时间列表】
+                    {
+                        "day_select": "06-28(明天)",              【日期选择显示】
+                        "hour_list": [
+                            {
+                                "start_arrive_time": "2019-06-28 08:00",            【开始配送时间 需要传给下单接口】
+                                "end_arrive_time": "2019-06-28 09:00",              【结束配送时间 需要传给下单接口】
+                                "section_select": "08:00-09:00",                    【时间段选择显示】
+                                "arrive_time": "明天 [营业即送 08:00-09:00]"          【配送时间 需要传给下单接口】
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 09:00",
+                                "end_arrive_time": "2019-06-28 10:00",
+                                "section_select": "09:00-10:00",
+                                "arrive_time": "明天 [09:00-10:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 10:00",
+                                "end_arrive_time": "2019-06-28 11:00",
+                                "section_select": "10:00-11:00",
+                                "arrive_time": "明天 [10:00-11:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 11:00",
+                                "end_arrive_time": "2019-06-28 12:00",
+                                "section_select": "11:00-12:00",
+                                "arrive_time": "明天 [11:00-12:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 12:00",
+                                "end_arrive_time": "2019-06-28 13:00",
+                                "section_select": "12:00-13:00",
+                                "arrive_time": "明天 [12:00-13:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 13:00",
+                                "end_arrive_time": "2019-06-28 14:00",
+                                "section_select": "13:00-14:00",
+                                "arrive_time": "明天 [13:00-14:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 14:00",
+                                "end_arrive_time": "2019-06-28 15:00",
+                                "section_select": "14:00-15:00",
+                                "arrive_time": "明天 [14:00-15:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 15:00",
+                                "end_arrive_time": "2019-06-28 16:00",
+                                "section_select": "15:00-16:00",
+                                "arrive_time": "明天 [15:00-16:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 16:00",
+                                "end_arrive_time": "2019-06-28 17:00",
+                                "section_select": "16:00-17:00",
+                                "arrive_time": "明天 [16:00-17:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 17:00",
+                                "end_arrive_time": "2019-06-28 18:00",
+                                "section_select": "17:00-18:00",
+                                "arrive_time": "明天 [17:00-18:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 18:00",
+                                "end_arrive_time": "2019-06-28 19:00",
+                                "section_select": "18:00-19:00",
+                                "arrive_time": "明天 [18:00-19:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-28 19:00",
+                                "end_arrive_time": "2019-06-28 20:00",
+                                "section_select": "19:00-20:00",
+                                "arrive_time": "明天 [19:00-20:00]"
+                            }
+                        ]
+                    },
+                    {
+                        "day_select": "06-29(后天)",
+                        "hour_list": [
+                            {
+                                "start_arrive_time": "2019-06-29 08:00",
+                                "end_arrive_time": "2019-06-29 09:00",
+                                "section_select": "08:00-09:00",
+                                "arrive_time": "后天 [营业即送 08:00-09:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 09:00",
+                                "end_arrive_time": "2019-06-29 10:00",
+                                "section_select": "09:00-10:00",
+                                "arrive_time": "后天 [09:00-10:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 10:00",
+                                "end_arrive_time": "2019-06-29 11:00",
+                                "section_select": "10:00-11:00",
+                                "arrive_time": "后天 [10:00-11:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 11:00",
+                                "end_arrive_time": "2019-06-29 12:00",
+                                "section_select": "11:00-12:00",
+                                "arrive_time": "后天 [11:00-12:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 12:00",
+                                "end_arrive_time": "2019-06-29 13:00",
+                                "section_select": "12:00-13:00",
+                                "arrive_time": "后天 [12:00-13:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 13:00",
+                                "end_arrive_time": "2019-06-29 14:00",
+                                "section_select": "13:00-14:00",
+                                "arrive_time": "后天 [13:00-14:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 14:00",
+                                "end_arrive_time": "2019-06-29 15:00",
+                                "section_select": "14:00-15:00",
+                                "arrive_time": "后天 [14:00-15:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 15:00",
+                                "end_arrive_time": "2019-06-29 16:00",
+                                "section_select": "15:00-16:00",
+                                "arrive_time": "后天 [15:00-16:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 16:00",
+                                "end_arrive_time": "2019-06-29 17:00",
+                                "section_select": "16:00-17:00",
+                                "arrive_time": "后天 [16:00-17:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 17:00",
+                                "end_arrive_time": "2019-06-29 18:00",
+                                "section_select": "17:00-18:00",
+                                "arrive_time": "后天 [17:00-18:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 18:00",
+                                "end_arrive_time": "2019-06-29 19:00",
+                                "section_select": "18:00-19:00",
+                                "arrive_time": "后天 [18:00-19:00]"
+                            },
+                            {
+                                "start_arrive_time": "2019-06-29 19:00",
+                                "end_arrive_time": "2019-06-29 20:00",
+                                "section_select": "19:00-20:00",
+                                "arrive_time": "后天 [19:00-20:00]"
+                            }
+                        ]
+                    }
+                ],
         "user_info": {                          【用户信息】
             "id": 1185,                           【用户编号】
             "nickname": null,                       【用户昵称】
@@ -2166,6 +2354,9 @@ string      session_security
 string/null         order_from                       【订单来源 good商品/cart购物车 默认good】
 string         spec_ids_numbers                 【批量规格ID与数量对应,每个规格的ID与数量以英文半角下划线分隔，数量默认为1，ID之间以英文半角逗号隔开，比如 5 代表规格ID为5 数量为1，比如 5_2,9_3 代表规格ID为5、数量为2，规格ID为9、数量为3】
 string/null         remarks                         【订单备注】
+string/null         arrive_time                         【配送时间 比如：后天 [营业即送 08:00-09:00]】
+string/null         start_arrive_time                  【配送开始时间 比如：2019-06-29 08:00】
+string/null         end_arrive_time                    【配送结束时间 比如：2019-06-29 09:00】
 ```
 
 > ** 返回参数 Response Data : **
@@ -2275,6 +2466,13 @@ string/null    status_choice                     【订单状态选择：no_pay 
                     "all_buy_number": 1,                        【购买规格数量和】
                     "pay_price": "5.00",                        【订单实付金额】
                     "create_time": "2019-04-20 17:27:30",           【订单创建时间】
+                    "type": "advance",                              【订单类型（标准的-std，预订-advance，预订补款-advance_son）】
+                    "wait_pay_order": {                             【还未支付的尾款订单】
+                        "order_sn": "S201906271712571323",
+                        "total_amount": "30.00",
+                        "title": null,
+                        "buy_number": 1
+                    },
                     "spec_list": [                        【订单规格列表】
                         {
                             "good_id": 12,                      【商品ID】
@@ -2284,8 +2482,6 @@ string/null    status_choice                     【订单状态选择：no_pay 
                             "price": "5.00"                     【商品规格售价】
                         }
                     ],
-                    "status_string": "待付款",                     【订单状态显示】
-                    "create_time_string": "昨天 17:27",                【订单创建时间显示】
                     "distribution_order": {                 【配送信息】
                         "distribution_user_full_name": "红星",            【配送员全名】
                         "distribution_user_face": "",                       【配送员头像】
@@ -2306,25 +2502,33 @@ string/null    status_choice                     【订单状态选择：no_pay 
                     },
                     "user_agent": {                 【代理信息】
                       "tel": "18381082766"            【代理联系方式】
-                    }
+                    },
+                    "status_string": "待付款",                     【订单状态显示】
+                    "create_time_string": "昨天 17:27"                【订单创建时间显示】
                 },
                 {
-                    "order_sn": "S201904201643361928",
-                    "all_buy_number": 4,
-                    "pay_price": "20.00",
-                    "create_time": "2019-04-20 16:43:36",
-                    "order_item_list": [
+                    "order_sn": "S201906271711395705",
+                    "status": 0,
+                    "all_buy_number": 1,
+                    "pay_price": "0.02",
+                    "create_time": "2019-06-27 17:11:39",
+                    "type": "advance",
+                    "wait_pay_order": {},
+                    "spec_list": [
                         {
-                            "good_id": 12,
-                            "good_title": "百事可乐",
-                            "good_litpic": "\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
-                            "buy_number": 4,
-                            "price": "5.00"
+                            "good_id": 35,
+                            "good_title": "福之泉大豆油25L",
+                            "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190505/2a2f1d293a5e11dfd316f8ad5634d8ae.jpg",
+                            "buy_number": 1,
+                            "price": "0.02"
                         }
                     ],
-                    "status_string": "交易关闭",
-                    "create_time_string": "昨天 16:43",
-                    "distribution_order": {}
+                    "distribution_order": {},
+                    "user_agent": {
+                        "tel": "4001-898-116"
+                    },
+                    "status_string": "待付款",
+                    "create_time_string": "3小时前"
                 }
             ],
             "count": 70,                【列表总数】
@@ -2394,6 +2598,13 @@ string      order_sn                                【订单号】
             "extension_address": "红星路四段"                    【收取地址-详细地址（商户地址）】
             "remarks": "555555",                        【订单备注】
             "pay_time": null,                           【时间->订单付款时间】
+            "type": "advance",                              【订单类型（标准的-std，预订-advance，预订补款-advance_son）】
+            "wait_pay_order": {                             【还未支付的尾款订单】
+                "order_sn": "S201906271712571323",
+                "total_amount": "30.00",
+                "title": "伊品鸡精",
+                "buy_number": 1
+            },
             "spec_list": {                          【规格列表信息】
                 "list": [                           【列表】
                     {
@@ -2456,46 +2667,67 @@ string      order_sn                                【订单号】
     "responseMessage": "ok",
     "data": {
         "order": {
-            "order_sn": "S201904220052558497",
-            "status": 0,
-            "create_time": "2019-04-22 00:52:55",
-            "extension_title": "通江店",
-            "extension_tel": "18381082766",
-            "extension_province_name": "天津市",
-            "extension_city_name": "天津市",
-            "extension_area_name": "河东区",
-            "extension_address": "红星路四段",
-            "remarks": "555555",
+            "order_sn": "S201906271712399263",
+            "status": 1,
+            "status_cancel_string": null,
+            "create_time": "2019-06-27 17:12:39",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_province_name": "四川省",
+            "extension_city_name": "成都市",
+            "extension_area_name": "武侯区",
+            "extension_address": "四川成都",
+            "remarks": null,
+            "pay_time": "2019-06-27 17:21:13",
+            "type": "advance",
+            "wait_pay_order": {},
             "spec_list": {
                 "list": [
                     {
-                        "id": 9,
-                        "price": "5.00",
-                        "source_price": "20.00",
-                        "name": "杯",
-                        "good_id": 12,
-                        "good_title": "百事可乐",
-                        "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190404\/d94ccbd5f7e678c3a21c2c473a8dd4cf.jpg",
+                        "id": 77,
+                        "price": "0.02",
+                        "source_price": "2.00",
+                        "name": "瓶",
+                        "good_id": 35,
+                        "good_title": "福之泉大豆油25L",
+                        "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190505\/2a2f1d293a5e11dfd316f8ad5634d8ae.jpg",
                         "buy_number": 1
+                    },
+                    {
+                        "id": 78,
+                        "price": "0.02",
+                        "source_price": "19.80",
+                        "name": "900克",
+                        "good_id": 34,
+                        "good_title": "伊品鸡精",
+                        "good_litpic": "http:\/\/www.ypvpa.localhost\/uploads\/goods\/cover\/20190407\/a8b30305190cb9113c039c2dee8587d9.jpg",
+                        "buy_number": 2
                     }
                 ],
-                "all_spec_number": 1,
-                "all_buy_number": 1,
-                "all_price": 5,
-                "all_source_price": 20,
-                "all_diff_price": 15,
+                "all_spec_number": 2,
+                "all_buy_number": 3,
+                "all_price": 0.06,
+                "all_source_price": 41.6,
+                "all_diff_price": 41.54,
                 "distribution_price": "0.00",
-                "pay_price": 5
+                "pay_price": 0.06
             },
-            "status_string": "等待买家付款",
-            "status_string_description": "剩余23小时59分钟自动关闭",
-            "status_cancel_string": "未取消",
-            "create_time_string": "22分钟前"
+            "cancel_time": null,
+            "arrive_time": "立即配送",
+            "distribution_get_order_time": null,
+            "distribution_arriving_time": null,
+            "distribution_sending_time": null,
+            "finish_time": null,
+            "evaluation_time": null,
+            "status_string": "已支付",
+            "status_string_description": "订单支付成功，等待商家接单",
+            "create_time_string": "4小时前",
+            "pay_type_string": "微信支付"
         },
         "distribution_order": {},
         "user_agent": {
             "tel": "4001-898-116"
-        },
+        }
     }
 }
 {
