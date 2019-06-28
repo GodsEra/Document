@@ -128,6 +128,9 @@ status 22 已完成 已评论 状态
 > * [下单](#下单) 添加 输入参数 (配送时间 arrive_time) (开始配送时间 start_arrive_time) (结束配送时间 end_arrive_time)
 > * [订单列表](#订单列表) [订单详情](#订单详情) 添加 (订单类型：标准的-std，预订-advance，预订补款-advance_son) (还未支付的尾款订单 wait_pay_order)
 
+### 2019.6.28
+>* [购物车列表](购物车列表) 添加 购物车状态：normal 正常 lacked 失效
+
 ## 接口目录
 
 ### 登录相关
@@ -1936,8 +1939,8 @@ string      session_security
                 "source_price": "22.00",            【规格原始标价】
                 "price": "11.00",                    【规格售价】
                 "stock_number": 100,                   【规格库存】
-                "min_buy_number": 2                       【起售数】
-                
+                "min_buy_number": 2,                      【起售数】 
+                "status": "normal"                      【购物车状态：normal 正常 lacked 失效】
             },
             {
                 "spec_id": 13,
@@ -1949,7 +1952,8 @@ string      session_security
                 "source_price": "22.00",
                 "price": "11.00",
                 "stock_number": 100,
-                "min_buy_number": 3                       【起售数】
+                "min_buy_number": 3,
+                "status": "lacked"
             },
             {
                 "spec_id": 12,
@@ -1961,7 +1965,8 @@ string      session_security
                 "source_price": "1.00",
                 "price": "1.00",
                 stock_number": 50,
-                "min_buy_number": 1                       【起售数】
+                "min_buy_number": 1,
+                "status": "lacked"
             }
         ],
         "cart_all_spec_number": 3,          【购物车的规格数量和】
