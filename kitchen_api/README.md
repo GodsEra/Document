@@ -52,6 +52,8 @@ data                响应数据 具体参考其接口文档
 10009,              风控校验失败
 10099,              API 已弃用
 10098,              处理失败
+11000,              还有未支付的预购差价
+
 
 10007,              登录错误
 
@@ -130,6 +132,7 @@ status 22 已完成 已评论 状态
 
 ### 2019.6.28
 >* [购物车列表](#购物车列表) 添加 购物车状态：normal 正常 lacked 失效
+>* [支付订单](#支付订单) 添加 异常状态码 11000 还有未支付的预购差价,当出现异常状态时会附带需要支付的订单数据 wait_pay_order
 
 ## 接口目录
 
@@ -2426,6 +2429,19 @@ string      pay_type                【支付方式：微信 weixin  支付宝 a
     "responseMessage": "订单不存在",
     "data": {}
 }
+{
+    "responseCode": "11000",
+    "responseMessage": "您还有未支付的预购差价，请先付清差价",
+    "data": {
+        "wait_pay_order": {                            【还未支付的尾款订单】
+            "order_sn": "S201906271712571326",          【未支付订单号】
+            "total_amount": "10.00",                    【未支付价格】
+            "title": "福之泉大豆油25L",                   【规格名】
+            "buy_number": 2,                             【规格购买数量】
+            "advance_parent_order_sn": "S201906271712571321"            【父订单号】
+        }
+    }
+}
 ```  
 [接口目录](#接口目录)
 
@@ -2472,11 +2488,11 @@ string/null    status_choice                     【订单状态选择：no_pay 
                     "pay_price": "5.00",                        【订单实付金额】
                     "create_time": "2019-04-20 17:27:30",           【订单创建时间】
                     "type": "advance",                              【订单类型（标准的-std，预订-advance，预订补款-advance_son）】
-                    "wait_pay_order": {                             【还未支付的尾款订单】
-                        "order_sn": "S201906271712571323",
-                        "total_amount": "30.00",
-                        "title": null,
-                        "buy_number": 1
+                    "wait_pay_order": {                            【还未支付的尾款订单】
+                        "order_sn": "S201906271712571326",          【未支付订单号】
+                        "total_amount": "10.00",                    【未支付价格】
+                        "title": "福之泉大豆油25L",                   【规格名】
+                        "buy_number": 2,                             【规格购买数量】
                     },
                     "spec_list": [                        【订单规格列表】
                         {
