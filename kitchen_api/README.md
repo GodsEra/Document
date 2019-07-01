@@ -2435,10 +2435,13 @@ string      pay_type                【支付方式：微信 weixin  支付宝 a
     "data": {
         "wait_pay_order": {                            【还未支付的尾款订单】
             "order_sn": "S201906271712571326",          【未支付订单号】
-            "total_amount": "10.00",                    【未支付价格】
+            "total_amount": "10.00",                    【未支付的总价格】
             "title": "福之泉大豆油25L",                   【规格名】
             "buy_number": 2,                             【规格购买数量】
-            "advance_parent_order_sn": "S201906271712571321"            【父订单号】
+            "advance_parent_order_sn": "S201906271712571321",   【父订单号】
+            "advance_parent_status": 1,                         【父订单状态】
+            "advance_parent_total_amount": "0.04",              【父订单总价格】
+            "actual_total_amount": 10.04                        【实际的总价格】
         }
     }
 }
@@ -2493,6 +2496,10 @@ string/null    status_choice                     【订单状态选择：no_pay 
                         "total_amount": "10.00",                    【未支付价格】
                         "title": "福之泉大豆油25L",                   【规格名】
                         "buy_number": 2,                             【规格购买数量】
+                        "advance_parent_order_sn": "S201904201727304308",   【父订单号】
+                        "advance_parent_status": 1,                         【父订单状态】
+                        "advance_parent_total_amount": "0.04",              【父订单总价格】
+                        "actual_total_amount": 10.04                        【实际的总价格】
                     },
                     "spec_list": [                        【订单规格列表】
                         {
@@ -2620,11 +2627,15 @@ string      order_sn                                【订单号】
             "remarks": "555555",                        【订单备注】
             "pay_time": null,                           【时间->订单付款时间】
             "type": "advance",                              【订单类型（标准的-std，预订-advance，预订补款-advance_son）】
-            "wait_pay_order": {                             【还未支付的尾款订单】
-                "order_sn": "S201906271712571323",
-                "total_amount": "30.00",
-                "title": "伊品鸡精",
-                "buy_number": 1
+            "wait_pay_order": {                            【还未支付的尾款订单】
+                "order_sn": "S201906271712571323",          【未支付订单号】
+                "total_amount": "10.00",                    【未支付价格】
+                "title": "福之泉大豆油25L",                   【规格名】
+                "buy_number": 2,                             【规格购买数量】
+                "advance_parent_order_sn": "S201904201727304308",   【父订单号】
+                "advance_parent_status": 1,                         【父订单状态】
+                "advance_parent_total_amount": "0.04",              【父订单总价格】
+                "actual_total_amount": 10.04                        【实际的总价格】
             },
             "spec_list": {                          【规格列表信息】
                 "list": [                           【列表】
