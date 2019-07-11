@@ -1,4 +1,4 @@
-# 大神厨房APP接口文档
+# 美香厨APP接口文档
 ```
 注意事项 
 1、加密key ：8Klr!;tey#3{O/dT9>H)H_*qlt(G$LHq|zF{YlH@3M_6iSn    （生成签名所需）
@@ -134,6 +134,10 @@ status 22 已完成 已评论 状态
 >* [购物车列表](#购物车列表) 添加 购物车状态：normal 正常 lacked 失效
 >* [支付订单](#支付订单) 添加 异常状态码 11000 还有未支付的预购差价,当出现异常状态时会附带需要支付的订单数据 wait_pay_order
 
+###2019.7.11
+>* [商品详情](#商品详情) 添加 是否已加入常购清单状态：是-joined 否-not_joined
+>* 增加 [加入常购清单](#加入常购清单) [已加入的常购清单列表](#已加入的常购清单列表)  
+
 ## 接口目录
 
 ### 登录相关
@@ -170,6 +174,10 @@ status 22 已完成 已评论 状态
 
 [商品详情](#商品详情)  
 
+[加入常购清单](#加入常购清单)  
+
+[已加入的常购清单列表](#已加入的常购清单列表)  
+
 [商品评论列表](#商品评论列表)  
 
 ### 专题相关
@@ -182,7 +190,7 @@ status 22 已完成 已评论 状态
 
 [收藏商品](#收藏商品)
 
-[收藏的商品列表](#收藏的商品列表)
+[已收藏的商品列表](#已收藏的商品列表)
   
 [清空商品收藏](#清空商品收藏)  
 
@@ -1362,7 +1370,8 @@ int         id              【商品ID】
                     "unit": "1杯",            【规格单位注释】
                     "stock_number": 50,          【规格库存】
                     "type": "std",                      【规格类型：标准的-std，预订的-advance】
-                    "min_buy_number": 1         【起售数】
+                    "min_buy_number": 1,         【起售数】
+                    "join_status": "joined"         【是否已加入常购清单状态：是-joined 否-not_joined】
                 },
                 {
                     "id": 11,
@@ -1372,7 +1381,8 @@ int         id              【商品ID】
                     "unit": "1",
                     "stock_number": 20,
                     "type": "std", 
-                    "min_buy_number": 1         【起售数】
+                    "min_buy_number": 1,
+                    "join_status": "not_joined"
                 }
             ],
             "distribution_price": 0,            【运费】
@@ -1419,6 +1429,118 @@ int         id              【商品ID】
         "user_agent": {
             "tel": "18381082766"
         }
+    }
+}
+```  
+[接口目录](#接口目录)
+
+### 加入常购清单
+ 
+> 接口地址 /good/join_buy_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+int         spec_id                        【规格ID】                         
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "加入常购清单成功",
+    "data": {
+        "spec_id": 64,
+        "join_status": "joined"
+    }
+}
+{
+    "responseCode": "0",
+    "responseMessage": "取消常购清单成功",
+    "data": {
+        "spec_id": 64,
+        "join_status": "not_joined"
+    }
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "规格不存在",
+    "data": {}
+}
+```  
+[接口目录](#接口目录)
+
+### 已加入的常购清单列表
+
+> 接口地址 /good/joined_buy_list
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "ok",
+    "data": {
+        "buy_list": [
+            {
+                "spec_id": 171,                 【规格ID】       
+                "buy_number": 1,                【购买数量增量】
+                "good_id": 12,                      【商品ID】
+                "good_title": "回锅肉",             【商品名】
+                "good_litpic": "http:\/\/www.ypvpa.localhost",      【商品图片】
+                "name": "2斤",                   【规格单位】
+                "unit": "kg"                    【规格单位注释】
+                "source_price": "22.00",            【规格原始标价】
+                "price": "11.00",                    【规格售价】
+                "stock_number": 100,                   【规格库存】
+                "min_buy_number": 2,                      【起售数】 
+                "status": "normal"                      【状态：normal 正常 lacked 失效】
+            },
+            {
+                "spec_id": 64,
+                "buy_number": 8,
+                "good_id": 3,
+                "good_title": "中粮米川府藏香",
+                "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/30a47f62e9bd49a1101592f4f95f493a.jpg",
+                "name": "50斤",
+                "unit": "袋",
+                "price": "115.00",
+                "source_price": "115.00",
+                "stock_number": 85,
+                "min_buy_number": 1,
+                "status": "normal"
+            },
+            {
+                "spec_id": 62,
+                "buy_number": 2,
+                "good_id": 7,
+                "good_title": "福掌柜超香菜籽油20L",
+                "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/d9d29b632018464aad8e2828fbd42e25.jpg",
+                "name": "20L",
+                "unit": "件",
+                "price": "170.00",
+                "source_price": "180.00",
+                "stock_number": 42,
+                "min_buy_number": 1,
+                "status": "normal"
+            }
+        ]
     }
 }
 ```  
@@ -1699,7 +1821,7 @@ int      goods_id                                【商品ID】
 ```  
 [接口目录](#接口目录)
 
-### 收藏的商品列表
+### 已收藏的商品列表
  
 > 接口地址 /good/loved_good_list
 
@@ -3114,7 +3236,7 @@ string      order_sn                                【订单号】
                 "pay_price": 0.01
             },
             "status_string": "订单已完成",
-            "status_string_description": "感谢您使用大神厨房",
+            "status_string_description": "感谢您使用美香厨",
             "create_time_string": "7分钟前",
             "pay_type_string": "微信支付",
             "distribution_get_order_time": "2019-05-16 15:15:18",
@@ -3554,7 +3676,7 @@ int/null    page                    【页数(默认1)】
             "list": [               【列表】
                 {
                     "id": 1,            【消息ID】
-                    "title": "欢迎来到大神厨房",        【消息题目】
+                    "title": "欢迎来到美香厨",        【消息题目】
                     "description": "666",               【消息摘要】
                     "create_time": "1970-01-01 08:33:39",       【消息创建时间】
                     "is_read": "unread",                        【是否已读:unread 未读,read 已读】
@@ -3605,7 +3727,7 @@ int         id                  【系统消息ID】
     "data": {
         "system": {                     【系统消息信息】
             "id": 1,                        【消息ID】
-            "title": "欢迎来到大神厨房",        【消息题目】
+            "title": "欢迎来到美香厨",        【消息题目】
             "description": "666",               【消息摘要】
             "body": "B站源码被公开 6啊",           【消息内容】
             "create_time": "1970-01-01 08:33:39",       【消息创建时间】
@@ -3943,3 +4065,4 @@ string      checksum
      "data": {}
  }
 ```  
+
