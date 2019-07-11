@@ -1497,7 +1497,7 @@ string      session_security
     "responseCode": "0",
     "responseMessage": "ok",
     "data": {
-        "buy_list": [
+        "buy_list": [                           【清单列表】
             {
                 "spec_id": 171,                 【规格ID】       
                 "buy_number": 1,                【购买数量增量】
@@ -4065,4 +4065,6 @@ string      checksum
      "data": {}
  }
 ```  
+[接口目录](#接口目录)
+
 
