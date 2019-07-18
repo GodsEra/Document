@@ -309,6 +309,9 @@ string      device_id           【设备号】
 
 > 请求方式 POST
 
+<details>
+<summary>参数查看</summary>
+
 > ** 传递参数 Request Data : **
 ```
 int         reqTime     
@@ -329,6 +332,8 @@ string      mobile          【用户手机号】
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 密码登录
@@ -336,6 +341,9 @@ string      mobile          【用户手机号】
 > 接口地址 /user/login_via_password
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -375,6 +383,8 @@ string      password        【登陆密码】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 验证码登录
@@ -382,6 +392,9 @@ string      password        【登陆密码】
 > 接口地址 /user/login_via_sms
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -426,6 +439,9 @@ string      verify_code        【验证码】
     "data": ""
 }
 ```  
+</details>
+<summary>参数查看</summary>
+
 [接口目录](#接口目录)
 
 ### 找回密码
@@ -433,6 +449,9 @@ string      verify_code        【验证码】
 > 接口地址 /user/find_password
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -463,6 +482,8 @@ string      verify_code        【验证码】
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 用户详情
@@ -470,6 +491,9 @@ string      verify_code        【验证码】
 > 接口地址 /user/user
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -502,6 +526,8 @@ string      session_security
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 设置坐标
@@ -509,6 +535,9 @@ string      session_security
 > 接口地址 /user/set_coordinate_info
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -535,6 +564,8 @@ string/null         address                                     【详细地址�
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 首页
@@ -542,6 +573,9 @@ string/null         address                                     【详细地址�
 > 接口地址 /navigation/index
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -751,6 +785,8 @@ int/null    random_number                 【获取随机商品列表个数（�
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 分类页面
@@ -758,6 +794,9 @@ int/null    random_number                 【获取随机商品列表个数（�
 > 接口地址 /navigation/sort
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -915,6 +954,8 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 分类页面V2
@@ -922,6 +963,9 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
 > 接口地址 /navigation/sort_v2
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1033,6 +1077,8 @@ string      session_security
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 二级分类
@@ -1040,6 +1086,9 @@ string      session_security
 > 接口地址 /sort/son_good_cate_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1080,6 +1129,8 @@ int         parent_cate_id          【一级分类（上级分类）ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 商品列表
@@ -1087,6 +1138,9 @@ int         parent_cate_id          【一级分类（上级分类）ID】
 > 接口地址 /good/good_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1218,6 +1272,8 @@ int/null    page                    【页数(默认1)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 查询商品列表
@@ -1225,6 +1281,9 @@ int/null    page                    【页数(默认1)】
 > 接口地址 /good/search_good_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1355,6 +1414,8 @@ string      search                  【查询字符串】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 热门查询词列表
@@ -1362,6 +1423,9 @@ string      search                  【查询字符串】
 > 接口地址 /good/hot_search_word_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1396,6 +1460,8 @@ int/null    number              【列表显示数量(默认后台配置)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 商品详情
@@ -1403,6 +1469,9 @@ int/null    number              【列表显示数量(默认后台配置)】
 > 接口地址 /good/good
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1500,6 +1569,8 @@ int         id              【商品ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 加入常购清单
@@ -1507,6 +1578,9 @@ int         id              【商品ID】
 > 接口地址 /good/join_buy_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1542,6 +1616,8 @@ int         spec_id                        【规格ID】
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 已加入的常购清单列表
@@ -1549,6 +1625,9 @@ int         spec_id                        【规格ID】
 > 接口地址 /good/joined_buy_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1612,6 +1691,8 @@ string      session_security
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 商品评论列表
@@ -1619,6 +1700,9 @@ string      session_security
 > 接口地址 /good/good_evaluation_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1693,6 +1777,8 @@ int         goods_id              【商品ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 专题详情
@@ -1700,6 +1786,9 @@ int         goods_id              【商品ID】
 > 接口地址 /object/object
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1812,6 +1901,8 @@ int/null    page                    【商品列表页数(默认1)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 关于详情
@@ -1819,6 +1910,9 @@ int/null    page                    【商品列表页数(默认1)】
 > 接口地址 /about/about
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1850,6 +1944,8 @@ int         id                      【关于ID】
     }
 }
 ```  
+<details>
+
 [接口目录](#接口目录)
 
 ### 收藏商品
@@ -1857,6 +1953,9 @@ int         id                      【关于ID】
 > 接口地址 /good/love_good
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1887,6 +1986,8 @@ int      goods_id                                【商品ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 已收藏的商品列表
@@ -1894,6 +1995,9 @@ int      goods_id                                【商品ID】
 > 接口地址 /good/loved_good_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2067,6 +2171,8 @@ int/null        page                    【页数(默认1)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 清空商品收藏
@@ -2074,6 +2180,9 @@ int/null        page                    【页数(默认1)】
 > 接口地址 /good/empty_good_love
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2097,6 +2206,8 @@ string      session_security
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 购物车列表
@@ -2104,6 +2215,9 @@ string      session_security
 > 接口地址 /navigation/cart_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2179,6 +2293,8 @@ string      session_security
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 计算购物车
@@ -2186,6 +2302,9 @@ string      session_security
  > 接口地址 /cart/calculate_cart
  
  > 请求方式 POST
+ 
+ <details>
+ <summary>参数查看</summary>
  
  > ** 传递参数 Request Data : **
  ```
@@ -2223,6 +2342,8 @@ string      session_security
      "data": {}
  }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 批量删除购物车
@@ -2230,6 +2351,9 @@ string      session_security
 > 接口地址 /cart/delete_carts
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2253,6 +2377,8 @@ string      spec_ids                 【批量规格ID,ID之间以英文半角�
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 订单确认页面
@@ -2260,6 +2386,9 @@ string      spec_ids                 【批量规格ID,ID之间以英文半角�
 > 接口地址 /order/order_ok
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2498,6 +2627,8 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 检测规格库存
@@ -2505,6 +2636,9 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 > 接口地址 /order/check_spec_stock
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2534,6 +2668,8 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 下单
@@ -2541,6 +2677,9 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 > 接口地址 /order/generate_order
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2572,6 +2711,8 @@ string/null         end_arrive_time                    【配送结束时间 比
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 支付订单
@@ -2579,6 +2720,9 @@ string/null         end_arrive_time                    【配送结束时间 比
 > 接口地址 /order/pay_order
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2636,6 +2780,8 @@ string      pay_type                【支付方式：微信 weixin  支付宝 a
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 订单列表
@@ -2643,6 +2789,9 @@ string      pay_type                【支付方式：微信 weixin  支付宝 a
 > 接口地址 /order/order_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2770,6 +2919,8 @@ string/null    status_choice                     【订单状态选择：no_pay 
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 订单详情
@@ -2777,6 +2928,9 @@ string/null    status_choice                     【订单状态选择：no_pay 
 > 接口地址 /order/order
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3337,6 +3491,8 @@ string      order_sn                                【订单号】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 订单取消原因列表
@@ -3344,6 +3500,9 @@ string      order_sn                                【订单号】
 > 接口地址 /order/order_cancel_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3381,6 +3540,8 @@ string      session_security
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 取消订单
@@ -3388,6 +3549,9 @@ string      session_security
 > 接口地址 /order/cancel_order
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3418,6 +3582,8 @@ string/null    status_cancel_choice                 【订单状态取消原因:
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 删除订单
@@ -3425,6 +3591,9 @@ string/null    status_cancel_choice                 【订单状态取消原因:
 > 接口地址 /order/delete_order
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3454,6 +3623,8 @@ string      order_sn                                【订单号】
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 订单日志列表
@@ -3461,6 +3632,9 @@ string      order_sn                                【订单号】
 > 接口地址 /order/order_log_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3538,6 +3712,8 @@ int/null    page                    【页数(默认1)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 订单追踪列表
@@ -3545,6 +3721,9 @@ int/null    page                    【页数(默认1)】
 > 接口地址 /order/order_trace_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3610,6 +3789,8 @@ string      order_sn                                【订单号】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 评论订单
@@ -3617,6 +3798,9 @@ string      order_sn                                【订单号】
 > 接口地址 /order/evaluate_order
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3649,6 +3833,8 @@ string      evaluation                              【评论】
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 消息详情
@@ -3656,6 +3842,9 @@ string      evaluation                              【评论】
 > 接口地址 /plugin/message
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3676,6 +3865,8 @@ string      session_security
     }
 }
 ```
+</details>
+
 [接口目录](#接口目录)
 
 ### 消息中心列表
@@ -3683,6 +3874,9 @@ string      session_security
 > 接口地址 /plugin/message_center_function_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3718,6 +3912,8 @@ string      session_security
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 系统消息列表
@@ -3725,6 +3921,9 @@ string      session_security
 > 接口地址 /plugin/system_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3772,6 +3971,8 @@ int/null    page                    【页数(默认1)】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 系统消息详情
@@ -3779,6 +3980,9 @@ int/null    page                    【页数(默认1)】
 > 接口地址 /plugin/system
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3812,6 +4016,8 @@ int         id                  【系统消息ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 常见问题列表
@@ -3819,6 +4025,9 @@ int         id                  【系统消息ID】
 > 接口地址 /plugin/question_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3849,6 +4058,8 @@ string      checksum
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 常见问题详情
@@ -3856,6 +4067,9 @@ string      checksum
 > 接口地址 /plugin/question
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3887,6 +4101,8 @@ int         id                  【常见问题ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 协议列表
@@ -3894,6 +4110,9 @@ int         id                  【常见问题ID】
 > 接口地址 /plugin/agreement_list
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3924,6 +4143,8 @@ string      checksum
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 协议详情
@@ -3931,6 +4152,9 @@ string      checksum
 > 接口地址 /plugin/agreement
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3962,6 +4186,8 @@ int         id                  【协议ID】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 写留言
@@ -3969,6 +4195,9 @@ int         id                  【协议ID】
 > 接口地址 /mes_book/write_mes_book
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4000,6 +4229,8 @@ string      body                        【内容】
     "data": {}
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### ios版本
@@ -4007,6 +4238,9 @@ string      body                        【内容】
 > 接口地址 /plugin/ios_version
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4037,6 +4271,8 @@ string      body                        【内容】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### android版本
@@ -4044,6 +4280,9 @@ string      body                        【内容】
 > 接口地址 /plugin/android_version
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4076,6 +4315,8 @@ string      body                        【内容】
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### 资质条款
@@ -4083,6 +4324,9 @@ string      body                        【内容】
 > 接口地址 /about/mine_clause
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4106,6 +4350,8 @@ string      checksum
     }
 }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 ### H5首页3U
@@ -4113,6 +4359,9 @@ string      checksum
  > 接口地址 /h5/index_3u
  
  > 请求方式 GET
+ 
+ <details>
+ <summary>参数查看</summary>
  
  > ** 传递参数 Request Data : **
  ```
@@ -4133,6 +4382,8 @@ string      checksum
      "data": {}
  }
 ```  
+</details>
+
 [接口目录](#接口目录)
 
 
