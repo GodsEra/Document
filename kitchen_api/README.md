@@ -272,12 +272,13 @@ status 22 已完成 已评论 状态
 ## 接口
 
 ### 请求mobile_id
-<details>
-<summary>查看</summary>
 
 > 接口地址 /plugin/get_mobile_id 
 
 > 请求方式 POST
+
+<details>
+<summary>参数查看</summary>
 
 > ** 传递参数 Request Data : **
 ```
