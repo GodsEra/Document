@@ -272,6 +272,8 @@ status 22 已完成 已评论 状态
 ## 接口
 
 ### 请求mobile_id
+<details>
+<summary>查看</summary>
 
 > 接口地址 /plugin/get_mobile_id 
 
@@ -286,9 +288,6 @@ string      device_id           【设备号】
 ```
 
 > ** 返回参数 Response Data : **
-<details>
-<summary>查看</summary>
-
 ```
 {
     "responseCode": 0,
@@ -300,6 +299,7 @@ string      device_id           【设备号】
 
 ```  
 </details>
+
 [接口目录](#接口目录)
 
 ### 发送验证码
