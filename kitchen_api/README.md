@@ -32,7 +32,7 @@
 
 ## 状态码
 <details>
-<summary>###状态码说明</summary>
+<summary>状态码说明</summary>
 
 ```
 responseCode        响应状态 
@@ -42,7 +42,7 @@ data                响应数据 具体参考其接口文档
 </details>
 
 <details>
-<summary>###状态码列表</summary>
+<summary>状态码列表</summary>
 
 ```
 0                   成功
@@ -286,6 +286,9 @@ string      device_id           【设备号】
 ```
 
 > ** 返回参数 Response Data : **
+<details>
+<summary>查看</summary>
+
 ```
 {
     "responseCode": 0,
@@ -296,6 +299,7 @@ string      device_id           【设备号】
 }
 
 ```  
+</details>
 [接口目录](#接口目录)
 
 ### 发送验证码
