@@ -139,7 +139,7 @@ status 22 已完成 已评论 状态
 >* 增加 [加入常购清单](#加入常购清单) [已加入的常购清单列表](#已加入的常购清单列表)  
 
 ### 2019.7.18
->* [首页](#首页) 添加 坐标信息 coordinate_info
+>* [首页](#首页) [密码登录](#密码登录) [验证码登录](#验证码登录) 添加 坐标信息 coordinate_info
 >* 增加 [设置坐标](#设置坐标)
 
 ## 接口目录
@@ -356,6 +356,11 @@ string      password        【登陆密码】
             "extension_city_name": "天津市",                   【商户市名】
             "extension_area_name": "河东区",                   【商户区名】
             "extension_address": "红星路四段"                    【商户地址】
+        },
+        "coordinate_info": {            【坐标信息】
+            "address": "成都高新区",         【地址】
+            "coordinate_x": "3.0000000",    【横坐标】
+            "coordinate_y": "4.0000000"     【纵坐标】
         }
     }
 }
@@ -397,6 +402,11 @@ string      verify_code        【验证码】
             "extension_city_name": "天津市",                   【商户市名】
             "extension_area_name": "河东区",                   【商户区名】
             "extension_address": "红星路四段"                    【商户地址】
+        },
+        "coordinate_info": {            【坐标信息】
+            "address": "成都高新区",         【地址】
+            "coordinate_x": "3.0000000",    【横坐标】
+            "coordinate_y": "4.0000000"     【纵坐标】
         }
     }
 }
