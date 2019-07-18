@@ -31,12 +31,16 @@
 ```
 
 ## 状态码
-> **状态码说明**
+<details>
+<summary>状态码说明</summary>
+
 ```
 responseCode        响应状态 
 responseMessage     响应信息
 data                响应数据 具体参考其接口文档
 ```
+</details>
+
 > **responseCode返回状态码**
 ```
 0                   成功
