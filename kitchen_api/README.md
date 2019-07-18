@@ -440,7 +440,6 @@ string      verify_code        【验证码】
 }
 ```  
 </details>
-<summary>参数查看</summary>
 
 [接口目录](#接口目录)
 
