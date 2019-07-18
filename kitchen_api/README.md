@@ -284,7 +284,7 @@ status 22 已完成 已评论 状态
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -316,7 +316,7 @@ string      device_id           【设备号】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -349,7 +349,7 @@ string      mobile          【用户手机号】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -400,7 +400,7 @@ string      password        【登陆密码】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -456,7 +456,7 @@ string      verify_code        【验证码】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -498,7 +498,7 @@ string      verify_code        【验证码】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -542,7 +542,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -580,7 +580,7 @@ string/null         address                                     【详细地址�
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -801,7 +801,7 @@ int/null    random_number                 【获取随机商品列表个数（�
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -970,7 +970,7 @@ int/null    cate_id                 【分类ID(默认选择第一个)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1093,7 +1093,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1145,7 +1145,7 @@ int         parent_cate_id          【一级分类（上级分类）ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1288,7 +1288,7 @@ int/null    page                    【页数(默认1)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1430,7 +1430,7 @@ string      search                  【查询字符串】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1476,7 +1476,7 @@ int/null    number              【列表显示数量(默认后台配置)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1585,7 +1585,7 @@ int         id              【商品ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1632,7 +1632,7 @@ int         spec_id                        【规格ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1707,7 +1707,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1793,7 +1793,7 @@ int         goods_id              【商品ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1917,7 +1917,7 @@ int/null    page                    【商品列表页数(默认1)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -1960,7 +1960,7 @@ int         id                      【关于ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2002,7 +2002,7 @@ int      goods_id                                【商品ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2187,7 +2187,7 @@ int/null        page                    【页数(默认1)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2222,7 +2222,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2309,7 +2309,7 @@ string      session_security
  > 请求方式 POST
  
  <details>
- <summary>参数查看</summary>
+ <summary></summary>
  
  > ** 传递参数 Request Data : **
  ```
@@ -2358,7 +2358,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2393,7 +2393,7 @@ string      spec_ids                 【批量规格ID,ID之间以英文半角�
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2643,7 +2643,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2684,7 +2684,7 @@ string/null         spec_ids_numbers                 【批量规格ID与数量�
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2727,7 +2727,7 @@ string/null         end_arrive_time                    【配送结束时间 比
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2796,7 +2796,7 @@ string      pay_type                【支付方式：微信 weixin  支付宝 a
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -2935,7 +2935,7 @@ string/null    status_choice                     【订单状态选择：no_pay 
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3507,7 +3507,7 @@ string      order_sn                                【订单号】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3556,7 +3556,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3598,7 +3598,7 @@ string/null    status_cancel_choice                 【订单状态取消原因:
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3639,7 +3639,7 @@ string      order_sn                                【订单号】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3728,7 +3728,7 @@ int/null    page                    【页数(默认1)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3805,7 +3805,7 @@ string      order_sn                                【订单号】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3849,7 +3849,7 @@ string      evaluation                              【评论】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3881,7 +3881,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3928,7 +3928,7 @@ string      session_security
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -3987,7 +3987,7 @@ int/null    page                    【页数(默认1)】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4032,7 +4032,7 @@ int         id                  【系统消息ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4074,7 +4074,7 @@ string      checksum
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4117,7 +4117,7 @@ int         id                  【常见问题ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4159,7 +4159,7 @@ string      checksum
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4202,7 +4202,7 @@ int         id                  【协议ID】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4245,7 +4245,7 @@ string      body                        【内容】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4287,7 +4287,7 @@ string      body                        【内容】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4331,7 +4331,7 @@ string      body                        【内容】
 > 请求方式 POST
 
 <details>
-<summary>参数查看</summary>
+<summary></summary>
 
 > ** 传递参数 Request Data : **
 ```
@@ -4366,7 +4366,7 @@ string      checksum
  > 请求方式 GET
  
  <details>
- <summary>参数查看</summary>
+ <summary></summary>
  
  > ** 传递参数 Request Data : **
  ```
