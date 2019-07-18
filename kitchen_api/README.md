@@ -1945,7 +1945,7 @@ int         id                      【关于ID】
     }
 }
 ```  
-<details>
+</details>
 
 [接口目录](#接口目录)
 
