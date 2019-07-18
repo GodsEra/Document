@@ -31,8 +31,10 @@
 ```
 
 ## 状态码
+
+### 状态码说明
 <details>
-<summary>状态码说明</summary>
+<summary></summary>
 
 ```
 responseCode        响应状态 
@@ -41,8 +43,9 @@ data                响应数据 具体参考其接口文档
 ```
 </details>
 
+### 状态码列表
 <details>
-<summary>状态码列表</summary>
+<summary></summary>
 
 ```
 0                   成功
