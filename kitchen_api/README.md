@@ -1,6 +1,7 @@
 # 美香厨APP接口文档
+
+## 注意事项
 ```
-注意事项 
 1、加密key ：8Klr!;tey#3{O/dT9>H)H_*qlt(G$LHq|zF{YlH@3M_6iSn    （生成签名所需）
 
 2、每次发送请求   需生成  checksum  字段
@@ -24,17 +25,12 @@
 
 ## 请求地址
 ```
-接口开始
-
 测试地址: http://kitchenapi.marketing.ypvpa.com
-
 ```
 
 ## 状态码
-
-### 状态码说明
 <details>
-<summary></summary>
+<summary>状态码说明</summary>
 
 ```
 responseCode        响应状态 
@@ -43,9 +39,8 @@ data                响应数据 具体参考其接口文档
 ```
 </details>
 
-### 状态码列表
 <details>
-<summary></summary>
+<summary>状态码列表</summary>
 
 ```
 0                   成功
