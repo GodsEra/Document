@@ -359,8 +359,8 @@ string      password        【登陆密码】
         },
         "coordinate_info": {            【坐标信息】
             "address": "成都高新区",         【地址】
-            "coordinate_x": "3.0000000",    【横坐标】
-            "coordinate_y": "4.0000000"     【纵坐标】
+            "coordinate_x": "3.0000000",    【纬度】
+            "coordinate_y": "4.0000000"     【经度】
         }
     }
 }
@@ -405,8 +405,8 @@ string      verify_code        【验证码】
         },
         "coordinate_info": {            【坐标信息】
             "address": "成都高新区",         【地址】
-            "coordinate_x": "3.0000000",    【横坐标】
-            "coordinate_y": "4.0000000"     【纵坐标】
+            "coordinate_x": "3.0000000",    【纬度】
+            "coordinate_y": "4.0000000"     【经度】
         }
     }
 }
@@ -507,8 +507,8 @@ string      checksum
 string      mobile_id
 string      session_id        
 string      session_security
-string              coordinate_x                                【横坐标】
-string              coordinate_y                                【纵坐标】
+string              coordinate_x                                【纬度】
+string              coordinate_y                                【经度】
 string/null         address                                     【详细地址】
 ```
 
@@ -521,7 +521,7 @@ string/null         address                                     【详细地址�
 }
 {
     "responseCode": "10001",
-    "responseMessage": "缺少纵坐标 coordinate_y",
+    "responseMessage": "缺少经度 coordinate_y",
     "data": {}
 }
 ```  
@@ -692,8 +692,8 @@ int/null    random_number                 【获取随机商品列表个数（�
         "un_read_number": 2,             【消息未读数】          
         "coordinate_info": {            【坐标信息】
             "address": "成都高新区",         【地址】
-            "coordinate_x": "3.0000000",    【横坐标】
-            "coordinate_y": "4.0000000"     【纵坐标】
+            "coordinate_x": "3.0000000",    【纬度】
+            "coordinate_y": "4.0000000"     【经度】
         }
     }
 }
