@@ -134,9 +134,13 @@ status 22 已完成 已评论 状态
 >* [购物车列表](#购物车列表) 添加 购物车状态：normal 正常 lacked 失效
 >* [支付订单](#支付订单) 添加 异常状态码 11000 还有未支付的预购差价,当出现异常状态时会附带需要支付的订单数据 wait_pay_order
 
-###2019.7.11
+### 2019.7.11
 >* [商品详情](#商品详情) 添加 是否已加入常购清单状态：是-joined 否-not_joined
 >* 增加 [加入常购清单](#加入常购清单) [已加入的常购清单列表](#已加入的常购清单列表)  
+
+### 2019.7.18
+>* [首页](#首页) 添加 坐标信息 coordinate_info
+>* 增加 [设置坐标](#设置坐标)
 
 ## 接口目录
 
@@ -480,6 +484,39 @@ string      session_security
 ```  
 [接口目录](#接口目录)
 
+### 设置坐标
+ 
+> 接口地址 /user/set_coordinate_info
+
+> 请求方式 POST
+
+> ** 传递参数 Request Data : **
+```
+int         reqTime     
+string      checksum 
+string      mobile_id
+string      session_id        
+string      session_security
+string              coordinate_x                                【横坐标】
+string              coordinate_y                                【纵坐标】
+string/null         address                                     【详细地址】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "responseCode": "0",
+    "responseMessage": "坐标设置成功",
+    "data": {}
+}
+{
+    "responseCode": "10001",
+    "responseMessage": "缺少纵坐标 coordinate_y",
+    "data": {}
+}
+```  
+[接口目录](#接口目录)
+
 ### 首页
 
 > 接口地址 /navigation/index
@@ -642,7 +679,12 @@ int/null    random_number                 【获取随机商品列表个数（�
         "cart_all_spec_number": 4,      【购物车的规格数量和】
         "cart_all_buy_number": 5,      【购物车的规格购买数量和】
         "cart_all_price": "7.03",      【购物车的购物车总金额】
-        "un_read_number": 2             【消息未读数】          
+        "un_read_number": 2,             【消息未读数】          
+        "coordinate_info": {            【坐标信息】
+            "address": "成都高新区",         【地址】
+            "coordinate_x": "3.0000000",    【横坐标】
+            "coordinate_y": "4.0000000"     【纵坐标】
+        }
     }
 }
 
@@ -679,7 +721,13 @@ int/null    random_number                 【获取随机商品列表个数（�
         "good_list": [],
         "cart_all_spec_number": 4,
         "cart_all_buy_number": 5,
-        "cart_all_price": "7.03"
+        "cart_all_price": "7.03",
+        "un_read_number": 2,           
+        "coordinate_info": {
+            "address": "成都高新区",
+            "coordinate_x": "3.0000000",
+            "coordinate_y": "4.0000000"
+        }
     }
 }
 ```  
