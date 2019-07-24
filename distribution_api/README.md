@@ -1103,6 +1103,8 @@ $params   session_security  【登陆的时候 返回的值】
 [接口目录](#接口目录)
 
 ### 设置坐标
+
+> 推荐每分钟设置1次
  
 > 接口地址 /dispatch/index
 
