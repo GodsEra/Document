@@ -115,12 +115,19 @@ string      token           【口令】
             // 商品列表
             "list": [
                 {
+                    // 商品ID
                     "id": 22,
+                    // 商品名 
                     "good_title": "扬名12kg精制红油豆瓣",
+                    // 商品图片
                     "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
+                    // 单位
                     "name": "12kg",
+                    // 单价
                     "price": "0.01",
+                    // 已售数
                     "payed_buy_number": 25,
+                    // 好评率
                     "high_opinion_rate": "0%"
                 }
             ],
