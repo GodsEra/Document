@@ -41,16 +41,18 @@ data                响应数据 具体参考其接口文档
 
 ### 登录相关
 
-[登录](#登录)  
+[密码登录](#密码登录)  
+
+[验证码登录](#验证码登录)  
 
 ### 导航相关
 [首页](#首页)
 
 ## 接口
 
-### 登录
+### 密码登录
 
-> 接口地址 /account/login
+> 接口地址 /account/login_via_password
 
 > 请求方式 POST
 
@@ -78,6 +80,48 @@ string      password            【密码】
 {
     "code": 400,
     "msg": "帐号或密码错误",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "invalid code, hints: [ req_id: xHAD0qLnRa-2Viq7a ]",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 验证码登录
+
+> 接口地址 /account/login_via_sms
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string      access_token        【登录口令：具体询问开发者】     
+string      code                【微信js code】 
+string      mobile              【手机号】
+string      verify_code            【验证码】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "亲，关联微信成功~",
+    "data": {
+        // 口令，相当于微信里的3rd_session，用于保持登录状态，登录后的接口都要带此参数
+        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ=="
+    }
+}
+{
+    "code": 400,
+    "msg": "亲，验证码已过期~",
     "data": {}
 }
 {
