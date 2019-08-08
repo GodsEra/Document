@@ -25,6 +25,7 @@ data                响应数据 具体参考其接口文档
 200                 操作成功
 400                 操作失败
 500                 异常
+600                 token无效或过期异常
 ```
 </details>
 
@@ -450,30 +451,68 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
 
 > ** 传递参数 Request Data : **
 ```
-string      access_token        【登录口令：具体询问开发者】     
-string      code                【微信js code】 
-string      mobile              【手机号】
-string      verify_code            【验证码】
+string              token           【口令】     
+string              order_sn        【订单号】
 ```
 
 > ** 返回参数 Response Data : **
 ```
 {
     "code": 200,
-    "msg": "亲，关联微信成功~",
-    "data": {
-        // 口令，相当于微信里的3rd_session，用于保持登录状态，登录后的接口都要带此参数
-        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ=="
-    }
-}
-{
-    "code": 400,
-    "msg": "亲，验证码已过期~",
+    "msg": "请求成功",
     "data": {}
 }
 {
     "code": 400,
-    "msg": "invalid code, hints: [ req_id: xHAD0qLnRa-2Viq7a ]",
+    "msg": "请求失败，只有待确认接单有权限~",
+    "data": {}
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 修改订单
+
+> 接口地址 /order/edit_order
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+string              order_sn        【订单号】
+float               total_amount    【修改后的订单金额】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "请求失败，只有待修改接单有权限~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "程序罢工，缺少订单金额 total_amount~",
+    "data": {}
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
     "data": {}
 }
 ```  
