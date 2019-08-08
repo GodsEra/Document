@@ -192,6 +192,46 @@ string      verify_code            【验证码】
 
 [接口目录](#接口目录)
 
+### 找回密码
+
+> 接口地址 /account/find_password
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string      access_token        【登录口令：具体询问开发者】     
+string      mobile              【手机号】
+string      verify_code         【验证码】
+string      password            【重置的密码】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "亲，验证码已过期~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "亲，缺少密码~",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+
 ### 首页
 
 > 接口地址 /navigation/index
