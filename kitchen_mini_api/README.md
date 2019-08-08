@@ -105,6 +105,7 @@ string      password            【密码】
 
 > ** 传递参数 Request Data : **
 ```
+string      access_token        【登录口令：具体询问开发者】     
 string      mobile              【手机号】
 ```
 
@@ -112,7 +113,7 @@ string      mobile              【手机号】
 ```
 {
     "code": 200,
-    "msg": "获取成功",
+    "msg": "请求成功",
     "data": {}
 }
 {
@@ -122,7 +123,12 @@ string      mobile              【手机号】
 }
 {
     "code": 400,
-    "msg": "请填写手机号码",
+    "msg": "亲，缺少手机号~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "亲，缺少登录令牌~",
     "data": {}
 }
 ```  
