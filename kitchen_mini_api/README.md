@@ -62,7 +62,7 @@ data                响应数据 具体参考其接口文档
 > ** 传递参数 Request Data : **
 ```
 string      access_token        【登录口令：具体询问开发者】     
-string      code                【微信js code】 
+string      code                【微信js code（暂时不用）】 
 string      mobile              【手机号】
 string      password            【密码】
 ```
@@ -74,7 +74,9 @@ string      password            【密码】
     "msg": "亲，关联微信成功~",
     "data": {
         // 口令，相当于微信里的3rd_session，用于保持登录状态，登录后的接口都要带此参数
-        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ=="
+        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ==",
+        // 过期时间（单位：秒）
+        "expire_time": 2592000
     }
 }
 {
@@ -85,6 +87,42 @@ string      password            【密码】
 {
     "code": 400,
     "msg": "invalid code, hints: [ req_id: xHAD0qLnRa-2Viq7a ]",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 获取验证码
+
+> 接口地址 /account/verify_code
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string      mobile              【手机号】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "短信发送失败",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "请填写手机号码",
     "data": {}
 }
 ```  
@@ -104,7 +142,7 @@ string      password            【密码】
 > ** 传递参数 Request Data : **
 ```
 string      access_token        【登录口令：具体询问开发者】     
-string      code                【微信js code】 
+string      code                【微信js code（暂时不用）】 
 string      mobile              【手机号】
 string      verify_code            【验证码】
 ```
@@ -116,7 +154,9 @@ string      verify_code            【验证码】
     "msg": "亲，关联微信成功~",
     "data": {
         // 口令，相当于微信里的3rd_session，用于保持登录状态，登录后的接口都要带此参数
-        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ=="
+        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ==",
+         // 过期时间（单位：秒）
+        "expire_time": 2592000
     }
 }
 {
@@ -387,6 +427,48 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
         // 订单总数
         "count_order_all": 5
     }
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 确认订单
+
+> 接口地址 /order/accept_order
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string      access_token        【登录口令：具体询问开发者】     
+string      code                【微信js code】 
+string      mobile              【手机号】
+string      verify_code            【验证码】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "亲，关联微信成功~",
+    "data": {
+        // 口令，相当于微信里的3rd_session，用于保持登录状态，登录后的接口都要带此参数
+        "token": "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnZZbXBsWTNRaU9uc2liM0JsYm1sa0lqbzBMQ0p6WlhOemFXOXVYMnRsZVNJNk9YMTkuWVN1dUV5VTRSOFEwemRxWnNjUzU5a3IxMmNMRVk5NHMwQlpqMm1DOHEwTQ=="
+    }
+}
+{
+    "code": 400,
+    "msg": "亲，验证码已过期~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "invalid code, hints: [ req_id: xHAD0qLnRa-2Viq7a ]",
+    "data": {}
 }
 ```  
 </details>
