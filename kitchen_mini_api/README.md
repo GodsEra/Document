@@ -493,6 +493,203 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
 
 [接口目录](#接口目录)
 
+### 订单详情
+
+> 接口地址 /order/order
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+int/null            page            【默认第1页】    
+string/null         status_choice   【默认全部，pay_success 待发货，send_success 待收货，finish 已完成】    
+```
+> * status 0 未付款（待付款） 
+> * status 1 已付款（待发货） (分解为2、3、4)
+> * status 2 （预付款专属）待确认订单 => 可以 确认接单
+> * status 3 （预付款专属）待修改订单 => 可以 修改订单
+> * status 4 （预付款专属）已修改订单 
+> * status 10 已发货（待收货）(分解为11 12 13)
+> * status 11 已发货（待收货）已分配订单 商家拣货完成状态 
+> * status 12 已发货（待收货）已分配订单 配送员接单状态
+> * status 13 已发货（待收货）已分配订单 配送员取货状态
+> * status 20 完成（分解为21 22）
+> * status 21 完成（待评价） 
+> * status 22 完成（已评价） 
+> * status 30 订单取消（交易关闭）
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 订单信息
+        "order": {
+            // 订单号
+            "order_sn": "S201907251024245837",
+            // 订单状态
+            "status": 11,
+            // 时间->下单时间
+            "create_time": "2019-07-25 10:24:24",
+            // 收货人（商户名)
+            "extension_title": "苏杰的商户",
+            // 收货电话（商户电话）
+            "extension_tel": "18381082760",
+            // 收取地址-详细地址（商户地址）
+            "extension_address": "四川省成都市武侯区四川成都",
+            // 预付总金额
+            "total_amount": "0.06",
+            // 订单备注
+            "remarks": null,
+            // 时间->订单付款时间
+            "pay_time": "2019-07-25 10:25:23",
+            // 时间->送达时间
+            "arrive_time": "2019年06月29日 后天 [营业即送 08:00-09:00]",
+            // 规格列表信息
+            "spec_list": {
+                // 列表
+                "list": [
+                    {
+                        // 规格售价
+                        "price": "0.01",
+                        // 商品名
+                        "good_title": "扬名12kg精制红油豆瓣",
+                        // 商品图片
+                        "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
+                        // 购买数量
+                        "buy_number": 6,
+                        // 规格总价
+                        "all_spec_price": 0.06
+                    }
+                ],
+                // 总规格数
+                "all_spec_number": 1,
+                // 总规格购买数量和
+                "all_buy_number": 6,
+                // 总金额
+                "all_price": 0.06,
+                // 总优惠价
+                "all_diff_price": 0,
+                // 运费
+                "distribution_price": "0.00",
+            },
+            // 时间->取消订单时间
+            "cancel_time": null,
+            // 时间->订单拣货时间
+            "distribution_get_order_time": "2019-08-08 10:51:22",
+            // 时间->配送员接单时间
+            "distribution_arriving_time": null,
+            // 时间->配送员取货时间
+            "distribution_sending_time": null,
+            // 时间->订单完成时间
+            "finish_time": null,
+            // 时间->订单评论时间
+            "evaluation_time": null,
+            // 补款总金额
+            "advance_son_total_amount": -0.04,
+            // 实际最后的总金额
+            "final_total_amount": 0.02,
+            // 订单状态显示
+            "status_string": "拣货完成",
+            // 订单状态显示的解释
+            "status_string_description": "商家已完成拣货，等待配送",
+            // 支付方式
+            "pay_type_string": "微信支付",
+            // 物流方式
+            "distribution_type": "大神物流"
+        },
+        // 配送信息
+        "distribution_order": {
+            // 配送员全名
+            "distribution_user_full_name": "罗宝银",
+            // 配送员头像
+            "distribution_user_face": "http://www.ypvpa.localhost/uploads/distribution_user/face/201905/a4acf3ef8c.jpg",
+            // 配送员电话
+            "distribution_user_mobile": "13900000053",
+            // 配送状态
+            "status_string": "已分配",
+            // 坐标信息
+            "coordinate_info": {
+                // 确认接单坐标 到 取货坐标列表
+                "receive_to_pick_goods": {
+                    // 坐标纬度
+                    "coordinate_x": "23.5555556",
+                    // 坐标经度
+                    "coordinate_y": "113.2222222", 
+                    // 接单时间
+                    "create_time": "1970-01-01 08:33:39"
+                },
+                // 取货坐标 到 完成坐标列表
+                "pick_goods_to_merchant": {
+                    // 坐标纬度
+                    "coordinate_x": "23.5555556",
+                    // 坐标经度
+                    "coordinate_y": "113.2222222",
+                    // 取货时间
+                    "create_time": "1970-01-01 08:33:39" 
+                }
+            }
+        }
+    }
+}
+
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        "order": {
+            "order_sn": "S201907171629229317",
+            "status": 1,
+            "create_time": "2019-07-17 16:29:22",
+            "extension_title": "苏杰的商户",
+            "extension_tel": "18381082760",
+            "extension_address": "四川省成都市武侯区四川成都",
+            "total_amount": "0.06",
+            "remarks": null,
+            "pay_time": "2019-07-17 16:29:45",
+            "arrive_time": "2019年06月29日 后天 [营业即送 08:00-09:00]",
+            "spec_list": {
+                "list": [
+                    {
+                        "price": "0.01",
+                        "good_title": "扬名12kg精制红油豆瓣",
+                        "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
+                        "buy_number": 6,
+                        "all_spec_price": 0.06
+                    }
+                ],
+                "all_spec_number": 1,
+                "all_buy_number": 6,
+                "all_price": 0.06,
+                "all_diff_price": 0,
+                "distribution_price": "0.00"
+            },
+            "cancel_time": null,
+            "distribution_get_order_time": null,
+            "distribution_arriving_time": null,
+            "distribution_sending_time": null,
+            "finish_time": null,
+            "evaluation_time": null,
+            "advance_son_total_amount": 0,
+            "final_total_amount": 0.06,
+            "status_string": "已支付",
+            "status_string_description": "订单支付成功，等待商家接单",
+            "pay_type_string": "微信支付",
+            "distribution_type": "大神物流"
+        },
+        "distribution_order": {}
+    }
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
 ### 确认订单
 
 > 接口地址 /order/accept_order
