@@ -289,6 +289,19 @@ int/null            page            【默认第1页】
         },
         // 订单总数
         "count_order_all": 5,
+        // 今日营业额
+        "today_order_amount": 0,
+        // 最新订单
+        "newest_order": {
+            // 订单号
+            "order_sn": "S201907251029519267",
+            // 下单时间
+            "create_time": "2019-07-25 10:29:51",
+            // 订单金额
+            "total_amount": "0.06",
+            // 下单时间显示
+            "create_time_string": "15天前 10:29"
+        },
         // 用户信息
         "user_info": {
             "title": "测试供应商001"
