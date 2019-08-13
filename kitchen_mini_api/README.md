@@ -537,9 +537,7 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
 > ** 传递参数 Request Data : **
 ```
 string              token           【口令】     
-int/null            page            【默认第1页】    
-string/null         status_choice   【默认全部，pay_success 待发货，send_success 待收货，finish 已完成】    
-```
+string              order_sn        【订单号】
 > * status 0 未付款（待付款） 
 > * status 1 已付款（待发货） (分解为2、3、4)
 > * status 2 （预付款专属）待确认订单 => 可以 确认接单
