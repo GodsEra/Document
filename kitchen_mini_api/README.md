@@ -38,7 +38,7 @@ data                响应数据 具体参考其接口文档
 > * 完成基本接口
 
 ### 2019.8.13
-> * [用户导航](#用户导航) [用户信息](#用户信息) [客服信息](#客服信息)
+> * [用户导航](#用户导航) [用户信息](#用户信息) [客服信息](#客服信息) [登录后获取验证码](#登录后获取验证码) [重置密码](#重置密码)
 </details>
 
 ## 接口目录
@@ -72,6 +72,12 @@ data                响应数据 具体参考其接口文档
 ### 用户相关
 
 [用户信息](#用户信息)
+
+[客服信息](#客服信息)
+
+[登录后获取验证码](#登录后获取验证码)
+
+[重置密码](#重置密码)
 
 ## 接口
 
@@ -929,6 +935,70 @@ string              token           【口令】
         // 摘要
         "description": "有问题？联系上方客服电话服务您！"
     }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 登录后获取验证码
+
+> 接口地址 /user/verify_code
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功~",
+    "data": {}
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 重置密码
+
+> 接口地址 /user/reset_password
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】 
+string              verify_code     【验证码】
+string              password        【重置的密码】
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功~",
+    "data": {}
 }
 {
     "code": 600,
