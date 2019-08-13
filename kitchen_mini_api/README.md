@@ -36,6 +36,9 @@ data                响应数据 具体参考其接口文档
 
 ### 2019.8.2 以前
 > * 完成基本接口
+
+### 2019.8.13
+> * [用户导航](#用户导航) [用户信息](#用户信息) [客服信息](#客服信息)
 </details>
 
 ## 接口目录
@@ -56,6 +59,8 @@ data                响应数据 具体参考其接口文档
 
 [订单列表](#订单列表)
 
+[用户导航](#用户导航)
+
 ### 订单相关
 
 [订单详情](#订单详情)
@@ -63,6 +68,10 @@ data                响应数据 具体参考其接口文档
 [确认订单](#确认订单)
 
 [修改订单](#修改订单)
+
+### 用户相关
+
+[用户信息](#用户信息)
 
 ## 接口
 
@@ -321,6 +330,7 @@ int/null            page            【默认第1页】
         ],
         // 用户信息
         "user_info": {
+            // 企业名称
             "title": "测试供应商001"
         }
     }
@@ -519,6 +529,47 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
         // 订单总数
         "count_order_all": 5
     }
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 用户导航
+
+> 接口地址 /navigation/user
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 订单总数
+        "count_order_all": 5,
+        // 用户信息
+        "user_info": {
+            // 企业ID
+            "id": 1,
+            // 企业名称
+            "title": "测试供应商001"
+        }
+    }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
 }
 ```  
 </details>
@@ -790,6 +841,94 @@ float               total_amount    【修改后的订单金额】
     "code": 400,
     "msg": "程序罢工，缺少订单金额 total_amount~",
     "data": {}
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 用户信息
+
+> 接口地址 /user/user
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // LOGO
+        "logo": "http://www.ypvpa.localhost/uploads/images/201906/f24f73d171.jpg",
+        // 负责人
+        "full_name": "苏苏",
+        // 手机号
+        "mobile": "18381082760",
+        // 企业名称
+        "title": "测试供应商001",
+        // 企业ID
+        "id": 1,
+        // 经营地址 区
+        "area_name": "武侯区",
+        // 经营地址 市
+        "city_name": "成都市",
+        // 经营地址 省
+        "province_name": "四川省",
+        //  详细地址
+        "address": "天府大道"
+    }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 客服信息
+
+> 接口地址 /user/client
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 电话
+        "tel": "4001-898-116",
+        // 题目
+        "title": "24小时在线客服",
+        // 摘要
+        "description": "有问题？联系上方客服电话服务您！"
+    }
 }
 {
     "code": 600,
