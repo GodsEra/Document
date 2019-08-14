@@ -1111,8 +1111,8 @@ int                 id              【关于我们ID】
 
 > ** 传递参数 Request Data : **
 ```
-string              token           【口令】 
-string              pay_password    【支付密码】 
+string              token                   【口令】 
+string              pay_password            【支付密码】 
 string              confirm_pay_password    【确认支付密码】 
 ```
 
