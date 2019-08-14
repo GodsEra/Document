@@ -1113,7 +1113,7 @@ int                 id              【关于我们ID】
 ```
 string              token           【口令】 
 string              pay_password    【支付密码】 
-string              pay_password    【确认支付密码】 
+string              confirm_pay_password    【确认支付密码】 
 ```
 
 > ** 返回参数 Response Data : **
