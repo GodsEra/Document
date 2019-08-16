@@ -434,6 +434,8 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "price": "90.00"
                         }
                     ],
+                    // 规格总数
+                    "all_spec_number": 2,
                     // 补款的订单金额
                     "advance_son_total_amount": 133.09,
                     // 补款的订单规格数量
