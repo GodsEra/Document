@@ -418,20 +418,26 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_title": "虹陈香10kg红油豆瓣",
                             // 商品图片
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/213a5cee0d0bd8ea55ee78235191397e.jpg",
-                            // 购买数量
-                            "buy_number": 3.44,
+                            // 愿订单的购买数量
+                            "buy_number": 3,
                             // 单位
                             "spec_name": "10kg",
                             // 单价
-                            "price": "65.00"
+                            "price": "65.00",
+                            // 补款订单购买数量
+                            "advance_son_buy_number": 0.44,
+                            // 最后的购买数量
+                            "final_buy_number": 3.44
                         },
                         {
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 9.16,
+                            "buy_number": 8,
                             "spec_name": "12kg",
-                            "price": "90.00"
+                            "price": "90.00",
+                            "advance_son_buy_number": 1.16,
+                            "final_buy_number": 9.16
                         }
                     ],
                     // 规格总数
@@ -460,25 +466,30 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_id": 26,
                             "good_title": "虹陈香10kg红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/213a5cee0d0bd8ea55ee78235191397e.jpg",
-                            "buy_number": 3.38,
+                            "buy_number": 3,
                             "spec_name": "10kg",
-                            "price": "65.00"
+                            "price": "65.00",
+                            "advance_son_buy_number": 0.38,
+                            "final_buy_number": 3.38
                         },
                         {
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 9.02,
+                            "buy_number": 8,
                             "spec_name": "12kg",
-                            "price": "90.00"
+                            "price": "90.00",
+                            "advance_son_buy_number": 1.02,
+                            "final_buy_number": 9.02
                         }
                     ],
+                    "all_spec_number": 2,
                     "advance_son_total_amount": 116.45,
                     "advance_son_total_number": 1.4,
                     "final_total_amount": 1031.45,
                     "final_total_number": 12.4,
                     "status_string": "拣货完成",
-                    "create_time_string": "2小时前"
+                    "create_time_string": "昨天 14:07"
                 },
                 {
                     "order_sn": "S201908151401316061",
@@ -491,17 +502,20 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 9.5,
+                            "buy_number": 8,
                             "spec_name": "12kg",
-                            "price": "90.00"
+                            "price": "90.00",
+                            "advance_son_buy_number": 1.5,
+                            "final_buy_number": 9.5
                         }
                     ],
+                    "all_spec_number": 1,
                     "advance_son_total_amount": 135,
                     "advance_son_total_number": 1.5,
                     "final_total_amount": 855,
                     "final_total_number": 9.5,
                     "status_string": "拣货完成",
-                    "create_time_string": "2小时前"
+                    "create_time_string": "昨天 14:01"
                 },
                 {
                     "order_sn": "S201908151354363399",
@@ -516,15 +530,18 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
                             "buy_number": 8,
                             "spec_name": "12kg",
-                            "price": "90.00"
+                            "price": "90.00",
+                            "advance_son_buy_number": 0,
+                            "final_buy_number": 8
                         }
                     ],
+                    "all_spec_number": 1,
                     "advance_son_total_amount": 0,
                     "advance_son_total_number": 0,
                     "final_total_amount": 720,
                     "final_total_number": 8,
                     "status_string": "拣货完成",
-                    "create_time_string": "3小时前"
+                    "create_time_string": "昨天 13:54"
                 },
                 {
                     "order_sn": "S201907251029519267",
@@ -539,9 +556,12 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
                             "buy_number": 6,
                             "spec_name": "12kg",
-                            "price": "0.01"
+                            "price": "0.01",
+                            "advance_son_buy_number": 0,
+                            "final_buy_number": 6
                         }
                     ],
+                    "all_spec_number": 1,
                     "advance_son_total_amount": 0,
                     "advance_son_total_number": 0,
                     "final_total_amount": 0.06,
@@ -560,11 +580,14 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 12,
+                            "buy_number": 6,
                             "spec_name": "12kg",
-                            "price": "0.01"
+                            "price": "0.01",
+                            "advance_son_buy_number": 6,
+                            "final_buy_number": 12
                         }
                     ],
+                    "all_spec_number": 1,
                     "advance_son_total_amount": 0.14,
                     "advance_son_total_number": 6,
                     "final_total_amount": 0.2,
@@ -583,11 +606,14 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 12,
+                            "buy_number": 6,
                             "spec_name": "12kg",
-                            "price": "0.01"
+                            "price": "0.01",
+                            "advance_son_buy_number": 6,
+                            "final_buy_number": 12
                         }
                     ],
+                    "all_spec_number": 1,
                     "advance_son_total_amount": -0.04,
                     "advance_son_total_number": 6,
                     "final_total_amount": 0.02,
@@ -606,11 +632,14 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 7.2,
+                            "buy_number": 6,
                             "spec_name": "12kg",
-                            "price": "0.01"
+                            "price": "0.01",
+                            "advance_son_buy_number": 1.2,
+                            "final_buy_number": 7.2
                         }
                     ],
+                    "all_spec_number": 1,
                     "advance_son_total_amount": 0.01,
                     "advance_son_total_number": 1.2,
                     "final_total_amount": 0.07,
@@ -629,27 +658,34 @@ string/null         status_choice   【默认全部，pay_success 待发货，se
                             "good_id": 27,
                             "good_title": "扬名12kg精制红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 2,
+                            "buy_number": 1,
                             "spec_name": "12kg",
-                            "price": "0.01"
+                            "price": "0.01",
+                            "advance_son_buy_number": 1,
+                            "final_buy_number": 2
                         },
                         {
                             "good_id": 24,
                             "good_title": "红花椒特麻",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 2,
+                            "buy_number": 1,
                             "spec_name": "500g",
-                            "price": "90.00"
+                            "price": "90.00",
+                            "advance_son_buy_number": 1,
+                            "final_buy_number": 2
                         },
                         {
                             "good_id": 26,
                             "good_title": "虹陈香10kg红油豆瓣",
                             "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                            "buy_number": 2,
+                            "buy_number": 1,
                             "spec_name": "10kg",
-                            "price": "65.00"
+                            "price": "65.00",
+                            "advance_son_buy_number": 1,
+                            "final_buy_number": 2
                         }
                     ],
+                    "all_spec_number": 3,
                     "advance_son_total_amount": 10.99,
                     "advance_son_total_number": 1,
                     "final_total_amount": 11,
@@ -781,16 +817,22 @@ string              order_sn        【订单号】
                         // 商品图片
                         "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/213a5cee0d0bd8ea55ee78235191397e.jpg",
                         // 购买数量
-                        "buy_number": 3.44,
+                        "buy_number": 3,
                         // 规格总价
-                        "all_spec_price": 195
+                        "all_spec_price": 195,
+                        // 补款订单购买数量
+                        "advance_son_buy_number": 0.44,
+                        // 最后的购买数量
+                        "final_buy_number": 3.44
                     },
                     {
                         "price": "90.00",
                         "good_title": "扬名12kg精制红油豆瓣",
                         "good_litpic": "http://www.ypvpa.localhost/uploads/goods/cover/20190407/ef095c8bf7b0e252d79a7c9c2e6f248b.jpg",
-                        "buy_number": 9.16,
-                        "all_spec_price": 720
+                        "buy_number": 8,
+                        "all_spec_price": 720,
+                        "advance_son_buy_number": 1.16,
+                        "final_buy_number": 9.16
                     }
                 ],
                 // 总规格数
