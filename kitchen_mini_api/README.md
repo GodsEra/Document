@@ -734,7 +734,9 @@ string              token           【口令】
             // 企业ID
             "id": 1,
             // 企业名称
-            "title": "测试供应商001"
+            "title": "测试供应商001",
+            // LOGO
+            "logo": "http://www.ypvpa.localhost/uploads/images/201906/f24f73d171.jpg"
         }
     }
 }
