@@ -44,6 +44,9 @@ data                响应数据 具体参考其接口文档
 
 ### 2019.8.14
 > * [关于我们列表](#关于我们列表) [关于我们](#关于我们) [设置支付密码](#设置支付密码) [重置支付密码](#重置支付密码) 
+
+### 2019.8.19
+> * [修改logo](#修改logo) 
 </details>
 
 ## 接口目录
@@ -77,6 +80,8 @@ data                响应数据 具体参考其接口文档
 ### 用户相关
 
 [用户信息](#用户信息)
+
+[修改logo](#修改logo)
 
 [客服信息](#客服信息)
 
@@ -1189,6 +1194,46 @@ string              token           【口令】
         //  详细地址
         "address": "天府大道"
     }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 修改logo
+
+> 接口地址 /user/edit_logo
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token           【口令】     
+string              logo_base64     【logo图片的base64值】     
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功",
+    "data": {
+        // 新logo地址
+        "logo": "http://www.ypvpa.localhost/uploads/supplier/logo/201908/6f79f945ec.png"
+    }
+}
+{
+    "code": 400,
+    "msg": "请求失败，上传logo失败~",
+    "data": {}
 }
 {
     "code": 600,
