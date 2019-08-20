@@ -1621,3 +1621,93 @@ string              token                   【口令】
 
 [接口目录](#接口目录)
 
+### 钱包流水列表
+
+> 接口地址 /user/wallet_log_list
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token                   【口令】 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 流水分页
+        "log_paginate": {
+            // 流水列表
+            "list": [
+                {
+                    // 流水金额
+                    "amount": "99.00",
+                    // 流水时间
+                    "create_time": "2019-08-20 14:36:00",
+                    // 流水标题
+                    "title": "预售：虹陈香10kg红油豆瓣",
+                    // 流水时间显示
+                    "create_time_string": "52分钟前"
+                },
+                {
+                    "amount": "99.00",
+                    "create_time": "2019-08-20 14:29:41",
+                    "title": "预售：虹陈香10kg红油豆瓣",
+                    "create_time_string": "59分钟前"
+                },
+                {
+                    "amount": "99.00",
+                    "create_time": "2019-08-20 11:41:46",
+                    "title": "预售：虹陈香10kg红油豆瓣",
+                    "create_time_string": "4小时前"
+                },
+                {
+                    "amount": "195.00",
+                    "create_time": "2019-08-20 11:30:59",
+                    "title": "预售：虹陈香10kg红油豆瓣",
+                    "create_time_string": "4小时前"
+                },
+                {
+                    "amount": "195.00",
+                    "create_time": "2019-08-20 11:27:40",
+                    "title": "预售：虹陈香10kg红油豆瓣",
+                    "create_time_string": "5小时前"
+                },
+                {
+                    "amount": "195.00",
+                    "create_time": "2019-08-20 11:10:53",
+                    "title": "预售：虹陈香10kg红油豆瓣",
+                    "create_time_string": "5小时前"
+                }
+            ],
+            // 列表总数
+            "count": 7,
+            // 分页总数
+            "total_page": 2,
+            // 当前页
+            "current_page": 1,
+            // 每页数量
+            "pagesize": 6,
+            // 收入总金额
+            "income_amount": 882,
+            // 支出总金额
+            "outlay_amount": 0
+        }
+    }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
