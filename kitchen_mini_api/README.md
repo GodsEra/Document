@@ -1369,9 +1369,9 @@ string              token           【口令】
 
 > ** 传递参数 Request Data : **
 ```
-string              token           【口令】 
-string              verify_code     【验证码】
-string              password        【重置的密码】
+string              token                   【口令】 
+string              original_password       【原始的密码】
+string              password                【重置的密码】
 ```
 
 > ** 返回参数 Response Data : **
@@ -1379,6 +1379,11 @@ string              password        【重置的密码】
 {
     "code": 200,
     "msg": "请求成功~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "请求失败，原始密码错误",
     "data": {}
 }
 {
