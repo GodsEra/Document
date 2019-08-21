@@ -1517,7 +1517,7 @@ string              confirm_pay_password    【确认支付密码】
 
 ### 重置支付密码
 
-> 接口地址 /user/set_pay_password
+> 接口地址 /user/reset_pay_password
 
 > 请求方式 POST
 
