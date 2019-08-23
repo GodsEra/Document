@@ -1729,6 +1729,44 @@ int/null            page            【默认第1页】
 
 [接口目录](#接口目录)
 
+### 支付宝信息
+
+> 接口地址 /user/withdrawals_type_alipay_info
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token                           【口令】 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 支付宝账户姓名
+        "alipay_account_number": "18381082760",
+        // 支付宝账户
+        "alipay_full_name": "马化腾",
+        // 是否绑定支付宝(0-未绑定 1-已绑定)
+        "status": 1
+    }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
 ### 绑定支付宝
 
 > 接口地址 /user/binding_alipay
