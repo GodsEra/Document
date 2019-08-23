@@ -212,7 +212,7 @@ string      mobile              【手机号】
 string      access_token        【登录口令：具体询问开发者】     
 string      code                【微信js code（暂时不用）】 
 string      mobile              【手机号】
-string      verify_code            【验证码】
+string      verify_code         【验证码】
 ```
 
 > ** 返回参数 Response Data : **
@@ -1708,6 +1708,154 @@ int/null            page            【默认第1页】
             "outlay_amount": 0
         }
     }
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 绑定支付宝
+
+> 接口地址 /user/binding_alipay
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token                           【口令】 
+string              verify_code                     【验证码】 
+string              alipay_full_name                【支付宝账户姓名】 
+string              alipay_account_number           【支付宝帐号】 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "亲，缺少验证码~",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "请求失败，支付宝已经绑定",
+    "data": {}
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 解绑支付宝
+
+> 接口地址 /user/untied_alipay
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token                           【口令】 
+string              verify_code                     【验证码】 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "请求成功",
+    "data": {}
+}
+{
+    "code": 400,
+    "msg": "亲，缺少验证码~",
+    "data": {}
+}
+{
+    "code": 630,
+    "msg": "请求失败，支付宝还未绑定",
+    "data": {}
+}
+{
+    "code": 600,
+    "msg": "程序罢工，无效token或过期token",
+    "data": {}
+}
+```  
+</details>
+
+[接口目录](#接口目录)
+
+### 提现请求信息
+
+> 接口地址 /user/withdrawals_request_info
+
+> 请求方式 POST
+
+<details>
+<summary></summary>
+
+> ** 传递参数 Request Data : **
+```
+string              token                           【口令】 
+string              verify_code                     【验证码】 
+```
+
+> ** 返回参数 Response Data : **
+```
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 支付类型列表
+        "withdrawals_type_list": [
+            {
+                // 类型（alipay-支付宝）
+                "type": "alipay",
+                // 标题
+                "title": "18381082760"
+            }
+        ],
+        // 钱包
+        "wallet": {
+            // 钱包余额
+            "balance": "200.00"
+        }
+    }
+}
+{
+    "code": 400,
+    "msg": "亲，缺少验证码~",
+    "data": {}
+}
+{
+    "code": 630,
+    "msg": "请求失败，支付宝还未绑定",
+    "data": {}
+}
+{
+    "code": 620,
+    "msg": "请求失败，不存在支付密码",
+    "data": {}
 }
 {
     "code": 600,
