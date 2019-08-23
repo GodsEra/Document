@@ -1867,7 +1867,6 @@ string              verify_code                     【验证码】
 > ** 传递参数 Request Data : **
 ```
 string              token                           【口令】 
-string              verify_code                     【验证码】 
 ```
 
 > ** 返回参数 Response Data : **
@@ -1891,11 +1890,6 @@ string              verify_code                     【验证码】
             "balance": "200.00"
         }
     }
-}
-{
-    "code": 400,
-    "msg": "亲，缺少验证码~",
-    "data": {}
 }
 {
     "code": 630,
