@@ -1943,6 +1943,11 @@ string              total_amount                    【提现金额】
     "data": {}
 }
 {
+    "code": 400,
+    "msg": "提现金额不足",
+    "data": {}
+}
+{
     "code": 630,
     "msg": "请求失败，支付宝还未绑定",
     "data": {}
@@ -1952,7 +1957,6 @@ string              total_amount                    【提现金额】
     "msg": "请求失败，不存在支付密码",
     "data": {}
 }
-
 {
     "code": 600,
     "msg": "程序罢工，无效token或过期token",
