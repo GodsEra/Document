@@ -1669,6 +1669,112 @@ int/null            page            【默认第1页】
             "list": [
                 {
                     // 流水金额
+                    "amount": "-5.00",
+                    // 流水时间
+                    "create_time": "2019-08-28 10:00:16",
+                    // 流水标题
+                    "title": "提现：审核中",
+                    // 流水时间显示
+                    "create_time_string": "昨天 10:00",
+                    // 流水订单号
+                    "order_sn": null
+                },
+                {
+                    "amount": "-5.00",
+                    "create_time": "2019-08-28 10:00:15",
+                    "title": "提现：审核中",
+                    "create_time_string": "昨天 10:00",
+                    "order_sn": null
+                },
+                {
+                    "amount": "-5.00",
+                    "create_time": "2019-08-28 10:00:05",
+                    "title": "提现：审核中",
+                    "create_time_string": "昨天 10:00",
+                    "order_sn": null
+                },
+                {
+                    "amount": "5.00",
+                    "create_time": "2019-08-26 17:39:35",
+                    "title": "提现：退款",
+                    "create_time_string": "08-26 17:39",
+                    "order_sn": null
+                },
+                {
+                    "amount": "-5.00",
+                    "create_time": "2019-08-26 17:14:25",
+                    "title": "提现：已拒绝",
+                    "create_time_string": "08-26 17:14",
+                    "order_sn": null
+                },
+                {
+                    "amount": "-5.00",
+                    "create_time": "2019-08-26 17:10:15",
+                    "title": "提现：已完成",
+                    "create_time_string": "08-26 17:10",
+                    "order_sn": null
+                },
+                {
+                    "amount": "2.00",
+                    "create_time": "2019-08-26 17:09:45",
+                    "title": "提现：退款",
+                    "create_time_string": "08-26 17:09",
+                    "order_sn": null
+                },
+                {
+                    "amount": "-2.00",
+                    "create_time": "2019-08-26 17:09:06",
+                    "title": "提现：已拒绝",
+                    "create_time_string": "08-26 17:09",
+                    "order_sn": null
+                },
+                {
+                    "amount": "40.00",
+                    "create_time": "2019-08-22 16:33:48",
+                    "title": "预售：扬名陈醋 * 1",
+                    "create_time_string": "08-22 16:33",
+                    "order_sn": "S201908221631464362"
+                },
+                {
+                    "amount": "80.00",
+                    "create_time": "2019-08-22 16:33:48",
+                    "title": "预售：扬名陈醋 * 1",
+                    "create_time_string": "08-22 16:33",
+                    "order_sn": "S201908221631464362"
+                },
+                {
+                    "amount": "80.00",
+                    "create_time": "2019-08-22 16:31:43",
+                    "title": "预售：扬名陈醋 * 1",
+                    "create_time_string": "08-22 16:31",
+                    "order_sn": "S201908221629389161"
+                }
+            ],
+            // 列表总数
+            "count": 11,
+            // 分页总数
+            "total_page": 1,
+            // 当前页
+            "current_page": 1,
+            // 每页数量
+            "pagesize": 12,
+            // 收入总金额
+            "income_amount": 207,
+            // 支出总金额
+            "outlay_amount": -27
+        }
+    }
+}
+{
+    "code": 200,
+    "msg": "获取成功",
+    "data": {
+        // 流水分页
+        "log_paginate": {
+            // 流水列表
+            "list": [
+                {
+                    // 流水金额
                     "amount": "99.00",
                     // 流水时间
                     "create_time": "2019-08-20 14:36:00",
